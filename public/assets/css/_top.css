@@ -1,0 +1,34 @@
+#header{width: calc(100% - 200px); background:#202f78; height: 50px; position: absolute; left: 200px; min-width: 900px; } 
+
+#header .logo {   float: left;  width: 200px; height: 50px;  }
+#header .logo img { padding: 10px 15px;  }
+#header .top_logo ul{ padding: 0 15px; float: left; height: 50px;  }
+#header .top_logo li {  display: inline-block;   }
+#header .top_logo .logo-img {  height: 50px; vertical-align: middle; }
+#header .top_logo .logo-txt{   vertical-align: middle;  color:#e2e2e2; padding-left: 5px; font-size: 11px; line-height: 14px;   font-weight: bold;  word-break:keep-all;  max-width: 130px;  min-width: 100px;  }
+ 
+#header .lnb {  float: left;  }
+#header .lnb ul  li { float: left;}
+#header .lnb ul  li input { 
+	margin: 10px 0 0 0; 
+	background: #4d65dc;
+	border:#4d65dc;
+	color: #fff;
+	width: 300px;
+	}
+#header .lnb  li a {float: left; color:#fff;  line-height: 30px; font-size: 15px; font-weight: 600; margin: 10px 0 0 0; }
+#header .lnb  li  .btn_se {  padding-left:10px; padding-right: 10px;  font-size: 14px; margin-left: -10px; border-radius:5px; background: #4d65dc; color:#fff;}
+#header .lnb  li  .btn_se:hover {  background: #3345a1; }
+#header .lnb  .focus {  color:#5d98e6;  }
+#header .lnb  li a:hover { color:#5d98e6;  }
+#header .lnb  li  {  padding: 0 5px 0 0;  margin-left: 15px;}
+
+#header .gnb {  float: right; padding-right: 20px; }
+#header .gnb ul  li { float: left;}
+#header .gnb  .btn {float: left; color:#fff;  line-height: 50px; font-size: 12px; font-weight: 600; border: 0; padding: 0;}
+#header .gnb  .focus {  color:#5d98e6;  }
+#header .gnb  li  {  padding: 0 7px; }
+
+.dropdown-menu > li:first-child > a  { 
+	color:#333;
+	display: block; }

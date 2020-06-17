@@ -1,0 +1,264 @@
+
+
+/* 페이지 레이아웃 */
+.cmp {
+	clear:both;position:relative;overflow:hidden;
+	width:100%; height:auto;
+	max-width: 1200px;
+	margin: auto;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:cover;
+	font-size: 0;
+}
+.loader {
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	transform-origin: 50% 50%;
+}
+
+.sttsBul {
+	position: relative;
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+}
+.sttsPos { background-color: #6ba240; }/*예약가능*/
+.sttsWat { background-color: #278fc5; } /*입금대기*/
+.sttsCom { background-color: #e05c2f; } /*예약완료*/
+.sttsTel { background-color: #888;} /*전화문의*/
+
+.clrPos { color: #222; }
+.clrWat { color: #278fc5; }
+.clrCom { color: #e05c2f; }
+.clrTel { color: #888; }
+
+.clrRed { color: #d21a1a; }
+.clrBlue { color: #1b65b3; }
+
+
+.disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+
+
+.txtThrough {
+	text-decoration: line-through;
+}
+
+
+
+
+/* 버튼공통 */
+.btn_rsvComm {
+	height: 60px;
+	font-size: 20px;
+	line-height: 60px;
+	background-color: #e05c2f;
+	color: #fff;
+	text-align: center;
+	transition: background-color 0.3s;
+}
+.btn_rsvComm:hover {
+	background-color: #d14414;
+	color: #fff;
+}
+
+.btn_rsvGray {
+	height: 60px;
+	font-size: 20px;
+	line-height: 60px;
+	background-color: #e8e8e8;
+	color: #333;
+	text-align: center;
+	transition: background-color 0.3s;
+}
+.btn_rsvGray:hover {
+	background-color: #aeaeae;
+	color: #333;
+}
+
+.btn_common {
+	display: inline-block;
+	height: 30px;
+	padding: 0 14px;
+	font-size: 14px;
+	color: #444;
+	line-height: 28px;
+	border: 1px solid #d8d8d8;
+	background-color: #f8f8f8;
+	text-align: center;
+	transition: background-color 0.3s, color 0.3s;
+}
+.btn_common:hover {
+	color: #fff;
+	background-color: #7b7b7b;
+}
+
+
+/* 팝업 */
+.popup_wrap {
+	display: none;
+	position: fixed;
+	top: 0; right: 0; bottom: 0; left: 0;
+	margin: auto;
+	width: 100%; height: 100vh;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 100;
+}
+.popup_wrap.SEL {
+	display: block;
+}
+
+
+/* 룸 사진 팝업 */
+.popPhoto_wrap {
+	display: none;
+	position: fixed;
+	top: 0; right: 0; bottom: 0; left: 0;
+	margin: auto;
+	width: 100%; height: 100vh;
+	background-color: rgba(0,0,0,0.9);
+	z-index: 100;
+}
+.popPhoto_wrap.SEL {
+	display: block;
+}
+.popPhoto {
+	position: absolute;
+	top: 50%; right: 0; left: 0;
+	width: 100%;
+	max-width: 1490px;
+	margin: auto;
+	padding: 0 145px;
+	transform: translateY(-50%);
+}
+.popPhoto .swiper-photo {
+	position: relative;
+	width: 100%;
+	margin: auto;
+}
+.popPhoto .swiper-photo .swiper-slide {
+	position: relative;
+	padding-top: 56.25%;
+}
+.popPhoto .swiper-photo .loader {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	margin: auto;
+}
+
+.popPhoto .swiper-button-next,
+.popPhoto .swiper-button-prev {
+	width: 38px; height: 75px;
+	margin-top: -62px;
+	background-size: 100% 100%;
+	transition: opacity 0.3s;
+}
+.popPhoto .swiper-button-next:hover,
+.popPhoto .swiper-button-prev:hover {
+	opacity: 0.5;
+}
+.popPhoto .swiper-button-next {
+	background-image: url(../images/photo_arrowR.png);
+}
+.popPhoto .swiper-button-prev {
+	background-image: url(../images/photo_arrowL.png);
+}
+
+.popPhoto .swiper-pagination {
+	right: 0; left: 0;
+	margin: 23px auto 0;
+	text-align: center;
+}
+.popPhoto .swiper-pagination .swiper-pagination-bullet {
+	width: 6px; height: 6px;
+	margin: 0 10px;
+	border-radius: 5px;
+	background-color: #fff;
+	opacity: 1;
+	transition: width 0.3s;
+}
+.popPhoto .swiper-pagination .swiper-pagination-bullet-active {
+	width: 47px;
+}
+
+.popPhoto .roomName {
+	margin-top: 54px;
+	font-size: 23px;
+	color: #fff;
+	text-align: center;
+}
+
+.popPhoto_wrap .photo_close {
+	position: absolute;
+	top: 40px; right: 40px;
+	width: 58px; height: 58px;
+	background: url(../images/photo_close.png) 0 0 no-repeat;
+	z-index: 10;
+}
+
+
+@media ( max-width: 1024px ) {
+	select {
+		min-width: 60px;
+		font-size: 13px;
+	}
+
+	/* 버튼공통 */
+	.btn_rsvComm {
+		height: 45px;
+		font-size: 17px;
+		line-height: 45px;
+	}
+	.btn_rsvGray {
+		height: 45px;
+		font-size: 17px;
+		line-height: 45px;
+	}
+
+/* 룸 사진 팝업 */
+
+.popPhoto {
+	max-width: 100%;
+	padding: 0;
+}
+.popPhoto .swiper-button-next,
+.popPhoto .swiper-button-prev {
+	display: none;
+}
+.popPhoto .swiper-pagination {
+	margin: 20px auto 0;
+}
+.popPhoto .swiper-pagination .swiper-pagination-bullet {
+	width: 5px; height: 5px;
+	margin: 0 5px;
+	border-radius: 3px;
+}
+.popPhoto .swiper-pagination .swiper-pagination-bullet-active {
+	width: 24px;
+}
+.popPhoto .roomName {
+	margin-top: 45px;
+	font-size: 15px;
+}
+.popPhoto_wrap .photo_close {
+	top: 35px; right: 18px;
+	width: 20px; height:20px;
+	background-size: cover;
+}
+
+}
+
+
+@media ( max-width: 340px ) {
+	select {
+		font-size: 12px;
+	}
+	
+}

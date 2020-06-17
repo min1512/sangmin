@@ -1,0 +1,654 @@
+
+
+====================================================
+==== http://client.einet.co.kr/info/auto_discount/list
+==== 2020-04-29 08:24:47
+====================================================
+==== HTTP_HOST :: client.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_REFERER :: http://client.einet.co.kr/info/discount/view/61
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: client.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://client.einet.co.kr/info/auto_discount/view/1
+==== 2020-04-29 08:24:49
+====================================================
+==== HTTP_HOST :: client.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_REFERER :: http://client.einet.co.kr/info/auto_discount/list
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: client.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://client.einet.co.kr/room/list
+==== 2020-04-29 08:27:33
+====================================================
+==== HTTP_HOST :: client.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_REFERER :: http://client.einet.co.kr/info/room/view/19
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: client.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://client.einet.co.kr/info/auto_discount/list
+==== 2020-04-29 14:09:00
+====================================================
+==== HTTP_HOST :: client.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_REFERER :: http://client.einet.co.kr/info/season
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: client.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://client.einet.co.kr/info/etc/list
+==== 2020-04-29 14:09:16
+====================================================
+==== HTTP_HOST :: client.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_REFERER :: http://client.einet.co.kr/
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: client.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://client.einet.co.kr/info/etc/view
+==== 2020-04-29 14:09:18
+====================================================
+==== HTTP_HOST :: client.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_REFERER :: http://client.einet.co.kr/info/etc/list
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: client.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://client.einet.co.kr/order/list
+==== 2020-04-29 14:24:42
+====================================================
+==== HTTP_HOST :: client.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_REFERER :: http://client.einet.co.kr/info/etc/view
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: client.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://client.einet.co.kr/info/etc/view
+==== 2020-04-29 15:12:26
+====================================================
+==== HTTP_HOST :: client.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_REFERER :: http://client.einet.co.kr/order/list
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: client.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://client.einet.co.kr/info/etc/view
+==== 2020-04-29 15:15:21
+====================================================
+==== HTTP_HOST :: client.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_REFERER :: http://client.einet.co.kr/order/list
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: client.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:36:37
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:36:54
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:38:36
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:39:13
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:45:40
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:45:56
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:46:37
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:46:57
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:47:34
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:52:24
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:52:34
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:52:51
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:53:45
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:54:30
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:59:20
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 17:59:58
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 18:00:13
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 18:02:17
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 18:03:21
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 18:03:22
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 18:03:23
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 18:03:23
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 18:03:23
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 22:25:23
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 58.143.121.48
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 22:30:08
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 58.143.121.48
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 22:31:42
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 58.143.121.48
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 22:33:46
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 58.143.121.48
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 22:40:35
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 58.143.121.48
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 22:45:14
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 58.143.121.48
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 22:55:20
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 58.143.121.48
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 22:57:02
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 58.143.121.48
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 23:01:54
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 58.143.121.48
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 23:02:26
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 58.143.121.48
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://staff.einet.co.kr/client/room
+==== 2020-04-29 23:07:03
+====================================================
+==== HTTP_HOST :: staff.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: staff.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 58.143.121.48
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 

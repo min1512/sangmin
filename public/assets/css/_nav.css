@@ -1,0 +1,88 @@
+.sidebar {  width: 200px; background: #4d65dc;  padding-bottom: 50px; }
+.sidebar-wrapper {   width: 200px; background: #4d65dc; }
+.sidebar-wrapper ul {  color:#fff;}
+.sidebar .logo, .bootstrap-navbar .logo {
+    padding: 20px 15px 10px 15px;
+    height: 100px;
+    position: relative;
+    z-index: 4;
+    background: #4d65dc;
+}
+.sidebar .user, .bootstrap-navbar .user {
+	 background: #4d65dc;
+	 padding: 0;
+	
+}
+
+.sidebar .sidebar-wrapper, .main-panel {
+    overflow: visible;
+}
+
+.sidebar .sidebar-wrapper > .user ~ .nav {
+	
+	padding-bottom: 50px;
+}
+
+.sidebar .nav p {
+	color:#fff;
+}
+.sidebar .nav i {
+	color:#fff;
+}
+
+
+
+.sidebar .nav > li.expand > a, .sidebar .nav > li > a:hover, .sidebar .nav > li > a:focus{
+	color:#feffbd;	
+	background: #202f78;
+	
+}
+
+
+.sidebar .nav > li > a {
+	color:#fff;	
+	
+}
+
+
+
+.sidebar .nav [data-toggle="collapse"] ~ div > ul > li > a {
+    background:url(../img/left_icon.png) no-repeat 36px #36408b ;
+   
+}
+
+
+
+.sidebar .nav {
+    background:  #3951cb ;
+   
+}
+
+
+.sidebar .logo-text img {
+	height:60px;
+	max-width: 150px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+
+
+
+@media (max-width: 992px) {
+.sidebar, .bootstrap-navbar{
+	
+	position: absolute;
+	left: 0;
+	top:0;
+	transform:none;
+	
+	
+}
+
+.sidebar .nav i, .bootstrap-navbar .nav i {
+    font-size: 18px;
+}
+
+
+}

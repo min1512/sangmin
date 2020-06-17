@@ -1,0 +1,1240 @@
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 07:29:12
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 08:42:08
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 10:42:20
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/room
+==== 2020-05-22 10:42:21
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/season
+==== 2020-05-22 10:42:21
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/reservation
+==== 2020-05-22 10:42:21
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/price
+==== 2020-05-22 10:42:21
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/order/set
+==== 2020-05-22 10:42:21
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== days :: "2020-5-1"
+==== room :: "334"
+
+
+====================================================
+==== http://api.einet.co.kr/order/change/day
+==== 2020-05-22 10:42:21
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-1"
+
+
+====================================================
+==== http://api.einet.co.kr/price/day
+==== 2020-05-22 10:42:21
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+
+
+====================================================
+==== day :: "2020-5-1"
+==== room :: "334"
+==== http://api.einet.co.kr/price/day
+==== 2020-05-22 10:42:21
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-1"
+==== room :: "335"
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 10:42:22
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/room
+==== 2020-05-22 10:42:23
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/price
+==== 2020-05-22 10:42:23
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/season
+==== http://api.einet.co.kr/calendar/reservation
+==== 2020-05-22 10:42:23
+==== 2020-05-22 10:42:23
+====================================================
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/order/set
+==== 2020-05-22 10:42:23
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== days :: "2020-5-1"
+==== room :: "334"
+
+
+====================================================
+==== http://api.einet.co.kr/order/change/day
+==== 2020-05-22 10:42:23
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-1"
+
+
+====================================================
+
+
+====================================================
+==== http://api.einet.co.kr/price/day
+==== http://api.einet.co.kr/price/day
+==== 2020-05-22 10:42:23
+====================================================
+==== 2020-05-22 10:42:23
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-1"
+==== day :: "2020-5-1"
+==== room :: "334"
+==== room :: "335"
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 16:46:57
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:06:12
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/room
+==== 2020-05-22 17:06:12
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/reservation
+==== http://api.einet.co.kr/calendar/season
+==== 2020-05-22 17:06:12
+====================================================
+==== 2020-05-22 17:06:12
+==== HTTP_HOST :: api.einet.co.kr
+====================================================
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_ACCEPT :: */*
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT :: */*
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== year :: "2020"
+==== month :: "5"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/order/set
+==== 2020-05-22 17:06:12
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== days :: "2020-5-1"
+==== room :: "334"
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/price
+==== 2020-05-22 17:06:12
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/order/change/day
+==== 2020-05-22 17:06:13
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-1"
+
+
+====================================================
+
+
+====================================================
+==== http://api.einet.co.kr/price/day
+==== 2020-05-22 17:06:13
+====================================================
+==== http://api.einet.co.kr/price/day
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== 2020-05-22 17:06:13
+==== HTTP_ACCEPT :: */*
+====================================================
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== SERVER_NAME :: api.einet.co.kr
+==== HTTP_ACCEPT :: */*
+==== SERVER_PORT :: 80
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== REMOTE_ADDR :: 182.208.117.213
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== REQUEST_METHOD :: POST
+==== SERVER_NAME :: api.einet.co.kr
+==== QUERY_STRING :: 
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-1"
+==== room :: "334"
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-1"
+==== room :: "335"
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:09:14
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/room
+==== 2020-05-22 17:09:14
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/season
+==== 2020-05-22 17:09:14
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/order/set
+==== 2020-05-22 17:09:14
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== days :: "2020-5-1"
+==== room :: "334"
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/reservation
+==== 2020-05-22 17:09:14
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/price
+==== 2020-05-22 17:09:14
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/order/change/day
+==== 2020-05-22 17:09:15
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-1"
+
+
+====================================================
+==== http://api.einet.co.kr/price/day
+
+
+====================================================
+==== 2020-05-22 17:09:15
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== http://api.einet.co.kr/price/day
+==== day :: "2020-5-1"
+==== room :: "334"
+==== 2020-05-22 17:09:15
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-1"
+==== room :: "335"
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:13:38
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:14:35
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:14:35
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:14:38
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:15:18
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:18:21
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:20:29
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:20:44
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:24:10
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:24:28
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:24:53
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:25:39
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:26:10
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:26:27
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:33:40
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:34:52
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:35:28
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:36:34
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:37:46
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/test
+==== 2020-05-22 17:38:08
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: GET
+==== QUERY_STRING :: 
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/room
+==== 2020-05-22 17:38:08
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/reservation
+==== 2020-05-22 17:38:08
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/season
+==== 2020-05-22 17:38:08
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/calendar/price
+==== 2020-05-22 17:38:08
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== year :: "2020"
+==== month :: "5"
+
+
+====================================================
+==== http://api.einet.co.kr/order/set
+==== 2020-05-22 17:38:11
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== days :: "2020-5-23"
+==== room :: "334"
+
+
+====================================================
+==== http://api.einet.co.kr/order/change/day
+==== 2020-05-22 17:38:11
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-23"
+
+
+====================================================
+==== http://api.einet.co.kr/price/day
+==== 2020-05-22 17:38:11
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-23"
+==== room :: "334"
+
+
+====================================================
+==== http://api.einet.co.kr/price/day
+==== 2020-05-22 17:38:11
+====================================================
+==== HTTP_HOST :: api.einet.co.kr
+==== HTTP_USER_AGENT :: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+==== HTTP_ACCEPT :: */*
+==== HTTP_REFERER :: http://api.einet.co.kr/test
+==== HTTP_ACCEPT_LANGUAGE :: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+==== SERVER_NAME :: api.einet.co.kr
+==== SERVER_PORT :: 80
+==== REMOTE_ADDR :: 182.208.117.213
+==== REQUEST_METHOD :: POST
+==== QUERY_STRING :: 
+===============================================
+==== POST =====================================
+==== key :: "2juEEJI8kjdjlf6ZYqZMFDJNSJSqXrSnNxEKStdWcNQDcAEO4eT8q9bvbQi2tBEO"
+==== day :: "2020-5-23"
+==== room :: "335"

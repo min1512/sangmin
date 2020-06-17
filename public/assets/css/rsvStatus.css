@@ -1,0 +1,413 @@
+.rsvStatus .sttsTop {
+	margin: 0 auto 15px;
+}
+.rsvStatus .sttsTop .monthInfo {
+	text-align: center;
+}
+.rsvStatus .sttsTop .monthInfo * {
+	vertical-align: top;
+}
+.rsvStatus .sttsTop .monthInfo .month {
+	padding: 0 37px;
+	font-size: 30px;
+	font-weight: bold;
+	color: #333;
+	line-height: 42px;
+}
+.rsvStatus .sttsTop .monthInfo a {
+	display: inline-block;
+	width: 44px; height: 44px;
+	font-size: 16px;
+	border: 1px solid #bbb;
+	transition: background-color 0.3s;
+}
+.rsvStatus .sttsTop .monthInfo a:hover {
+	background-color: #f8f8f8;
+}
+.rsvStatus .sttsTop .monthInfo a i {
+	line-height: 42px;
+}
+
+.rsvStatus .sttsTop .today {
+	font-size: 16px;
+	color: #278fc5;
+	line-height: 45px;
+	text-align: right;
+}
+.rsvStatus .sttsTop .today .bullet {
+	display: inline-block;
+	width: 53px; height: 17px;
+	margin-right: 6px;
+	font-size: 12px;
+	color: #fff;
+	line-height: 17px;
+	background: #278fc5;
+	border-radius: 30px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.rsvStatus .sttsTop .sttsInfo {
+	position: relative;
+}
+.rsvStatus .sttsTop .sttsInfo > div {
+	display: inline-block;
+	margin-right: 30px;
+	font-size: 12px;
+	line-height: 30px;
+}
+.rsvStatus .sttsTop .sttsInfo > div .sttsBul {
+	margin-right: 6px;
+	width: 18px; height: 18px;
+	line-height: 18px;
+	font-size: 12px;
+}
+
+.rsvStatus .sttsTop .sttsInfo .datePrice {
+	position: absolute;
+	top: 0; right: 0;
+	display: inline-block;
+	height: 30px;
+	padding: 0 12px;
+	font-size: 13px;
+	color: #fff;
+	line-height: 30px;
+	background-color: #555;
+	text-align: center;
+	transition: background-color 0.3s;
+}
+.rsvStatus .sttsTop .sttsInfo .datePrice:hover {
+	background-color: #e05c2f;
+}
+.rsvStatus .sttsTop .sttsInfo .datePrice::after {
+	content: '날짜별 금액';
+	padding-left: 5px;
+}
+.rsvStatus .sttsTop .sttsInfo .datePrice span {
+	display: inline-block;
+	width: 18px; height: 18px;
+	font-size: 12px;
+	color: #7b7b7b;
+	line-height: 18px;
+	border-radius: 100%;
+	background-color: #fff;
+	text-align: center;
+}
+
+
+
+/* 예약현황 테이블 */
+.sttsTbl {
+	table-layout: fixed;
+	color: #666;
+	border: 1px solid #d8d8d8;
+}
+.sttsTbl thead th {
+	width: 14.28%;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 50px;
+	border:1px solid #d8d8d8;
+	text-align: center;
+	
+}
+
+.sttsTbl tbody td {
+	padding: 14px 10px;
+	border: 1px solid #d8d8d8;
+	vertical-align: top;
+}
+.sttsTbl tbody td.today {
+	background-color: #f8f8f8;
+}
+/* 1. 날짜 */
+.sttsTbl tbody td .day {
+	position: relative;
+	padding-left: 5px;
+	font-size: 16px;
+	line-height: 18px;
+}
+.sttsTbl tbody td .day .holidayTxt {
+	position: absolute;
+	top: 0; right: 0;
+	font-size: 13px;
+	color: #d21a1a;
+}
+.sttsTbl tbody td .day .bul_today { /*today */
+	display: inline-block;
+	width: 54px; height: 18px;
+	margin-left: 10px;
+	font-size: 12px;
+	color: #fff;
+	line-height: 18px;
+	background-color: #278fc5;
+	border-radius: 100px;
+	text-transform: uppercase;
+	text-align: center;
+	vertical-align: top;
+}
+
+.sttsTbl tbody td .rsvInfo {}
+
+/* 2. 성수기, 할인 */
+.sttsTbl tbody td .rsvInfo .weekTxt {
+	font-size: 12px;
+	line-height: 26px;
+	color: #888;
+}
+.sttsTbl tbody td .rsvInfo .dc {
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 13px;
+	height: 13px;
+	color: #d21a1a;
+}
+
+/* 룸 리스트 */
+.sttsTbl tbody td .rsvInfo ul {
+	margin-top: 12px;
+	font-size: 13px;
+	overflow: hidden;
+}
+
+.sttsTbl tbody td .rsvInfo ul li {
+	width: 100%;
+	white-space: nowrap;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	cursor: pointer;
+}
+.sttsTbl tbody td .rsvInfo ul .clrCom { /* 예약완료 */
+	cursor: context-menu;
+}
+.sttsTbl tbody td .rsvInfo ul .sttsBul {
+	margin-right: 8px;
+	width: 18px; height: 18px;
+	line-height: 18px;
+	font-size: 12px;
+}
+.sttsTbl tbody td .rsvInfo .rsvEnd {
+	font-size: 13px;
+	color: #999;
+}
+/* 룸 리스트 방별 */
+.sttsTbl tbody td .rsvInfo ul.rsvRoomList li {
+	margin: 7px 0;
+}
+/* 룸 리스트 날짜별 */
+.sttsTbl tbody td .rsvInfo ul.rsvPriceList li {
+	margin: 2px 0;
+}
+.sttsTbl tbody td .rsvInfo ul.rsvPriceList li .price {
+	padding-left: 26px;
+	font-size: 12px;
+	color: #888;
+	line-height: 11px;
+	text-decoration: line-through;
+}
+.sttsTbl tbody td .rsvInfo ul.rsvPriceList li .discount {
+	padding-left: 26px;
+	color: #444;
+}
+
+/* 대기자신청 */
+.sttsTbl tbody td .wating {
+	text-align: center;
+}
+.sttsTbl tbody td .wating a {
+	position: relative;
+	display: inline-block;
+	width: 95px; height: 26px;
+	font-size: 12px;
+	color: #666;
+	line-height: 24px;
+	border: 1px solid #d8d8d8;
+	background-color: #f8f8f8;
+	text-align: center;
+	transition: background 0.3s, color 0.3s;
+}
+.sttsTbl tbody td .wating a:hover {
+	color: #fff;
+	background-color: #7b7b7b;
+}
+
+
+
+
+@media ( max-width: 1024px ) {
+	.rsvStatus .sttsTop {
+		margin: 0 auto 10px;
+	}
+	.rsvStatus .sttsTop .monthInfo .month {
+		padding: 0 30px;
+		font-size: 25px;
+		line-height: 36px;
+	}
+	.rsvStatus .sttsTop .monthInfo a {
+		width: 36px; height: 36px;
+		font-size: 14px;
+	}
+	.rsvStatus .sttsTop .monthInfo a i {
+		line-height: 34px;
+	}
+	.rsvStatus .sttsTop .today {
+		font-size: 12px;
+		line-height: 22px;
+		text-align: center;
+	}
+	.rsvStatus .sttsTop .today .bullet {
+		width: 44px; height: 14px;
+		font-size: 10px;
+		line-height: 14px;
+	}
+	.rsvStatus .sttsTop .sttsInfo {
+		margin-top: 20px;
+		padding-left: 15px;
+	}
+	.rsvStatus .sttsTop .sttsInfo > div {
+		margin-right: 10px;
+		font-size: 11px;
+		line-height: 18px;
+	}
+	.rsvStatus .sttsTop .sttsInfo > div .sttsBul {
+		margin-right: 4px;
+		width: 15px; height: 15px;
+		line-height: 15px;
+		font-size: 11px;
+	}
+	.rsvStatus .sttsTop .sttsInfo .datePrice {
+		top: auto; bottom: 0; right: 15px;
+		height: 30px;
+		padding: 0 8px;
+		font-size: 11px;
+	}
+	.rsvStatus .sttsTop .sttsInfo .datePrice::after {
+		content: '금액표시';
+		padding-left: 3px;
+	}
+	.rsvStatus .sttsTop .sttsInfo .datePrice span {
+		width: 14px; height: 14px;
+		font-size: 9px;
+		line-height: 14px;
+	}
+
+	/* 예약현황 테이블 */
+	.sttsTbl thead th {
+		font-size: 11px;
+		line-height: 35px;
+	}
+	.sttsTbl tbody td {
+		padding: 12px 5px;
+	}
+	/* 날짜 */
+	.sttsTbl tbody td .day {
+		padding-bottom: 14px;
+		padding-left: 0;
+		font-size: 11px;
+		line-height: 11px;
+	}
+	.sttsTbl tbody td .day .holidayTxt {
+		position: absolute;
+		top: auto; right: auto;
+		bottom: 0; left: 0;
+		font-size: 9px;
+	}
+	.sttsTbl tbody td .day .bul_today {
+		display: none;
+	}
+
+	/* 2. 성수기, 할인 */
+	.sttsTbl tbody td .rsvInfo .weekTxt {
+		font-size: 9px;
+		line-height: 13px;
+	}
+	.sttsTbl tbody td .rsvInfo .weekTxt span {
+		display: block;
+	}
+	.sttsTbl tbody td .rsvInfo .dc {
+		margin-top: 2px;
+		height: 14px;
+		line-height: 14px;
+		font-size: 10px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	.sttsTbl tbody td .rsvInfo ul {
+		margin-top: 5px;
+		font-size: 11px;
+		overflow: hidden;
+	}
+	.sttsTbl tbody td .rsvInfo ul .sttsBul {
+		display: none;
+	}
+	.sttsTbl tbody td .rsvInfo .rsvEnd {
+		font-size: 11px;
+	}
+
+	/* 룸 리스트 날짜별 */
+	.sttsTbl tbody td .rsvInfo ul.rsvPriceList li .price {
+		padding-left: 0;
+		font-size: 10px;
+		line-height: 10px;
+	}
+	.sttsTbl tbody td .rsvInfo ul.rsvPriceList li .discount {
+		padding-left: 0;
+	}
+	/* 대기자신청 */
+	.sttsTbl tbody td .wating a {
+		width: 100%; height: 20px;
+		font-size: 10px;
+		line-height: 18px;
+		text-indent: -999em;
+	}
+	.sttsTbl tbody td .wating a::before {
+		content: '대기신청';
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		margin: auto;
+		text-indent: initial;
+		z-index: 1;
+		cursor: auto;
+	}
+
+}
+
+
+@media ( max-width: 375px ) {
+	.rsvStatus .sttsTop .sttsInfo {
+		padding-left: 5px;
+	}
+	.rsvStatus .sttsTop .sttsInfo > div {
+		margin-right: 5px;
+	}
+	.rsvStatus .sttsTop .sttsInfo > div .sttsBul {
+		margin-right: 2px;
+	}
+	.rsvStatus .sttsTop .sttsInfo .datePrice::after {
+		content: '금액';
+		padding-left: 3px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	.rsvStatus .sttsTop .sttsInfo .datePrice {
+		right: 5px;
+	}
+	/* 2. 성수기, 할인 */
+	.sttsTbl tbody td .day .holidayTxt {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	/* 대기자신청 */
+	.sttsTbl tbody td .wating a::before {
+		content: '대기';
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		margin: auto;
+		text-indent: initial;
+		z-index: 1;
+	}
+}

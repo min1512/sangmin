@@ -1,0 +1,1465 @@
+@charset "utf-8";
+
+/* reset */
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,
+form,fieldset,legend,input,textarea,button,select, 
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary, 
+time, mark, audio, video{
+    margin:0; padding:0; font-size:100%;
+}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0}
+h1,h2,h3,h4,h5,h6,address,caption,em{font-style:normal; font-weight:normal;}
+ul,ol,dl{list-style:none;}
+hr{display:none;}
+button{overflow:visible; margin:0; padding:0; border:0 none; background:transparent; cursor:pointer;}
+caption{font-size:0; line-height:0; margin:0; padding:0; border:none; visibility:hidden;}
+legend{display:block;position:absolute;top:-9999px;left:-9999px;width:1px;height:1px;line-height:0;overflow:hidden;font-size:0;text-indent:-9999px}
+input,button,textarea,select,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
+a:link, a:visited, a:active {text-decoration:none; color:#333;}
+a:focus, a:hover {color:#666;}
+
+/* common */
+html, body {
+font-size:12px; line-height:1.5em; font-family:'Noto Sans Kr','나눔고딕',NanumGothic,"Malgun Gothic", "돋움", Dotum, Arial, "Helvetica Neue", Helvetica, Verdana, sans-serif; 
+color:#333;}
+html, body, .layout_con{width: 100%; min-width: 960px;  background: #dedede}
+.response{position: relative; margin: 0 auto; width: 960px; height:100%; clear:both;}
+.lang_en{font-family:"Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif}
+.hide {visibility:hidden}
+.visible {display:block;position:absolute;top:-9999px;left:-9999px;width:1px;height:1px;line-height:0;overflow:hidden;font-size:0;text-indent:-9999px}
+
+.panel-body {  font-size: 12px;  }
+
+
+.all-icons [class^="pe-"]{
+    font-size: 40px;
+}
+.all-icons input{
+    border: 0;
+}
+.all-icons .font-icon-detail{
+    text-align: center;
+    padding: 45px 0px 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+.all-icons .font-icon-container a{
+    padding: 5px 0;
+    display: block;
+    color: #666666;
+}
+.all-icons .font-icon-detail input{
+    margin: 25px auto 0;
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: #aaa;
+    font-size: 13px;
+}
+.all-icons h5{
+    margin-top: 60px;
+}
+.all-icons > div > .row:first-child h5{
+    margin-top: 15px;
+}
+
+.places-buttons .btn{
+    margin-bottom: 30px
+}
+
+.buttons-with-margin .btn{
+    margin-bottom: 5px;
+}
+
+.animated .img-rounded{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin: 0 auto;
+    display: block;
+}
+.animated .img-rounded img{
+    width: 100%;
+}
+
+/* BLOG POST PAGE */
+.media {
+  border-bottom: 1px solid #E3E3E3;
+  padding: 30px 30px 0 30px;
+}
+.media:last-child {
+  border-bottom: 0;
+}
+.media .avatar {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 30px;
+  border-width: 2px;
+  padding: 0;
+  opacity: .9;
+}
+.media .avatar .media-object {
+  width: 100%;
+  overflow: hidden;
+}
+
+.media-heading {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.media-comment {
+  border: 0;
+  margin-top: 30px;
+}
+
+.btn-padding {
+  padding: 9px 6px 9px 0 !important;
+}
+
+.social-title {
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
+
+.author {
+  text-align: center;
+}
+
+.img-size {
+  width: 110px;
+  height: auto;
+}
+
+.border-none {
+  border: 0;
+}
+
+.label-gold {
+  background-color: #c5a47e;
+}
+/* END BLOG POST PAGE */
+
+
+.fixed-table-container td {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: 1px;
+}
+
+div .ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.comment-choice {
+	color: red;
+	cursor: pointer;
+}
+
+.comment-image {
+	max-width:400px;
+}
+
+.grid-left-btn {
+	float: left;
+	margin-top: 15px;
+}
+
+.form-left-btn {
+	float: left;
+}
+
+.form-right-btn {
+	margin-left: 400px;
+	text-align: right;
+}
+
+.master-list {
+	height: 600px;
+	overflow: hidden;
+	border:1px solid #eee;
+}
+
+.detail-list {
+	height: 600px;
+	overflow: hidden;
+	border:1px solid #eee;
+}
+
+
+/* ��� - �˻� - START */
+.search-condition {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+}
+
+.search-condition .element {
+	float: left;
+	width: 160px;
+	margin-top: 3px;
+	margin-left: 20px;
+}
+
+.search-condition .element-btn {
+	float: left;
+	width: 220px;
+	margin-left: 40px;
+}
+
+.search-condition .element-btn label {
+	float: left;
+	margin-right: 20px;
+}
+
+.search-condition .search-extend {
+	display: none;
+	margin-top: 10px;
+}
+/* ��� - �˻� - END */
+
+
+/* ����¡ - START */
+.page-area .pagination {
+	margin: 0 10px;
+}
+/* ����¡ - END */
+
+
+/* ���� - START */
+.coupon-no {
+	margin-top: 15px;
+	margin-left: 40px;
+}
+
+.coupon-no .coupon-label {
+	float: left;
+	font-size: 26px;
+	margin-left: 10px;
+}
+
+.coupon-no .coupon-input {
+	float: left;
+	margin-left: 20px;
+	width: 70px;
+}
+
+.coupon-no .coupon-btn {
+	float: left;
+	margin-left: 20px;
+}
+
+#coupon-extend-area {
+	display: none;
+}
+
+.coupon-info-area {
+	padding: 20px 0 10px 10px;
+}
+
+.coupon-message {
+	margin: 0 10px 0 10px;
+}
+
+.coupon-message .card {
+	min-height:90px; padding:10px;
+}
+
+.coupon-message .card .big span {
+	font-size: 25px;
+}
+
+.coupon-message .card .small span {
+	font-size: 14px;
+}
+
+#coupon-init {
+	display: none;
+}
+/* ���� - END */
+
+
+/* ���� - START */
+.manual-area {
+	padding: 20px 20px 20px 10px;
+}
+
+.manual-area .manual {
+	margin-left: 40px;
+}
+
+.manual-area .manual .icon-area {
+	float: left;
+	margin-left: 30px;
+}
+
+.manual-area .manual .icon-area img {
+	width: 120px;
+}
+
+.manual-area .manual .explain {
+	margin-left: 180px;
+}
+
+.manual-area .manual .explain-only {
+	float: left;
+}
+
+.manual-area .manual .item-link {
+	text-align: right;
+	padding: 20px 10px;
+}
+/* ���� - END */
+
+
+/* avatar - START */
+.avatar-user {
+	border: 3px solid #c5a47e;
+	border-radius: 50%;
+	overflow: hidden;
+	max-width: 110px;
+	margin: 0 auto;
+}
+.avatar-user img {
+	width: 100%;
+	height: auto;
+}
+
+.avatar-info {
+	border-color: #00abc0;
+}
+
+.avatar-success {
+	border-color: #7accb8;
+}
+
+.avatar-warning {
+	border-color: #f88f58;
+}
+
+.avatar-danger {
+	border-color: #e78b90;
+}
+/* avatar - END */
+
+
+/* ������ ���� ��Ȳ - START */
+.item-area {
+}
+
+.item-area .item-title {
+	padding: 20px 20px 0 20px;
+}
+
+.item-area .item-body {
+	padding: 10px 20px 0 20px;
+}
+
+.item-area .item-btn {
+	padding: 10px 0 10px 0;
+	text-align: center;
+}
+
+.item-area hr {
+	margin: 8px 0 0 0;
+}
+/* ������ ���� ��Ȳ - END */
+
+
+/* �̿� �?���� - START */
+.question-view {
+}
+
+.question-view .header {
+	padding-bottom: 16px;
+	border-bottom: 1px solid #eee;
+}
+
+.question-view .question-info {
+	border-bottom: 1px solid #eee;
+	padding: 16px 0 6px 20px;
+}
+
+.question-view .question {
+	min-height: 600px;
+	border-bottom: 1px solid #eee;
+}
+
+.question-view .answer {
+	min-height: 600px;
+	border-bottom: 1px solid #eee;
+}
+/* �̿� �?���� - END */
+
+
+/* ���� - START */
+.adjustment-date {
+	font-size: 26px;	
+}
+/* ���� - END */
+
+
+/* ��ü���� - START */
+.sidebar .user .avata {
+	position: relative;
+}
+
+.sidebar .user .item-info {
+	position: absolute;
+	top: 6px;
+	right: 3px;
+	width: 120px;
+	height: 60px;
+	padding-right: 20px;
+}
+
+.sidebar .user .item-info .left {
+	float: left;
+}
+
+.sidebar .user .item-info .right {
+	float: right;
+	text-align: right;
+}
+/* ��ü���� - END */
+
+
+/* ������ - START */
+body.main {
+	overflow: hidden;
+}
+
+#miontok-area {
+	position: absolute;
+	right: 0;
+	width: 320px;
+	top: 0;
+	bottom: 0;
+	border-left: 1px solid #ddd;
+	z-index: -1000000;
+	background: #fff;
+	display: block;
+	
+	
+}
+
+#miontok-area .button-area {
+	padding: 5px;
+	border-bottom: 1px solid #eee;
+	height: 46px;
+}
+
+#miontok-area .button-area .total-user {
+	float: left;
+	font-size: 16px;
+	padding: 12px 0 0 4px;
+}
+
+#miontok-area .button-area .report-button {
+	text-align: right;
+}
+
+#miontok-area .button-area button {
+	width: 90px;
+}
+
+#miontok-area .talk-area {
+	padding: 10px;
+	height: calc(100% - 46px - 56px);
+	
+}
+
+#miontok-area .talk-area .avatar-chat {
+	border: 1px solid #dddddd;
+	border-radius: 50%;
+	overflow: hidden;
+	max-width: 30px;
+	margin: 0;
+	float: left;
+	margin-top: 10px;
+}
+
+#miontok-area .talk-area .avatar-chat img {
+	width: 100%;
+	height: auto;
+}
+
+#miontok-area .talk-area .nickname {
+	padding-top: 8px;
+	margin-left: 40px;
+	font-size: 12px;
+	color:#2090ea;
+	font-weight:bold;
+}
+
+#miontok-area .message {
+	margin:20px 0 0 0;
+	
+}
+
+#miontok-area .message .txt { 
+	margin-left: 40px; font-size: 14px; color:#222; 
+	   }
+#miontok-area .mion-thumbnail {
+	width: 100%;
+	height:100px;
+	margin: 0;
+	background: url(../images/logo/logo_noImg.png) no-repeat center #f2f2f2;
+    text-align: center;
+    border-radius:10px  10px 0 0 ;
+	
+	
+}
+
+#miontok-area .mion-thumbnail img {
+	width: 100%;
+	height:100px;
+	 border-radius:10px  10px 0 0 ;
+	
+	
+}
+
+#miontok-area .miontok-shop, #miontok-area .miontok-event {
+	width:250px;
+	border:1px solid #ddd;
+	border-radius:10px;
+	margin: 12px 30px 0px 40px;
+	display: inline-block;
+	background: #fff;
+	position: relative;
+}
+
+#miontok-area .miontok-event .badge { 
+	background-color: #e52828;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #fff;
+    top:0;
+    left: 0;
+    position: absolute;
+    border-radius: 0;
+    }
+    
+#miontok-area .miontok-event .event-price{ 
+	padding: 0 10px 10px 10px;	
+	display: block;
+    	}
+    	
+
+#miontok-area .shop-info {
+	
+	border-top:1px solid #ddd;
+	padding: 10px;
+	
+	display: block;
+}
+
+
+#miontok-area .shop-name a {
+	
+	
+	padding: 0 0 5px 0;
+	font-size: 16px;
+	color:#222;
+	font-weight:bold;
+	
+}
+
+#miontok-area .shop-content {
+	
+	
+	font-size: 12px;
+	color:#666;
+}
+
+#miontok-area .shop-location {	
+	font-size: 12px;	
+}
+
+#miontok-area .mion-message {
+	margin:10px 10px 10px 40px;
+	padding: 4px 10px;;
+	font-size:14px;
+	color: #fff;
+	background: #2090ea;
+	border-radius:10px;
+	display:  inline-block;
+}
+
+#miontok-area .orig-price  {font-size: 12px;	 text-decoration:line-through }
+#miontok-area .discount-price { font-size: 20px;	 font-weight:600; }
+#miontok-area .discount-rate {  font-size: 14px; }
+
+
+#miontok-area .input-area {
+	padding: 10px 4px 0 4px;
+	border-top: 1px solid #eee;
+	height: 56px;
+}
+
+#content-area {
+	position: absolute;
+	left: 0;
+	width: calc(100% - 322px);
+	top: 0;
+	bottom: 0;
+	min-width: 800px;
+	padding: 0;
+	margin: 0;
+}
+/* ������ - END */
+
+
+/* ��ǰ ��(big) - START */
+.mion-event-big {
+	border: 1px solid #eee;
+	position: relative;
+	margin: 0 10px 44px 10px;
+	overflow: auto;
+}
+
+.mion-event-big .base-area {
+	width: 800px;
+}
+
+.mion-event-big .thumbnail-area {
+	position: relative;
+	width: 220px;
+}
+
+.mion-event-big .thumbnail-area img {
+	max-width: 220px;
+	height: 200px;
+}
+
+.mion-event-big .thumbnail-area .mion-badge {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	padding: 1px;
+	background-color: #FFFFFF;
+}
+
+.mion-event-big .thumbnail-area .quantity {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 5px;
+	padding: 1px;
+	background-color: #FFFFFF;
+}
+
+.mion-event-big .detail-area {
+	position: absolute;
+	float: right;
+	top: 0;
+	left: 220px;
+	bottom:0;
+	right:0;
+	padding: 10px;
+	overflow: hidden;
+	min-width:780px;
+}
+
+.mion-event-big .detail-area .main-area {
+	position: relative;
+}
+
+.mion-event-big .detail-area .main-area .event-name {
+	position: absolute;
+	top: 0px;
+	font-size: 18px;
+	width: 310px;
+	height: 52px;
+	overflow: hidden;
+}
+
+.mion-event-big .detail-area hr {
+	position: absolute;
+	top: 66px;
+	width: 300px;
+}
+
+.mion-event-big .detail-area .main-area .selling-type {
+	position: absolute;
+	top: 96px;
+	left: 0;
+	font-size: 15px;
+}
+
+.mion-event-big .detail-area .main-area .comment {
+	position: absolute;
+	top: 134px;
+	left: 0;
+	width: 170px;
+	height: 35px;
+	overflow: hidden;
+	font-size: 12px;
+}
+
+.mion-event-big .detail-area .main-area .start-sell-date {
+	position: absolute;
+	top: 95px;
+	left: 200px;
+	width: 140px;
+}
+
+.mion-event-big .detail-area .main-area .start-sell-date span {
+	margin-left: 12px;
+}
+
+.mion-event-big .detail-area .main-area .finish-sell-date {
+	position: absolute;
+	top: 139px;
+	left: 200px;
+	width: 140px;
+}
+
+.mion-event-big .detail-area .main-area .finish-sell-date span {
+	margin-left: 12px;
+}
+
+.mion-event-big .detail-area .right-area {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 320px;
+	width: 120px;
+	border-left: 1px solid #eee;
+}
+
+.mion-event-big .detail-area .right-area .selling-state {
+	height: 30px;
+	background-color: #2c6cf6;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 5px;
+	font-size: 16px;
+}
+
+.mion-event-big .detail-area .right-area .sell-discount-price {
+	text-align: center;
+	padding-top: 25px;
+}
+
+.mion-event-big .detail-area .right-area .sell-discount-price .price {
+	font-size: 20px;
+}
+
+.mion-event-big .detail-area .right-area .sell-discount-price .original-price {
+	text-decoration: line-through;
+	width: 100%;
+}
+
+.mion-event-big .detail-area .right-area .sell-discount-price .discount-rate {
+	font-size: 20px;
+}
+
+.mion-event-big .detail-area .right-area .point {
+	padding-top: 25px;
+	margin-left: 20px;
+}
+
+.mion-event-big .detail-area .right-area .point span {
+	margin-left: 19px;
+}
+
+.mion-event-big .detail-area .common1 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 440px;
+	width: 120px;
+}
+
+.mion-event-big .detail-area .common2 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 560px;
+	width: 120px;
+}
+
+.mion-event-big .detail-area .user-info-spacer {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 440px;
+	width: 40px;
+}
+
+.mion-event-big .detail-area .user-info {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 480px;
+	width: 160px;
+}
+
+.mion-event-big .detail-area .user-info .user-no {
+	text-align: center;
+	font-size: 21px;
+	padding-top: 10px;
+}
+
+.mion-event-big .detail-area .user-info .nickname {
+	text-align: center;
+	font-size: 14px;
+	padding-top: 2px;
+}
+
+.mion-event-big .detail-area .common-area .big-one {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.mion-event-big .detail-area .common-area .half-one {
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+}
+
+.mion-event-big .detail-area .border-left {
+	border-left: 1px solid #eee;
+}
+
+.mion-event-big .detail-area .border-right {
+	border-right: 1px solid #eee;
+}
+
+.mion-event-big .detail-area .border-top {
+	border-top: 1px solid #eee;
+}
+
+.mion-event-big h6 {
+	font-size: 12px;
+	margin: 0;
+}
+/* ��ǰ ��(big) - END */
+
+
+/* ��ǰ����(small) - START */
+.mion-event-small {
+	border: 1px solid #eee;
+	position: relative;
+	margin: 0 10px 44px 10px;
+	overflow: auto;
+}
+
+.mion-event-small .base-area {
+	width: 800px;
+}
+
+.mion-event-small .thumbnail-area {
+	position: relative;
+	width: 160px;
+}
+
+.mion-event-small .thumbnail-area img {
+	max-width: 160px;
+	height: 140px;
+}
+
+.mion-event-small .thumbnail-area .mion-badge {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	padding: 1px;
+	background-color: #FFFFFF;
+}
+
+.mion-event-small .thumbnail-area .quantity {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 5px;
+	padding: 1px;
+	background-color: #FFFFFF;
+}
+
+.mion-event-small .detail-area {
+	position: absolute;
+	float: right;
+	top: 0;
+	left: 160px;
+	bottom:0;
+	right:0;
+	padding: 10px;
+	overflow: hidden;
+	min-width:780px;
+}
+
+.mion-event-small .detail-area .main-area {
+	position: relative;
+}
+
+.mion-event-small .detail-area .main-area .event-name {
+	position: absolute;
+	top: 0px;
+	font-size: 15px;
+	width: 230px;
+	height: 42px;
+	overflow: hidden;
+}
+
+.mion-event-small .detail-area hr {
+	position: absolute;
+	top: 30px;
+	width: 230px;
+}
+
+.mion-event-small .detail-area .main-area .selling-type {
+	position: absolute;
+	top: 56px;
+	left: 0;
+	font-size: 15px;
+}
+
+.mion-event-small .detail-area .main-area .comment {
+	position: absolute;
+	top: 88px;
+	left: 0;
+	width: 170px;
+	height: 35px;
+	overflow: hidden;
+	font-size: 12px;
+}
+
+.mion-event-small .detail-area .main-area .sell-discount-price {
+	position: absolute;
+	top: 88px;
+	left: 4px;
+}
+
+.mion-event-small .detail-area .main-area .sell-discount-price .price {
+	font-size: 18px;
+}
+
+.mion-event-small .detail-area .main-area .sell-discount-price .original-price {
+	text-decoration: line-through;
+	width: 100%;
+}
+
+.mion-event-small .detail-area .main-area .sell-discount-price .discount-rate {
+	font-size: 18px;
+}
+
+.mion-event-small .detail-area .common1 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 250px;
+	width: 120px;
+}
+
+.mion-event-small .detail-area .common2 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 370px;
+	width: 120px;
+}
+
+.mion-event-small .detail-area .common3 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 490px;
+	width: 120px;
+}
+
+.mion-event-small .detail-area .common4 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 610px;
+	width: 120px;
+}
+
+.mion-event-small .detail-area .common-area .big-one {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.mion-event-small .detail-area .common-area .half-one {
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+}
+
+.mion-event-small .detail-area .border-left {
+	border-left: 1px solid #eee;
+}
+
+.mion-event-small .detail-area .border-right {
+	border-right: 1px solid #eee;
+}
+
+.mion-event-small .detail-area .border-top {
+	border-top: 1px solid #eee;
+}
+
+.mion-event-small h6 {
+	font-size: 12px;
+	margin: 0;
+}
+/* ��ǰ����(small) - END */
+
+
+/* ��ü����(big) - START */
+.mion-shop-big {
+	border: 1px solid #eee;
+	position: relative;
+	margin: 0 10px 44px 10px;
+	overflow: auto;
+}
+
+.mion-shop-big .base-area {
+	width: 800px;
+}
+
+.mion-shop-big .thumbnail-area {
+	position: relative;
+	width: 220px;
+}
+
+.mion-shop-big .thumbnail-area img {
+	max-width: 220px;
+	height: 200px;
+}
+
+.mion-shop-big .thumbnail-area .mion-badge {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	padding: 1px;
+	background-color: #FFFFFF;
+}
+
+.mion-shop-big .thumbnail-area .status {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 5px;
+	padding: 1px;
+	background-color: #FFFFFF;
+}
+
+.mion-shop-big .detail-area {
+	position: absolute;
+	float: right;
+	top: 0;
+	left: 220px;
+	bottom:0;
+	right:0;
+	padding: 10px;
+	overflow: hidden;
+	min-width:780px;
+}
+
+.mion-shop-big .detail-area .main-area {
+	position: relative;
+}
+
+.mion-shop-big .detail-area .main-area .shop-name {
+	position: absolute;
+	top: 0px;
+	font-size: 22px;
+	width: 200px;
+	height: 60px;
+	overflow: hidden;
+}
+
+.mion-shop-big .detail-area .main-area .address {
+	position: absolute;
+	top: 63px;
+	font-size: 14px;
+}
+
+.mion-shop-big .detail-area hr {
+	position: absolute;
+	top: 67px;
+	width: 202px;
+}
+
+.mion-shop-big .detail-area .main-area .category {
+	position: absolute;
+	top: 98px;
+	left: 0;
+	font-size: 15px;
+}
+
+.mion-shop-big .detail-area .main-area .summary {
+	position: absolute;
+	top: 164px;
+	left: 0;
+	width: 210px;
+	height: 35px;
+	overflow: hidden;
+	font-size: 14px;
+}
+
+.mion-shop-big .detail-area .main-area .summary span {
+	margin-left: 7px;
+	cursor: pointer;
+}
+
+.mion-shop-big .detail-area .common1 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 220px;
+	width: 120px;
+}
+
+.mion-shop-big .detail-area .common2 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 340px;
+	width: 120px;
+}
+
+.mion-shop-big .detail-area .common3 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 460px;
+	width: 120px;
+}
+
+.mion-shop-big .detail-area .common4 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 580px;
+	width: 120px;
+}
+
+.mion-shop-big .detail-area .common-area .big-one {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.mion-shop-big .detail-area .common-area .half-one {
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+}
+
+.mion-shop-big .detail-area .border-left {
+	border-left: 1px solid #eee;
+}
+
+.mion-shop-big .detail-area .border-right {
+	border-right: 1px solid #eee;
+}
+
+.mion-shop-big .detail-area .border-top {
+	border-top: 1px solid #eee;
+}
+
+.mion-shop-big h6 {
+	font-size: 12px;
+	margin: 0;
+}
+/* ��ü����(big) - END */
+
+
+/* ��ü����(small) - START */
+.mion-shop-small {
+	border: 1px solid #eee;
+	position: relative;
+	margin: 0 10px 44px 10px;
+	overflow: auto;
+}
+
+.mion-shop-small .base-area {
+	width: 800px;
+}
+
+.mion-shop-small .thumbnail-area {
+	position: relative;
+	width: 160px;
+}
+
+.mion-shop-small .thumbnail-area img {
+	max-width: 160px;
+	height: 140px;
+}
+
+.mion-shop-small .thumbnail-area .mion-badge {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	padding: 1px;
+	background-color: #FFFFFF;
+}
+
+.mion-shop-small .thumbnail-area .status {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 5px;
+	padding: 1px;
+	background-color: #FFFFFF;
+}
+
+.mion-shop-small .detail-area {
+	position: absolute;
+	float: right;
+	top: 0;
+	left: 160px;
+	bottom:0;
+	right:0;
+	padding: 10px;
+	overflow: hidden;
+	min-width:780px;
+}
+
+.mion-shop-small .detail-area .main-area {
+	position: relative;
+}
+
+.mion-shop-small .detail-area .main-area .shop-name {
+	position: absolute;
+	top: 0px;
+	font-size: 20px;
+	width: 230px;
+	height: 54px;
+	overflow: hidden;
+}
+
+.mion-shop-small .detail-area .main-area .address {
+	position: absolute;
+	top: 63px;
+	font-size: 13px;
+}
+
+.mion-shop-small .detail-area hr {
+	position: absolute;
+	top: 68px;
+	width: 230px;
+}
+
+.mion-shop-small .detail-area .main-area .category {
+	position: absolute;
+	top: 98px;
+	left: 0;
+	font-size: 15px;
+}
+
+.mion-shop-small .detail-area .main-area .summary {
+	position: absolute;
+	top: 164px;
+	left: 0;
+	width: 210px;
+	height: 35px;
+	overflow: hidden;
+	font-size: 14px;
+}
+
+.mion-shop-small .detail-area .main-area .summary span {
+	margin-left: 7px;
+	cursor: pointer;
+}
+
+.mion-shop-small .detail-area .common1 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 250px;
+	width: 120px;
+}
+
+.mion-shop-small .detail-area .common2 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 370px;
+	width: 120px;
+}
+
+.mion-shop-small .detail-area .common3 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 490px;
+	width: 120px;
+}
+
+.mion-shop-small .detail-area .common4 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 610px;
+	width: 120px;
+}
+
+.mion-shop-small .detail-area .common-area .big-one {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.mion-shop-small .detail-area .common-area .half-one {
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+}
+
+.mion-shop-small .detail-area .border-left {
+	border-left: 1px solid #eee;
+}
+
+.mion-shop-small .detail-area .border-right {
+	border-right: 1px solid #eee;
+}
+
+.mion-shop-small .detail-area .border-top {
+	border-top: 1px solid #eee;
+}
+
+.mion-shop-small h6 {
+	font-size: 12px;
+	margin: 0;
+}
+/* ��ü����(small) - END */
+
+
+/* ���μ���(����) - START */
+.process-area {
+	position: relative;
+	width: 170px;
+	height: 190px;
+	float: left;
+}
+
+.process-area .pricess-circle {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	right: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 120px;
+	height: 120px;
+}
+
+.process-area .pricess-circle .title-icon {
+	position: absolute;
+	top: 4px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 62px;
+	color: #FFFFFF;
+}
+
+.process-area .pricess-circle .short-message {
+	position: absolute;
+	top: 83px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 15px;
+	color: #FFFFFF;
+}
+
+.process-area .detail-message {
+	position: absolute;
+	top: 136px;
+	left: 10px;
+	right: 40px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+	overflow: hidden;
+	height: 42px;
+}
+
+.process-area .next {
+	position: absolute;
+	top: 50px;
+	left: 142px;
+	right: 0;
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+}
+/* ���μ���(����) - END */
+
+
+/* ������û - START */
+.price {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.price td {
+	border: 1px solid;
+	text-align: center;
+	height: 30px;
+}
+
+.price th {
+	border: 1px solid;
+	text-align: center;
+	height: 30px;
+}
+/* ������û - END */
+
+
+.info {    margin-top:0px; color:#fff; background: rgba(0, 0, 0, 0.5); padding: 10px 0;}
+.info li a {  color:#fff;  }
+
+
+
+
+
+/* XX - START */
+/* XX - END */
+
+/* XX - START */
+/* XX - END */
+
+/* XX - START */
+/* XX - END */
+
+/* XX - START */
+/* XX - END */
+
+/* XX - START */
+/* XX - END */
+
+/* XX - START */
+/* XX - END */
+
+/* XX - START */
+/* XX - END */
+
+/* XX - START */
+/* XX - END */
+
+/* XX - START */
+/* XX - END */
+
+/* XX - START */
+/* XX - END */

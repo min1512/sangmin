@@ -1,0 +1,54 @@
+div.line_menu { position:relative; border-bottom:1px solid #2e5ee6; text-align:center; }
+div.line_menu p.br_title { position:absolute; leftt:0; top:0; height:45px; display:flex; align-items:center; justify-content:center; }
+div.line_menu p.br_menu  { display:inline-block; width:200px; height:45px; font-weight:300; color:#838383; background-color:#fff; border-radius:25px; font-size:20px; border:0; line-height:45px; margin:5px 0; }
+div.line_menu p.br_menu.on { font-weight:600; color:#fff; background-color:#0054d1; }
+div.line_menu p.br_admin { position:absolute; right:0; top:0; height:45px; display:flex; align-items:center; justify-content:center; }
+
+div.order_item { position:relative; font-size:12px; color:#333; margin:0 40px 10px; }
+div.order_item div.price { position:absolute; right:0; top:0; }
+div.order_item div.price button { border:1px solid #ddd; background-color:#fff; color:#333; width:80px; height:25px; }
+
+/** 기본달력(STEP01) **/
+div.year_month { margin:60px auto 0; height:65px; font-size:40px; color:#333; font-weight:600; text-align:center; }
+div.year_month a.calendar.off { border-radius:20px; text-align:center; align-items:center; justify-content:center; color:#363636; border:1px solid #363636; background-color:#fff; font-size:32px; height:40px; width:40px; display:inline-block; text-decoration:none; font-weight:bold; margin:0 40px; }
+div.year_month a.calendar.on  { border-radius:20px; text-align:center; align-items:center; justify-content:center; color:#ffffff; border:1px solid #fff; background-color:#363636; font-size:32px; height:40px; width:40px; display:inline-block; text-decoration:none; font-weight:bold; margin:0 40px; }
+div.today { margin:0 auto; text-align:center; }
+/** 기본달력(STEP02) **/
+div.year_month2 { font-size:16px; color:#4c4c4c; font-weight:600; text-align:center; margin-bottom:25px; }
+div.year_month2 a.calendar { text-align:center; align-items:center; justify-content:center; color:#4c4c4c; font-size:16px; display:inline-block; text-decoration:none; font-weight:bold; }
+
+div.container_calendar { margin:0 40px; }
+
+/** 기본달력(STEP01) **/
+table.full { border-width:1px 0px 0px 1px; border-style:solid; border-color:#bbb; width:100%; }
+table.full tr th { border-width:0px 1px 1px 0px; border-style:solid; border-color:#bbb; color:#333; font-weight:600; height:40px; }
+table.full tr th:first-child { color:#e00001; }
+table.full tr th:last-child { color:#155bd5; }
+table.full tr td { border-width:0px 1px 1px 0px; border-style:solid; border-color:#bbb; }
+
+/** 기본달력(STEP02) **/
+table.small { border:0; width:100%; }
+table.small tr th { border:0; color:#333; font-weight:600; height:35px; }
+table.small tr th:first-child { color:#e00001; }
+table.small tr th:last-child { color:#155bd5; }
+table.small tr td { border:0; text-align:center; }
+table.small tr td a { text-decoration:none; color:#333; ; }
+table.small tr td:first-child a { color:#e00001; }
+table.small tr td:last-child a { color:#155bd5; }
+
+span.state { border-radius:7px; text-align:center; color:#fff; font-size:9px; height:14px; width:14px; display:inline-block; margin-left:12px; }
+span.state.order { background-color:#24b8f8; }
+span.state.ready { background-color:#ff4f2e; }
+span.state.pending { background-color:#ff4f2e; }
+span.state.success { background-color:#787878; }
+span.state.complete { background-color:#787878; }
+span.state.phone { background-color: #a053df; }
+
+ul.day { position:relative; list-style:none; padding:0; margin:0; height:30px; }
+ul.day li:first-child { float:left; height:30px; font-size:15px; text-align:left; display:flex; align-items:center; justify-content:center; padding-left:12px; }
+ul.day li:last-child { float:right; height:30px; font-size:13px; color:#999; display:flex; align-items:center; justify-content:center; padding-right:12px; }
+ul.day:after { clear:both; }
+div.room_info { position:relative; margin-bottom:10px; }
+
+p.room_list { height:20px; font-size:12px; display:flex; align-items:center; margin:0; padding:0; }
+p.room_list span.room_name { margin-left:5px; color:#343434; display:flex; align-items:center; }

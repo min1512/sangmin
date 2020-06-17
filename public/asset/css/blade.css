@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/*가이드 외의 부분 css*/
+
+/*별도 수치조절 클래스*/
+.ml_10{margin-left:10px;}
+.w-650{width:650px;}
+.w-170{width:170px;}
+.ta_l{text-align: left;}
+.va-m{vertical-align: middle}
+
+/*그외*/
+.content-search{margin:20px 0 24px 0;}
+.content-search__item{font-size:0}
+.content-search__item + .content-search__item{margin-left:15px;}
+
+.scroll{ overflow-y: auto}
+/*-----------------------------------------------*/
