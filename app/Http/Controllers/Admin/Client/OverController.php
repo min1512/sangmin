@@ -26,10 +26,10 @@ class OverController extends Controller
         $this->data['id'] = $id;
         $this->data['over'] = ClientTypeRoomOver::where('over_type','O')
             ->where('user_id',$id)
-            ->paginate(10, ['*'], 'over');
+            ->paginate(3, ['*'], 'over');
         $this->data['discount'] = ClientTypeRoomOver::where('over_type','D')
             ->where('user_id',$id)
-            ->paginate(10, ['*'], 'discount');
+            ->paginate(3, ['*'], 'discount');
         $this->data['room'] = ClientTypeRoom::where('user_id',$id)
             ->where('flag_realtime','Y')
             ->get();
@@ -46,7 +46,6 @@ class OverController extends Controller
     }
 
     public function postOver(Request $request, $id) {
-        //dd($request->all());
         if($request->input("id")!=null && $request->input("id")!="")
             $over = ClientTypeRoomOver::find($request->input("id"));
         else {

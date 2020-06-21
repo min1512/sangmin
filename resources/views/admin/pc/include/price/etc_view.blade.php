@@ -131,13 +131,14 @@
             $('.room_add').click(function () {
                 var imgHtml = "";
                 imgHtml += "<li class='add-img__item fl'>";
+                imgHtml += "<input type='hidden' name='file_data["+size+"]' value='' />";
                 imgHtml += "<input type='hidden' id='file_name_"+size+"' name='file_name["+size+"]' />";
                 imgHtml += "<div class='add-img__imgbox'>";
                 imgHtml += "<img src='' style='width:100px; height:100px;' id='preview_"+size+"' />";
                 imgHtml += "</div>";
-                imgHtml += "<input type='file' name='file[]' class='img-input bld' onchange=\"readURL(this, "+size+");\" >";
+                imgHtml += "<input type='file' name='file["+size+"]' class='img-input bld' onchange=\"readURL(this, "+size+");\" >";
                 imgHtml += "<p class='add-img__tit ellipsis' title='이미지명입니다' id='image_name_"+size+"'>&nbsp;</p>";
-                imgHtml += "<p class='add-img__checkbox img_del' onclick=\"$(this).parents('li').remove()\">삭제</p>";
+                imgHtml += "<p class='img_del btn-v2 type-icon type-del' onclick=\"$(this).parents('li').remove()\">삭제</p>";
                 imgHtml += "</li>";
 
                 $(".add-img__list").append(imgHtml);
@@ -183,6 +184,13 @@
                 $('#preview3').hide();
             })
         };
+    </script>
+
+    <script>
+        function delete_room_list(id) {
+            var id = id;
+            $("#room_list_"+id+"").hide();
+        }
     </script>
 @endsection
 
@@ -251,13 +259,13 @@
 										<table class="table-a__table type-inner" id="num_plus1">
                                             @foreach($room_name as $t => $v)
                                             <input type="hidden" name="room_num[{{$t}}]" id="room_num[{{$t}}]" class="form-control" value='{{isset($room_name)?$v->id:""}}' />
-											<tr class="table-a__tr">
+											<tr class="table-a__tr" id="room_list_{{$t}}">
 												<td class="table-a__td type-grey">
 													<span class="table-a__span type-1">객실명</span>
 													<div class="input-wrap ml-10" style="max-width:160px;">
-														<input type="text" name="room_name[{{$t}}]" id="room_name[{{$t}}]" class="input-v1 ta-l" value="{{isset($room_name)?$v->room_name:""}}">
+														<input type="text" name="room_name[{{$t}}]" id="room_name_{{$t}}" class="input-v1 ta-l" value="{{isset($room_name)?$v->room_name:""}}">
 													</div>
-													<input type="checkbox" name="chkAll[{{$t}}]" id="del_{{$t}}" class="checkbox-v1" ><label for="del_{{$t}}" class=" ml-10">삭제</label>
+													<input type="checkbox" name="chkAll[{{$t}}]" id="del_{{$t}}" class="checkbox-v1"><label for="del_{{$t}}" class=" ml-10" onclick="delete_room_list({{$t}});">삭제</label>
 												</td>
 												<td class="table-a__td">
 													<span class="table-a__span type-2">온라인 판매</span>
@@ -395,19 +403,19 @@
 										<ul class="add-img__list clb">
                                             @foreach($file as $k => $v)
 											<li class="add-img__item fl">
+                                                <input type="hidden" name="file_data[{{$k}}]" value="{{$v->id}}">
                                                 <input type="hidden" id="file_name_{{$k}}" name="file_name[{{$k}}]" value="{{isset($file)&&$v->file_name? $v->file_name :""}}">
 												<div class="add-img__imgbox">
                                                     <img src="/data/{{$v->path}}" style="width:100px; height:100px;" id="preview_{{$k}}" />
 												</div>
-												<input type="file" name="file[]" class="img-input bld" onchange="readURL(this,{{$k}})">
+												<input type="file" name="file[{{$k}}]" class="img-input bld" onchange="readURL(this,{{$k}})">
 												<p class="add-img__tit ellipsis" title="이미지명입니다" id='image_name_{{$k}}' >{{isset($file)&&$v->file_name? $v->file_name :""}}</p>
-												<p class="add-img__checkbox img_del" onclick="$(this).parents('li').remove()">삭제</p>
+												<p class="img_del btn-v2 type-icon type-del" onclick="$(this).parents('li').remove()">삭제</p>
 											</li>
                                             @endforeach
 										</ul>
 										<span class="add-img__sub">데이터용량 0KB / 10MB</span>
 									</div>
-									<p class="mt-5"><button type="button" class="btn-v2 type-icon type-del">삭제</button></p>
 								</td>
 							</tr>
 							<tr class="table-a__tr">

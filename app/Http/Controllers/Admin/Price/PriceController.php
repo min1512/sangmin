@@ -119,7 +119,9 @@ class PriceController
             $price['season_term'] = $price['season_term']->where('season_id',$id);
         }
         $price['season'] = $price['season']->orderby('id','asc')->get();
-        $price['season_term'] = $price['season_term']->orderby('season_id','asc')->get();
+        $price['season_term'] = $price['season_term']->selectraw('client_season_term.*, (select season_name from client_season where id=client_season_term.season_id ) as season_name')->selectraw('client_season_term.*, (select season_id from client_season where id=client_season_term.season_id ) as season_id')->orderby('season_id','asc')->get();
+
+        $price['season_term_check'] = ClientSeasonTerm::whereIn('user_id',[$user_id,0])->selectraw('client_season_term.*, (select season_name from client_season where id=client_season_term.season_id ) as season_name')->selectraw('client_season_term.*, (select season_id from client_season where id=client_season_term.season_id ) as season_id')->orderby('season_id','asc')->get();
 
 
         $roomSeasonPrice = [];
@@ -161,6 +163,7 @@ class PriceController
     public function season_delete(Request $request){
         $user_id = $request->input('user_id');
         $season_id = $request->input('season_id');
+
         if(isset($season_id)){
             for($i=0; $i<sizeof($season_id); $i++){
                 $delete_id = $season_id[$i];
@@ -168,6 +171,9 @@ class PriceController
                 ClientSeasonTerm::where('season_id',$delete_id)->where('user_id',$user_id)->delete();
                 ClientTypeRoomPrice::where('season_id',$delete_id)->where('user_id',$user_id)->delete();
             }
+        }else{
+            $tmp = new ClientSeasonTerm();
+            $tmp->ClientSeasonTerm($request->input("user_id"),$request->all());
         }
 
         $url = $_SERVER['HTTP_HOST'];
@@ -179,6 +185,14 @@ class PriceController
             return redirect()->route('info.season');
         }
 
+    }
+
+    public function season_delete_all(Request $request){
+        $season = $request->season;
+        ClientSeason::where('id',$season)->delete();
+        ClientSeasonTerm::where('season_id',$season)->delete();
+        ClientTypeRoomPrice::where('season_id',$season)->delete();
+        return $season;
     }
 
 

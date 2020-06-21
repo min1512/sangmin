@@ -60,12 +60,11 @@ class MainController extends ApiController
         }
 
         foreach($this->data['room_list'] as $r) {
-            $this->data['facility'] = AdditionEtcPriceRoom::leftJoin('addition_etc_price','addition_etc_price.id','=','addition_etc_price_room.addition_etc_price_id')
+            $this->data['facility'][$r->id] = AdditionEtcPriceRoom::leftJoin('addition_etc_price','addition_etc_price.id','=','addition_etc_price_room.addition_etc_price_id')
                 ->where('addition_etc_price_room.room_id','=',$r->id)
                 ->selectraw('addition_etc_price.*')
                 ->get();
         }
-
 
 
         return response()->json($this->data);

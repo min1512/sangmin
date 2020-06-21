@@ -29,7 +29,13 @@ class MainController extends Controller
     }
 
     public function getList(){
-        $this->data['UserClient'] = UserClient::all();
+        $this->data['UserClient'] = UserClient::selectRaw("
+                user_client.*,
+                (select count(id) from client_type where user_id = user_client.user_id) as cnt_room_type,
+                (select count(id) from client_type_room where user_id = user_client.user_id) as cnt_room,
+                (select count(id) from client_type_room where user_id = user_client.user_id and flag_realtime = 'Y') as cnt_room_open
+            ")
+            ->paginate(5);
 
         return view('admin.'.$this->phone.'.price.price_list', $this->data);
     }

@@ -388,21 +388,40 @@ function callPrice(key, year, month) {
     var today = new Date();
     if(!year) var year = '';
     if(!month) var month = '';
-
-    postAjax('http://api.einet.co.kr/calendar/price', {
-        key: key,
-        year: year,
-        month: month,
-    }, function(obj){
-        var data = JSON.parse(obj);
-        for(var i in data.price){
-            var item = data.price[i];
-            for(var r in item){
-                document.getElementById('price_'+i+'_'+r).innerHTML = item[r].format();
-                //document.getElementById('order_'+i+'_'+r).innerHTML += "<br/><span style='text-decoration:line-through; color:#aaa;font-size:0.8em; '>"+data.origin[i][r].format()+"</span> <span style='font-weight:bold; '>"+item[r].format()+"</span>";
-            }
+    $.ajax({
+        url : 'http://api.einet.co.kr/calendar/price',
+        type: 'POST',
+        data: {
+            key: key,
+            year: year,
+            month: month
+        },
+        dataType: 'json',
+        success: function f(data) {
+                console.log(data);
+                for(var i in data.price_sales){
+                    var item = data.price_sales[i];
+                    for(var r in item){
+                        document.getElementById('price_'+i+'_'+r).innerHTML = item[r].format();
+                        //document.getElementById('order_'+i+'_'+r).innerHTML += "<br/><span style='text-decoration:line-through; color:#aaa;font-size:0.8em; '>"+data.origin[i][r].format()+"</span> <span style='font-weight:bold; '>"+item[r].format()+"</span>";
+                    }
+                }
         }
     });
+    // postAjax('http://api.einet.co.kr/calendar/price', {
+    //     key: key,
+    //     year: year,
+    //     month: month,
+    // }, function(obj){
+    //     var data = JSON.parse(obj);
+    //     for(var i in data.price){
+    //         var item = data.price[i];
+    //         for(var r in item){
+    //             document.getElementById('price_'+i+'_'+r).innerHTML = item[r].format();
+    //             //document.getElementById('order_'+i+'_'+r).innerHTML += "<br/><span style='text-decoration:line-through; color:#aaa;font-size:0.8em; '>"+data.origin[i][r].format()+"</span> <span style='font-weight:bold; '>"+item[r].format()+"</span>";
+    //         }
+    //     }
+    // });
 }
 
 //예약하러가기
@@ -501,7 +520,6 @@ function actionSet(days, room) {
             roominfo +="</div>"
         roominfo +="</p>"
 
-
         document.getElementById(brand_id+"_roominfo").innerHTML = roominfo;
 
         changeRoomList(days);
@@ -526,16 +544,17 @@ function changeRoomList(days) {
                 if(tmp_img!="") break;
             }
 
-
-
-
-
-
-                roomlist +="<div class=\"selected\" id='"+brand_id+"_room_info_"+item.id+"' price_room='"+item.id+"' price_adult='' price_child='' price_infant='' cnt_basic="+item.room_cnt_basic+" cnt_max="+item.room_cnt_max+" price='' >";
+                roomlist +="<div class=\"selected\" id='"+brand_id+"_room_info_"+item.id+"' price_room='"+item.id+"' price_adult='' price_child='' price_infant='' cnt_basic="+item.room_cnt_basic+" cnt_max="+item.room_cnt_max+" price='' price1='' price2='' price3='' price4='' price5=''>";
                     roomlist +="<div class=\"wrapper\">";
                         roomlist +="<h2>객실선택</h2>";
                         roomlist +="<div class=\"room\">";
-                            roomlist +="<div class=\"c-box\"></div>";
+
+                            roomlist +="<input type=\"checkbox\" id='c_box_"+item.id+"' name='c_box["+item.id+"][]'  onchange=\"check_price("+item.id+")\" />"
+                            roomlist +="<label for='c_box_"+item.id+"'>"
+                                roomlist +="<div class=\"c-box\">"
+                                roomlist +="</div>";
+                            roomlist +="</label>"
+
                         roomlist +="<div class=\"f-box\">";
                             roomlist +="<div class=\"l-box\">";
                                 roomlist +="<div class=\"img-box\">";
@@ -554,29 +573,31 @@ function changeRoomList(days) {
                                     roomlist +="<div class=\"r1-inner f-box\">"
                                         roomlist +="<div class=\"term\">"
                                             roomlist +="<div class=\"title\">기간</div>"
-                                            roomlist +="<select name=\"term\" onchange='check_price("+item.id+")'>"
+                                            roomlist +="<select name=\"term\" id='term_"+item.id+"' onchange='check_price("+item.id+")'>"
                                                 roomlist +="<option value=\"1\">1박</option>\n" +
                                                             "<option value=\"2\">2박</option>\n" +
                                                             "<option value=\"3\">3박</option>\n" +
-                                                            "<option value=\"4\">4박</option>"
+                                                            "<option value=\"4\">4박</option>" +
+                                                            "<option value=\"5\">5박</option>" +
+                                                            "<option value=\"6\">6박</option>"
                                             roomlist +="</select>"
                                         roomlist +="</div>"
                                         roomlist +="<div class=\"person\">"
                                             roomlist +="<div class=\"title\">인원</div>"
-                                            roomlist +="<select name=\"adult["+item.id+"]\" onchange=\"changeprice("+item.id+")\">"
+                                            roomlist +="<select name=\"adult["+item.id+"]\" id='adult_"+item.id+"' onchange=\"check_price("+item.id+")\">"
                                                 roomlist +="<option value=\"0\"><span>성인</span> 0명</option>\n";
                                                 for(var i=0; i<item.room_cnt_max; i++){
                                                     roomlist += "<option value="+(i+1)+" "+(item.room_cnt_basic-1==i?"selected":"")+"><span>성인</span> "+(i+1)+"명</option>"
                                                 }
                                             roomlist +="</select>"
-                                            roomlist +="<select name=\"child["+item.id+"]\" onchange=\"changeprice("+item.id+")\">"
+                                            roomlist +="<select name=\"child["+item.id+"]\" id='child_"+item.id+"' onchange=\"check_price("+item.id+")\">"
                                                 roomlist +="<option value=\"0\"><span>아이</span> 0명</option>\n" +
                                                             "<option value=\"1\"><span>아이</span> 1명</option>\n" +
                                                             "<option value=\"2\"><span>아이</span> 2명</option>\n" +
                                                             "<option value=\"3\"><span>아이</span> 3명</option>\n" +
                                                             "<option value=\"4\"><span>아이</span> 4명</option>"
                                             roomlist +="</select>"
-                                            roomlist +="<select name=\"infant["+item.id+"]\" onchange=\"changeprice("+item.id+")\">"
+                                            roomlist +="<select name=\"infant["+item.id+"]\" id='infant_"+item.id+"' onchange=\"check_price("+item.id+")\">"
                                                 roomlist +="<option value=\"0\"><span>영유아</span> 0명</option>\n" +
                                                             "<option value=\"1\"><span>영유아</span> 1명</option>\n" +
                                                             "<option value=\"2\"><span>영유아</span> 2명</option>\n" +
@@ -597,7 +618,7 @@ function changeRoomList(days) {
                                     roomlist +="<div class=\"r2-inner\">"
                                         roomlist +="<div class=\"title\">기준인원 초과금액</div>"
                                         roomlist +="<div class=\"extra-fee\">"
-                                            roomlist +="<div class=\"adult\">성인:<span class=\"a-age\" id='child_"+item.id+"'></span>  <span class=\"a-e-fee\" id='add_adult_"+item.id+"'></span>원 </div>\n" +
+                                            roomlist +="<div class=\"adult\">성인:<span class=\"a-age\" id='children_"+item.id+"'></span>  <span class=\"a-e-fee\" id='add_adult_"+item.id+"'></span>원 </div>\n" +
                                                         "<div class=\"child\">아동:<span class=\"c-age1\" id='young_"+item.id+"'></span>  <span class=\"c-e-fee\" id='add_child_"+item.id+"'></span>원</div>\n" +
                                                         "<div class=\"infant\">영유아:<span class=\"i-age1\" id='double_young_"+item.id+"'></span> <span class=\"i-e-fee\" id='add_baby_"+item.id+"'></span>원</div>\n"
                                         roomlist +="</div>"
@@ -613,20 +634,20 @@ function changeRoomList(days) {
                                     roomlist +="함께 예약됩니다</div>";
                                 roomlist +="</div>"
                             roomlist +="</div>"
-                            for(var z=0; z<data.facility.length; z++){
+                            for(var z=0; z<(data.facility[item.id]).length; z++){
                                 roomlist +="<div class='r-box'>"
                                     roomlist +="<div class=\"inner\">"
                                         roomlist +="<div class=\"r-box r-box1\">"
                                             roomlist +="<div class=\"l-box l-box2\">"
-                                                roomlist +="<input type=\"checkbox\" id='cb1_"+z+"' onchange=\"facility("+item.id+","+z+")\" />"
-                                                roomlist +="<label for='cb1_"+z+"'>"
+                                                roomlist +="<input type=\"checkbox\" id='cb1_"+item.id+"_"+z+"' name='fac["+item.id+"][]'  onchange=\"check_price("+item.id+")\" />"
+                                                roomlist +="<label for='cb1_"+item.id+"_"+z+"'>"
                                                     roomlist +="<div class='lable-box' ></div>"
                                                     roomlist +="<div class='title' id='title_"+item.id+"_"+z+"'></div>"
                                                     roomlist +="<span class='detail' id='detail_"+item.id+"_"+z+"'></span>"
                                                 roomlist +="</label>"
                                             roomlist +="</div>"
                                             roomlist +="<div class=\"r-box\">"
-                                                roomlist +="<select name='num_"+z+"'>"
+                                                roomlist +="<select name='num_"+item.id+"_"+z+"' id='num_"+item.id+"_"+z+"'   onchange='select_change("+item.id+","+z+")'>"
                                                 roomlist +="<option value=\"1\">1</option>\n" +
                                                             "<option value=\"2\">2</option>\n" +
                                                             "<option value=\"3\">3</option>\n" +
@@ -645,77 +666,176 @@ function changeRoomList(days) {
                     roomlist +="</div>"
                 roomlist +="</div>"
 
-                document.getElementById(brand_id+"_roomlist").innerHTML = roomlist;
+                // roomlist +="<div class=\"list\">"
+                //     roomlist +="<div class=\"room \">"
+                //         roomlist +="<div class=\"c-box\"></div>"
+                //         roomlist +="<div class=\"f-box\">"
+                //             roomlist +="<div class=\"l-box\">"
+                //                 roomlist +="<div class=\"img-box\">"
+                //                     roomlist +="<div class=\"button\"></div>"
+                //                     roomlist +="<img src=\"http://api.einet.co.kr/data/client_type/27/phpAaMRTZ.jpg\" id=\"room_img_334\">"
+                //                     roomlist +="<div class=\"contents\">"
+                //                         roomlist +="<div class=\"r1 f-box\">"
+                //                             roomlist +="<div class=\"title\">F01-오션뷰</div>"
+                //                             roomlist +="<div class=\"view-icon\"><a href=\"javascript:void(0)\"><img src=\"./img/order/v_btn.png\" alt=\"view 아이콘\">view</a></div>"
+                //                         roomlist +="</div>"
+                //                         roomlist +="<div class=\"r2\">"
+                //                             roomlist +="<div class=\"txts\">"
+                //                                 roomlist +="<div class=\"txt txt-1\">40평 거실1 방2 화장실1</div>"
+                //                                 roomlist +="<div class=\"txt txt-2\">기준 4명 / 최대 8명</div>"
+                //                             roomlist +="</div>"
+                //                         roomlist +="</div>"
+                //                     roomlist +="</div>"
+                //                 roomlist +="</div>"
+                //             roomlist +="</div>"
+                //             roomlist +="<div class=\"r-boxs\">"
+                //                 roomlist +="<div class=\"r-box r1 \">"
+                //                     roomlist +="<div class=\"r1-inner f-box\">"
+                //                         roomlist +="<div class=\"term\">"
+                //                             roomlist +="<div class=\"title\">기간</div>"
+                //                             roomlist +="<select name=\"term\">"
+                //                                 roomlist +="<option value=\"1\">1박</option>\n" +
+                //                                     "<option value=\"2\">2박</option>\n" +
+                //                                     "<option value=\"3\">3박</option>\n" +
+                //                                     "<option value=\"4\">4박</option>"
+                //                             roomlist +="</select>"
+                //                         roomlist +="</div>"
+                //                         roomlist +="<div class=\"person\">"
+                //                             roomlist +="<div class=\"title\">인원</div>"
+                //                             roomlist +="<select name=\"adult\">"
+                //                                 roomlist +="<option value=\"0\">성인 0명</option>\n" +
+                //                                     "<option value=\"1\">성인 1명</option>\n" +
+                //                                     "<option value=\"2\">성인 2명</option>\n" +
+                //                                     "<option value=\"3\">성인 3명</option>\n" +
+                //                                     "<option value=\"4\">성인 4명</option>"
+                //                             roomlist +="</select>"
+                //                             roomlist +="<select name=\"child\">"
+                //                             roomlist +="<option value=\"0\">아동 0명</option>\n" +
+                //                                 "<option value=\"1\">아동 1명</option>\n" +
+                //                                 "<option value=\"2\">아동 2명</option>\n" +
+                //                                 "<option value=\"3\">아동 3명</option>\n" +
+                //                                 "<option value=\"4\">아동 4명</option>"
+                //                             roomlist +="</select>"
+                //                             roomlist +="<select name=\"infant\">"
+                //                             roomlist +="<option value=\"0\">유아 0명</option>\n" +
+                //                                 "<option value=\"1\">유아 1명</option>\n" +
+                //                                 "<option value=\"2\">유아 2명</option>\n" +
+                //                                 "<option value=\"3\">유아 3명</option>\n" +
+                //                                 "<option value=\"4\">유아 4명</option>"
+                //                             roomlist +="</select>"
+                //                         roomlist +="</div>"
+                //                         roomlist +="<div class=\"fee\">"
+                //                             roomlist +="<div class=\"title\">객실요금</div>"
+                //                             roomlist +="<div class=\"fee-box\"><span>750,000</span> 원</div>"
+                //                         roomlist +="</div>"
+                //                         roomlist +="<div class=\"button r-button\"><span>예약하기</span></div>"
+                //                     roomlist +="</div>"
+                //                 roomlist +="</div>"
+                //                 roomlist +="<div class=\"r-box r2\">"
+                //                     roomlist +="<div class=\"r2-inner\">"
+                //                         roomlist +="<div class=\"title\">기준인원 초과금액</div>"
+                //                         roomlist +="<div class=\"extra-fee\">"
+                //                             roomlist +="<div class=\"adult\">성인(만<span class=\"a-age\">15</span>세 ~ ) : <span class=\"a-e-fee\">20,000</span>원 </div>"
+                //                             roomlist +="<div class=\"child\">아동(만<span class=\"c-age1\">7</span>세 ~ 만<span class=\"c-age2\">14</span>세) : <span class=\"c-e-fee\">10,000</span>원</div>"
+                //                             roomlist +="<div class=\"infant\">유아(만<span class=\"i-age1\">2</span>세 ~ 만<span class=\"i-age2\">6</span>세) : <span class=\"i-e-fee\">10,000</span>원</div>"
+                //                             roomlist +="<div class=\"free\">24개월 미만 무료</div>"
+                //                         roomlist +="</div>"
+                //                     roomlist +="</div>"
+                //                 roomlist +="</div>"
+                //             roomlist +="</div>"
+                //         roomlist +="</div>"
+                //         roomlist +="<div class=\"o-box\">"
+                //             roomlist +="<div class=\"l-box l-box1\">"
+                //                 roomlist +="<div class=\"inner\">"
+                //                     roomlist +="<div class=\"title\">옵션선택</div>"
+                //                     roomlist +="<div class=\"txt\">원하시는 옵션을 체크하시면<br>\n" +
+                //                         "함께 예약됩니다</div>"
+                //                 roomlist +="</div>"
+                //             roomlist +="</div>"
+                //
+                //         roomlist +="</div>"
+                //     roomlist +="</div>"
+                // roomlist +="</div>"
 
+                document.getElementById(brand_id+"_roomlist").innerHTML = roomlist;
 
                 // roomlist += "<div><img src='"+tmp_img+"' style='width:50px; height:50px; ' id='room_img_"+item.id+"' />["+item.type_name+"]"+item.room_name+", 기간:<select name=''><option value='1'>1박</option></select>기준:"+item.room_cnt_basic+"최대:"+item.room_cnt_max+", 가격(정상가):<span id='price_1_"+item.id+"'></span>, 가격(할인가):<span id='price_2_"+item.id+"'></span></div>";
 
             //일자별, 룸별 가격정보
-            postAjax("http://api.einet.co.kr/price/day",{
-                key: params.key,
-                day: days,
-                room: item.id,
-            }, function(obj) {
-                var data = JSON.parse(obj);
-                // document.getElementById("price_1_"+data.room).innerText = data.price_origin.format();
-                document.getElementById("price_2_"+data.room).innerText = data.price.format();
-                document.getElementById("add_adult_"+data.room).innerText = data.add_adult.format();
-                document.getElementById("add_child_"+data.room).innerText = data.add_child.format();
-                document.getElementById("add_baby_"+data.room).innerText = data.add_baby.format();
-                document.getElementById(brand_id+"_room_info_"+data.room).setAttribute("price_adult",data.add_adult);
-                document.getElementById(brand_id+"_room_info_"+data.room).setAttribute('price_child',data.add_child);
-                document.getElementById(brand_id+"_room_info_"+data.room).setAttribute('price_infant',data.add_baby);
-                document.getElementById(brand_id+"_room_info_"+data.room).setAttribute('price',data.price);
-
-                var data_room = data.room;
-                postAjax('http://api.einet.co.kr/order/set', {
+            $.ajax({
+                url: "http://api.einet.co.kr/price/day",
+                type : 'POST',
+                data: {
                     key: params.key,
-                    days: days,
-                    room: data_room
-                }, function (obj) {
-                    var data = JSON.parse(obj);
-                    if(data.client.dobule_young=="N"){
-                        document.getElementById('double_young_'+data_room).innerText ="입실 불가";
-                        document.getElementById("add_baby_"+data_room).innerText="X";
-                    }else{
-                        document.getElementById('double_young_'+data_room).innerText = data.client.sleep_check_value_dobule_young+"개월까지";
-                    }
+                    day: days,
+                    room: item.id,
+                },
+                success: function (data) {
+                    // console.log(obj);
+                    // var data = JSON.parse(obj);
+                    console.log(data);
+                    // document.getElementById("price_1_"+data.room).innerText = data.price_origin.format();
+                    document.getElementById("price_2_" + data.room).innerText = data.price.format();
+                    document.getElementById("add_adult_"+data.room).innerText = data.add_adult.format();
+                    document.getElementById("add_child_"+data.room).innerText = data.add_child.format();
+                    document.getElementById("add_baby_"+data.room).innerText = data.add_baby.format();
+                    document.getElementById(brand_id+"_room_info_"+data.room).setAttribute("price_adult",data.add_adult);
+                    document.getElementById(brand_id+"_room_info_"+data.room).setAttribute('price_child',data.add_child);
+                    document.getElementById(brand_id+"_room_info_"+data.room).setAttribute('price_infant',data.add_baby);
+                    document.getElementById(brand_id+"_room_info_"+data.room).setAttribute('price',data.price);
+                    document.getElementById(brand_id+"_room_info_"+data.room).setAttribute('price1',data.price1);
+                    document.getElementById(brand_id+"_room_info_"+data.room).setAttribute('price2',data.price2);
+                    document.getElementById(brand_id+"_room_info_"+data.room).setAttribute('price3',data.price3);
+                    document.getElementById(brand_id+"_room_info_"+data.room).setAttribute('price4',data.price4);
+                    document.getElementById(brand_id+"_room_info_"+data.room).setAttribute('price5',data.price5);
 
-                    if(data.client.young=="N"){
-                        document.getElementById('young_'+data_room).innerText ="입실 불가";
-                        document.getElementById("add_child_"+data_room).innerText="X";
-                    }else{
-                        document.getElementById('young_'+data_room).innerText = data.client.sleep_check_value_young+"개월까지";
-                    }
-                    document.getElementById('child_'+data_room).innerText = data.client.sleep_check_value_child+"개월 이상";
-
-                    if(data.facility[0] != ""){
-                        for (var i=0; i<data.facility.length; i++){
-                            var facility = data.facility[i];
-                            document.getElementById('title_'+data_room+"_"+i).innerText = facility.etc_content;
-                            document.getElementById('detail_'+data_room+"_"+i).innerText = "("+facility.etc_min+facility.etc_dan+"부터"+"~"+facility.etc_max+facility.etc_dan+"까지"+")";
-                            document.getElementById('fee_value_'+data_room+"_"+i).innerText = facility.etc_price+"원";
+                    var data_room = data.room;
+                    postAjax('http://api.einet.co.kr/order/set', {
+                        key: params.key,
+                        days: days,
+                        room: data_room
+                    }, function (obj) {
+                        var data = JSON.parse(obj);
+                        if(data.client.dobule_young=="N"){
+                            document.getElementById('double_young_'+data_room).innerText ="입실 불가";
+                            document.getElementById("add_baby_"+data_room).innerText="X";
+                        }else{
+                            document.getElementById('double_young_'+data_room).innerText = data.client.sleep_check_value_dobule_young+"개월까지";
                         }
-                    }
-                });
 
-            });
+                        if(data.client.young=="N"){
+                            document.getElementById('young_'+data_room).innerText ="입실 불가";
+                            document.getElementById("add_child_"+data_room).innerText="X";
+                        }else{
+                            document.getElementById('young_'+data_room).innerText = data.client.sleep_check_value_young+"개월까지";
+                        }
+                        document.getElementById('children_'+data_room).innerText = data.client.sleep_check_value_child+"개월 이상";
 
+                        if(data.facility[0] != ""){
+                            for (var i=0; i<data.facility.length; i++){
+                                var facility = data.facility[i];
+                                document.getElementById('title_'+data_room+"_"+i).innerText = facility.etc_content;
+                                document.getElementById('detail_'+data_room+"_"+i).innerText = "("+facility.etc_min+facility.etc_dan+"부터"+"~"+facility.etc_max+facility.etc_dan+"까지"+")";
+                                document.getElementById('fee_value_'+data_room+"_"+i).innerText = facility.etc_price+"원";
+                            }
+                        }
+                    });
+                },
+                error: function (obj) {
+                    console.log(obj);
+                }
+            })
 
         }
 
     });
 }
 
-function changeprice(room) {
-    check_price(room);
-}
-
 function check_price(room) {
-    var cnt_adult = document.getElementsByName("adult["+room+"]");
-    var cnt_child =document.getElementsByName("child["+room+"]");
-    var cnt_infant = document.getElementsByName("infant["+room+"]");
-    var term = document.getElementsByName("term");
+    var cnt_adult = document.getElementById("adult_"+room).value;
+    var cnt_child = document.getElementById("child_"+room).value;
+    var cnt_infant = document.getElementById("infant_"+room).value;
+    var term = document.getElementById("term_"+room).value;
 
     var price_adult = document.getElementById(brand_id+"_room_info_"+room).getAttribute("price_adult");
     var price_child = document.getElementById(brand_id+"_room_info_"+room).getAttribute("price_child");
@@ -725,70 +845,155 @@ function check_price(room) {
     var young = document.getElementById('young_'+room).innerText;
     var double_young = document.getElementById('double_young_'+room).innerText;
     var price = document.getElementById(brand_id+"_room_info_"+room).getAttribute("price");
-    var cnt =0;
+    var price1 = document.getElementById(brand_id+"_room_info_"+room).getAttribute("price1");
+    var price2 = document.getElementById(brand_id+"_room_info_"+room).getAttribute("price2");
+    var price3 = document.getElementById(brand_id+"_room_info_"+room).getAttribute("price3");
+    var price4 = document.getElementById(brand_id+"_room_info_"+room).getAttribute("price4");
+    var price5 = document.getElementById(brand_id+"_room_info_"+room).getAttribute("price5");
+    var price6 = document.getElementById(brand_id+"_room_info_"+room).getAttribute("price6");
 
-    for (var i = 0; i < cnt_adult.length; i++) {
-        var cnt_adult = cnt_adult[i].value;
-        var cnt_child = cnt_child[i].value;
-        var cnt_infant = cnt_infant[i].value;
-        var term = term[i].value;
+    var cnt = 0;
 
-        if(young=="입실 불가") {
-            if (parseInt(cnt_child) > 0) {
-                alert("아이는 입실 불가 입니다.");
-                document.getElementsByName("child[" + room + "]")[0].value = 0;
-                cnt++;
-            }
-        }else if(double_young =="입실 불가"){
-            if (parseInt(cnt_infant) > 0) {
-                alert("영유아는 입실 불가 입니다.");
-                document.getElementsByName("infant[" + room + "]")[0].value = 0;
-                cnt++;
-            }
+
+    if(young=="입실 불가") {
+        if (parseInt(cnt_child) > 0) {
+            alert("아이는 입실 불가 입니다.");
+            document.getElementById("child_" + room).value = 0;
+            cnt++;
         }
-
-        if((parseInt(cnt_adult) + parseInt(cnt_child) + parseInt(cnt_infant)) > parseInt(cnt_max)){
-            alert("최대 인원보다 많을수는 없습니다");
-            document.getElementsByName("adult["+room+"]")[0].value=cnt_basic;
-            document.getElementsByName("child["+room+"]")[0].value=0;
-            document.getElementsByName("infant["+room+"]")[0].value=0;
-            document.getElementsByName("term")[0].value=1;
-            price = price.replace(/,/gi,"");
-            document.getElementById('price_2_'+room).innerText = parseInt(price);
+    }
+    if(double_young =="입실 불가"){
+        if (parseInt(cnt_infant) > 0) {
+            alert("영유아는 입실 불가 입니다.");
+            document.getElementById("infant_" + room).value = 0;
             cnt++;
         }
     }
 
-    if(cnt == 0){
-        if((parseInt(cnt_adult) + parseInt(cnt_child) + parseInt(cnt_infant) <= parseInt(cnt_basic)) && facility_price == 0){
-            price = price.replace(/,/gi,"");
-            document.getElementById('price_2_'+room).innerText = (parseInt(price)*parseInt(term)).format();
-        }else{
-            price = price.replace(/,/gi,"");
-            document.getElementById('price_2_'+room).innerText = ((parseInt(price) +((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult))) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();        }
+    if((parseInt(cnt_adult) + parseInt(cnt_child) + parseInt(cnt_infant)) > parseInt(cnt_max)){
+        alert("최대 인원보다 많을수는 없습니다");
+        document.getElementById("adult_"+room).value = cnt_basic;
+        document.getElementById("child_"+room).value = 0;
+        document.getElementById("infant_"+room).value = 0;
+        document.getElementById("term_"+room).value = 1;
+        price = price.replace(/,/gi,"");
+        document.getElementById('price_2_'+room).innerText = parseInt(price);
+        cnt++;
     }
 
-}
+    if(cnt>0) return false;
 
-function facility(room, sizefacility ) {
-    // var term = document.getElementsByName("term");
-    var num = document.getElementsByName("num_"+sizefacility+"")[0].value;
+    if(parseInt(cnt_adult) + parseInt(cnt_child) + parseInt(cnt_infant) <= parseInt(cnt_basic)){
 
-    if (document.getElementById('cb1_'+sizefacility+'').checked== true){
-        var facility_price = document.getElementById('fee_value_'+room+'_'+sizefacility+'').innerText;
-        var facility_price = facility_price.replace(/원/gi,"");
-        var price = document.getElementById('price_2_'+room).innerText;
-        price = price.replace(/,/gi,"");
-        document.getElementById('price_2_'+room).innerText = (parseInt(price) + (parseInt(facility_price) * parseInt(num))).format();
+        if(parseInt(term)==1){
+            console.log(1);
+            console.log(price);
+            console.log(price1);
+            console.log(price2);
+            console.log(price3);
+            console.log(price4);
+            console.log(price5);
+            if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)  + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+            }else{
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+            }
+
+        }else if(parseInt(term)==2){
+            console.log(2);
+            console.log(price);
+            console.log(price1);
+            console.log(price2);
+            console.log(price3);
+            console.log(price4);
+            console.log(price5);
+            if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+            }else{
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+            }
+        }else if(parseInt(term)==3){
+            console.log(3);
+            console.log(price);
+            console.log(price1);
+            console.log(price2);
+            console.log(price3);
+            console.log(price4);
+            console.log(price5);
+            if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult) * parseInt(term)) + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term)) ).format();
+            }else{
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term)) ).format();
+            }
+        }else if(parseInt(term)==4){
+            console.log(4);
+            console.log(price);
+            console.log(price1);
+            console.log(price2);
+            console.log(price3);
+            console.log(price4);
+            console.log(price5);
+            if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+            }else{
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+            }
+        }else if(parseInt(term)==5){
+            console.log(5);
+            console.log(price);
+            console.log(price1);
+            console.log(price2);
+            console.log(price3);
+            console.log(price4);
+            console.log(price5);
+            if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+            }else{
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+            }
+        }else if(parseInt(term)==6){
+            console.log(price);
+            console.log(price1);
+            console.log(price2);
+            console.log(price3);
+            console.log(price4);
+            console.log(price5);
+            if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + parseInt(price5) + ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+            }else{
+                document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + parseInt(price5) + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+            }
+
+        }
+
+        // document.getElementById('price_2_'+room).innerText = (parseInt(price)*parseInt(term)).format();
     }else{
-        var facility_price = document.getElementById('fee_value_'+room+'_'+sizefacility+'').innerText;
-        var facility_price = facility_price.replace(/원/gi,"");
-        var price = document.getElementById('price_2_'+room).innerText;
         price = price.replace(/,/gi,"");
-        document.getElementById('price_2_'+room).innerText = (parseInt(price) - (parseInt(facility_price) * parseInt(num))).format();
+        document.getElementById('price_2_'+room).innerText = ((parseInt(price) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult))) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
     }
+
+
+    var fac = document.getElementsByName("fac["+room+"][]");
+
+    for(var f=0; f<fac.length; f++) {
+
+       if(document.getElementById("cb1_"+room+"_"+f+"").checked==true){
+            var facility_price = document.getElementById("fee_value_"+room+"_"+f+"").innerText;
+            var facility_price = facility_price.replace(/원/gi,"");
+            var num = document.getElementById("num_"+room+"_"+f+"").value;
+            var price = document.getElementById('price_2_'+room).innerText;
+            price = price.replace(/,/gi,"");
+            document.getElementById('price_2_'+room).innerText = (parseInt(price) + (parseInt(facility_price) * parseInt(num))).format();
+        }
+    }
+
+
 }
 
+function select_change(room, f) {
+    document.getElementById('cb1_'+room+'_'+f+'').checked = true;
+    check_price(room);
+}
 
 /** **************************************************************************************************************** **/
 //모바일환경

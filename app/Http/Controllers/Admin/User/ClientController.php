@@ -76,6 +76,7 @@ class ClientController extends Controller
     }
 
     public function postSave(Request $request, $id=0) {
+        dd($request->all());
         $check = str_replace("/user/client/save/2","",$request->input('check'));
 
         if($id>0)$user = User::find($id);
@@ -130,7 +131,7 @@ class ClientController extends Controller
         if($request->input('sleep_check_value_child')!=""){
             $user_client->sleep_check_value_child = $request->input('sleep_check_value_child');
         }
-        
+
 
         if($request->input("clientTel")!=""){
             $clientTel = [];
@@ -290,6 +291,7 @@ class ClientController extends Controller
         $user_client->client_fee_agency_unit           = $request->input("clientFeeAgencyUnit");
         $user_client->client_fee_payment               = $request->input("clientFeePayment");
         $user_client->client_fee_payment_unit          = $request->input("clientFeePaymentUnit");
+        $user_client->cnt_day                          = $request->input("cnt_day");
 
         $user->save();
         $user_client->save();

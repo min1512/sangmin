@@ -84,7 +84,6 @@ class DiscountController
         if($user_id==""){
             $user_id= Auth::user()->id;
         }
-
         if($did==""){
             $did=0;
         }
