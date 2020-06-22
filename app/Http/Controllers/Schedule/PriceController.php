@@ -181,24 +181,48 @@ class PriceController extends Controller
                             ->where('autoset_discount.discount_start', '<=', date("Y-m-d", strtotime("+".$d." days")))
                             ->where('autoset_discount.discount_end', '>=', date("Y-m-d", strtotime("+".$d." days")))
                             ->first();
-
                         $chkDate = strtotime("+".$d." days");
                         $todDate = strtotime(date("Y-m-d"));
-                        if ($chkDate >= $todDate) $diff_number = ceil(($chkDate - $todDate) / 86400);
+
+
+                        if ($chkDate >= $todDate) $diff_number = floor(($chkDate - $todDate) / 86400);
                         else $diff_number = 0;
                         //기간지정 할인의 경우 우선순위 적용
-                        if ($diff_number > 0) {
+
+                        if ($diff_number >= 0) {
                             if (isset($autoset)) {
-                                $tmp = AutosetDiscountHowmuch::where(['autoset_id' => $autoset->autoset_id, 'date' => $diff_number])->first();
-                                if (isset($tmp)) $tmp_discount_price = $temp_price * (100 - $tmp->autoset_discount_howmuch) / 100;
+                                $tmp = AutosetDiscountHowmuch::where(['autoset_id' => $autoset->autoset_id, 'date' => (int)$diff_number])->first();
+                                if (isset($tmp)){
+                                    if ($tmp->autoset_discount_type == "discount") {
+                                        $tmp_discount_price = $tmp->autoset_discount_unit == "원" ?
+                                            $temp_price - $tmp->autoset_discount_howmuch :
+                                            $temp_price * (100 - $tmp->autoset_discount_howmuch) / 100;
+                                    }
+                                    if ($tmp->autoset_discount_type == "fixed") {
+                                        $tmp_discount_price = $tmp->autoset_discount_howmuch;
+                                    }
+                                }
+//                                if (isset($tmp)) $tmp_discount_price = $temp_price * (100 - $tmp->autoset_discount_howmuch) / 100;
                             } //상시일 경우 우선순위 미적용
                             else {
                                 $autoset = AutosetDiscountRoom::leftJoin('autoset_discount', 'autoset_discount.id', '=', 'autoset_discount_room.autoset_id')
                                     ->where(['autoset_discount_room.room_id' => $tmp_room_id, 'autoset_discount.term_check' => 'N'])
                                     ->first();
                                 if (isset($autoset)) {
-                                    $tmp = AutosetDiscountHowmuch::where(['autoset_id' => $autoset->autoset_id, 'date' => $diff_number])->first();
-                                    if (isset($tmp)) $tmp_discount_price = $temp_price * (100 - $tmp->autoset_discount_howmuch) / 100;
+                                    $tmp = AutosetDiscountHowmuch::where(['autoset_id' => $autoset->autoset_id, 'date' => (int)$diff_number])->first();
+
+                                    if (isset($tmp)){
+                                        if ($tmp->autoset_discount_type == "discount") {
+                                            $tmp_discount_price = $tmp->autoset_discount_unit == "원" ?
+                                                $temp_price - $tmp->autoset_discount_howmuch :
+                                                $temp_price * (100 - $tmp->autoset_discount_howmuch) / 100;
+                                        }
+                                        if ($tmp->autoset_discount_type == "fixed") {
+                                            $tmp_discount_price = $tmp->autoset_discount_howmuch;
+                                        }
+                                    }
+
+//                                    if (isset($tmp)) $tmp_discount_price = $temp_price * (100 - $tmp->autoset_discount_howmuch) / 100;
                                 }
                             }
                         }
