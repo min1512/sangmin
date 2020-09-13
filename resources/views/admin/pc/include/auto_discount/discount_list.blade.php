@@ -33,22 +33,10 @@
     $(function () {
         $("#term_check_Y").hide();
         $("input[name='term_check']:radio").change(function () {
-            console.log($(this).val());
             if($(this).val()=="Y"){
                 $("#term_check_Y").show();
             }else{
                 $("#term_check_Y").hide();
-            }
-        })
-    })
-</script>
-<script>
-    $(function () {
-        $("input[name='autoset_check']").click(function () {
-            if($("input:checkbox[name='autoset_check']").is(":checked") == true){
-                $(this).val("Y");
-            }else{
-                $(this).val("N");
             }
         })
     })
@@ -61,29 +49,19 @@
         })
     })
 </script>
-<script>
-    $(function () {
-        if($("input[name='autoset_check']").is(":checked") == true){
-            $("input[name='autoset_check']").val("Y");
-        }else{
-            $("input[name='autoset_check']").val("N");
-        }
-    })
-</script>
 
 <script>
     function type_add() {
         var ord = $("input[name='discount_howmuch[]']").length;
-        console.log(ord);
         if (ord != 0) {
             $("#Autoset_Discount_Howmuch").append("" +
-                "<li class='check_new' id='"+ord+"'>" +
-                    "<span class='dp-ib' style='width: 112px;'>입실 " + ord + "일 전</span>" +
-                    "<div class='input-wrap input-v2 noto' style='width: 142px;'>" +
-                        "<input type='text' name='discount_howmuch[]' class='input-v2__input type-percent-discount type-unit' value=''>" +
+                "<li class='check_new mb-5' id='"+ord+"'>" +
+                    "<span class='dp-ib' style='width: 80px;'>입실 " + ord + "일 전</span>" +
+                    "<div class='input-wrap noto' style='width: 100px;'>" +
+                        "<input type='text' name='discount_howmuch[]' class='input-v1 number' value=''>" +
                         "<a class='change_char'></a>" +
                     "</div>" +
-                    "<div class='select-wrap'>" +
+                    "<div class='select-wrap dp-ib ml-5' style='width:150px;'>" +
                         "<select id='char_select_" + ord + "' name='char[]' class='select-v1 noto change_select'>" +
                             "<option value='%|discount'> 정률할인(%)</option>" +
                             "<option value='원|fixed'> 고정가 판매(원)</option>" +
@@ -91,19 +69,19 @@
                         "</select>" +
                     "</div>" +
                     "<div class='input-wrap'>" +
-                        "<label for='discount_delete_" + ord + "' class='ml-10 lh-33' onclick='delete_value("+ord+")'>삭제</label>" +
+                        "<label for='discount_delete_" + ord + "' class='ml-10 btn-v2' onclick='delete_value("+ord+")'>삭제</label>" +
                     "</div>" +
                 "</li>"
             );
         } else {
             $("#Autoset_Discount_Howmuch").append("" +
-                "<li class='check_new' id='"+ord+"'>" +
-                    "<span class='dp-ib' style='width: 112px;'>입실 당일</span>" +
-                    "<div class='input-wrap input-v2 noto' style='width: 142px;'>" +
-                        "<input type='text' name='discount_howmuch[]' class='input-v2__input type-percent-discount type-unit' value=''>" +
+                "<li class='check_new mb-5' id='"+ord+"'>" +
+                    "<span class='dp-ib' style='width: 80px;'>입실 당일</span>" +
+                    "<div class='input-wrap noto' style='width: 100px;'>" +
+                        "<input type='text' name='discount_howmuch[]' class='input-v1 number' value=''>" +
                         "<a class='change_char'></a>" +
                         "</div>" +
-                    "<div class='select-wrap'>" +
+                    "<div class='select-wrap dp-ib ml-5' style='width:150px;'>" +
                     "<select id='char_select_" + ord + "' name='char[]' class='select-v1 noto change_select'>" +
                         "<option value='%|discount'> 정률할인(%)</option>" +
                         "<option value='원|fixed'> 고정가 판매(원)</option>" +
@@ -111,7 +89,7 @@
                     "</select>" +
                     "</div>" +
                     "<div class='input-wrap'>" +
-                        "<label for='discount_delete_" + ord + "' class='ml-10 lh-33' onclick='delete_value("+ord+")' >삭제</label>" +
+                        "<label for='discount_delete_" + ord + "' class='ml-10 btn-v2' onclick='delete_value("+ord+")' >삭제</label>" +
                     "</div>" +
                 "</li>"
             );
@@ -170,7 +148,6 @@
             if(tmp != "staff") {
                 var tmp2 = tmp.replace(/staff_/i,"");
                 var season_id = $('#season_id_'+tmp2+'').val();
-                console.log(season_id);
                 $.ajax({
                     url: @if($path[0]=="client")  "/info/auto_discount/view/{{$s->id}}" @else "/price/autoset/view/{{$user_id}}/"+season_id + ""  @endif,
                     data: {
@@ -180,8 +157,6 @@
                     },
                     type: "get",
                     success: function (data) {
-                        console.log(data);
-
                         if(data.Autoset_Discount.term_check == "Y"){
                             $("#choice1").prop("checked",true);
                             $("#term_check_Y").show();
@@ -193,10 +168,8 @@
                         }
 
                         if(data.Autoset_Discount.autoset_check == "Y"){
-                            $("input[name='autoset_check']").val("Y");
                             $("input[name='autoset_check']").prop("checked",true);
                         }else{
-                            $("input[name='autoset_check']").val("N");
                             $("input[name='autoset_check']").prop("checked",false);
                         }
 
@@ -205,13 +178,13 @@
                         for (var i in data.Autoset_Discount_Howmuch) {
                             var item = data.Autoset_Discount_Howmuch[i];
                             if(i==0){
-                                html += "<li class='check_new' id='"+i+"'>";
-                                    html +="<span class=\"dp-ib\" style=\"width:112px\">입실 당일</span>"
-                                    html +="<div class=\"input-wrap input-v2 noto\" style=\"width:142px;\">"
-                                        html +="<input type=\"text\" name=\"discount_howmuch[]\" id='discount_value_"+i+"' class=\"input-v2__input type-percent-discount type-unit\" value=\""+item.autoset_discount_howmuch+"\">"
+                                html += "<li class='check_new mb-5' id='"+i+"'>";
+                                    html +="<span class=\"dp-ib\" style=\"width:80px\">입실 당일</span>"
+                                    html +="<div class=\"input-wrap noto\" style=\"width:100px;\">"
+                                        html +="<input type=\"text\" name=\"discount_howmuch[]\" id='discount_value_"+i+"' class=\"input-v1 number\" value=\""+item.autoset_discount_howmuch+"\">"
                                     html +="</div>"
-                                    html +="<div class=\"select-wrap\">"
-                                        html +="<select id='char_select_"+i+"' name=\"char[]\" class=\"select-v1 noto change_select\">"
+                                    html +="<div class=\"select-wrap dp-ib ml-5\" style='width:150px;'>"
+                                        html +="<select id='char_select_"+i+"' name=\"char[]\" class=\"select-v1 noto change_select\" >"
                                             html +="<option value=\"%|discount\">정률 할인(%)</option>"
                                             html +="<option value=\"원|fixed\">고정가 판매(원)</option>"
                                             html +="<option value=\"원|discount\">할인 판매(원)</option>"
@@ -219,17 +192,17 @@
                                         html +="<input type='hidden' id='char_"+i+"' value="+item.autoset_discount_unit+"|"+item.autoset_discount_type+">"
                                     html +="</div>"
                                     html +="<div class=\"input-wrap\">"
-                                        html +="<label for=\"discount_delete_"+i+"\" class=\"ml-10 lh-33 delete\" id=\"discount_delete_"+i+"\" onclick='delete_value("+i+")' >삭제</label>"
+                                        html +="<label for=\"discount_delete_"+i+"\" class=\"ml-10 delete btn-v2\" id=\"discount_delete_"+i+"\" onclick='delete_value("+i+")' >삭제</label>"
                                     html +="</div>"
                                 html +="</li>"
                             }else if(i>=1){
-                                html += "<li class='check_new' id='"+i+"'>";
-                                    html += "<span class=\"dp-ib\" style=\"width:112px\">입실 "+i+"일 전</span>"
-                                    html += "<div class=\"input-wrap input-v2 noto\" style=\"width:142px;\">"
-                                        html +="<input type=\"text\" name='discount_howmuch[]'  id='discount_value_"+i+"' class=\"input-v2__input type-percent-discount type-unit\" value=\""+item.autoset_discount_howmuch+"\"> <a class=\"change_char\"></a>"
+                                html += "<li class='check_new mb-5' id='"+i+"'>";
+                                    html += "<span class=\"dp-ib\" style=\"width:80px\">입실 "+i+"일 전</span>"
+                                    html += "<div class=\"input-wrap noto\" style=\"width:100px;\">"
+                                        html +="<input type=\"text\" name='discount_howmuch[]'  id='discount_value_"+i+"' class=\"input-v1 number\" value=\""+item.autoset_discount_howmuch+"\"> <a class=\"change_char\"></a>"
                                     html += "</div>"
-                                    html +="<div class=\"select-wrap\">"
-                                        html +="<select id='char_select_"+i+"' name=\"char[]\" class=\"select-v1 noto change_select\">"
+                                    html +="<div class=\"select-wrap dp-ib ml-5\" style='width:150px;'>"
+                                        html +="<select id='char_select_"+i+"' name=\"char[]\" class=\"select-v1 noto change_select\" >"
                                             html +="<option value=\"%|discount\">정률 할인(%)</option>"
                                             html +="<option value=\"원|fixed\">고정가 판매(원)</option>"
                                             html +="<option value=\"원|discount\">할인 판매(원)</option>"
@@ -237,7 +210,7 @@
                                         html +="<input type='hidden' id='char_"+i+"' value="+item.autoset_discount_unit+"|"+item.autoset_discount_type+">"
                                     html +="</div>"
                                     html +="<div class=\"input-wrap\">"
-                                        html +="<label for=\"discount_delete_"+i+"\" class=\"ml-10 lh-33 delete\"  id=\"discount_delete_"+i+"\" onclick='delete_value("+i+")'>삭제</label>"
+                                        html +="<label for=\"discount_delete_"+i+"\" class=\"ml-10 delete btn-v2\"  id=\"discount_delete_"+i+"\" onclick='delete_value("+i+")'>삭제</label>"
                                     html +="</div>"
                                 html += "</li>"
                             }
@@ -307,8 +280,7 @@
 
                 $("#discount_start").val("");
                 $("#discount_end").val("");
-                $("input[name='autoset_check']").val("Y");
-                $("input[name='autoset_check']").prop("checked",true);
+                $("input[name='autoset_check']").prop("checked",false);
 
 
                 // $("input[id^='discount_value']").each(function () {
@@ -341,7 +313,6 @@
 
         $('.check_new').each(function () {
             if($(this).attr("id") > id){
-                console.log(id);
                 $(this).find("span.dp-ib").text("입실 "+(parseInt($(this).attr("id")) - 1)+"일전");
                 $(this).attr("id",(parseInt($(this).attr("id")) - 1));
             }
@@ -355,15 +326,24 @@
     <div class="main-card mb-3 card" style="width:100%; ">
         <div class="card-body"><h5 class="card-title bld">자동 할인 설정</h5>
            <div class="table-a noto">
-           <div class="table-a__head clb">
-							<p class="table-a__tit fl">자동 할인 설정</p>
-							<div class="table-a_inbox type-head fr">
-{{--								 <button class="mr-2 btn btn-focus btn-v1 js-pop-btn js-type-sale-auto" onclick="goUrl('{{ isset($client) && $client=="client" ? route('info.autoset.view',['did'=>isset($did)?$did:""]) : route('price.autoset.view',['user_id'=>isset($user_id)?$user_id:"", 'did'=>isset($did)?$did:""]) }}');">자동 할인 추가</button>--}}
-                                <button type="button" id="staff" class="btn-v1 status-rb js-pop-btn js-type-sale-auto">할인 추가</button>
-							</div>
-						</div>
+               <div class="table-a__head clb">
+                   <p class="table-a__tit fl">자동 할인 설정</p>
+                   <div class="table-a_inbox type-head fr">
+                       {{--<button class="mr-2 btn btn-focus btn-v1 js-pop-btn js-type-sale-auto" onclick="goUrl('{{ isset($client) && $client=="client" ? route('info.autoset.view',['did'=>isset($did)?$did:""]) : route('price.autoset.view',['user_id'=>isset($user_id)?$user_id:"", 'did'=>isset($did)?$did:""]) }}');">자동 할인 추가</button>--}}
+                       <button type="button" id="staff" class="btn-v1 status-rb js-pop-btn js-type-sale-auto">할인 추가
+                       </button>
+                   </div>
+               </div>
 
-            <table class="mb-0 table table-hover table-a__table">
+               <table class="mb-0 table table-hover table-a__table">
+               <colgroup>
+                   <col>
+                   <col>
+                   <col>
+                   <col>
+                   <col width="40%">
+                   <col>
+               </colgroup>
                 <tr class="table-a__tr type-th">
                     <th class="table-a__th ">번호</th>
                     <th class="table-a__th ">할인 적용일</th>
@@ -373,7 +353,6 @@
                     <th class="table-a__th ">
 <!--                    <a id="delete_discount" name="delete_discount" class="mr-2 btn btn-info" style="color: white;">할인 삭제</a>-->
                     </th>
-                    <th></th>
                 </tr>
                 @foreach($discountList as $k=> $s)
                     <tr class="table-a__tr">
@@ -426,20 +405,29 @@
                         </td>
                         <td class="table-a__td">@if($s->term_check=="N")상시@elseif($s->term_check=="Y"){{$s->discount_start}} ~ {{$s->discount_end}}@endif</td>
                         <td class="table-a__td">
-                            @foreach($Client_type_room as $v)
+                           <ul class="auto-disroom__list clb">
+                              @foreach($Client_type_room as $v)
                                 @if($v->autoset_id==$s->id)
-                                    <p>{{$v->room_name}}</p>
+                               <li class="auto-disroom__item fl">
+                                    <span>{{$v->room_name}}</span>
+                               </li>
                                 @endif
                             @endforeach
+                             </ul>
                         </td>
-                        <td colspan="2" class="table-a__td">
+                        <td class="table-a__td">
                             <button type="button" class="btn-v2 delete_auto_discount" value="{{$s->id}}">삭제</button>
                         </td>
                     </tr>
                 @endforeach
+                   <tr>
+                       <td colspan="6">{{$discountList->links('admin.pc.pagination.default')}}</td>
+                   </tr>
+{{--
                 <tr>
                     <th id="add_discount_list"></th>
                 </tr>
+--}}
                 <script>
                     $(function () {
                         $(".delete_auto_discount").click(function () {
@@ -455,11 +443,9 @@
                                 type: "POST",
                                 success : function (data) {
                                     location.reload();
-                                    console.log(data);
                                 },
                                 error : function (data) {
                                     location.reload();
-                                    console.log(data);
                                 }
                             })
                         })
@@ -479,7 +465,7 @@
 						<span class="pop-module__tit fl">자동 할인 추가하기</span>
 						<span class="pop-module__close fr js-pop-close">닫기</span>
 					</div>
-					<div class="pop-module__body">
+					<div class="pop-module__body type-fix">
 						<div class="table-a noto">
                         <form method='post' name='teewetwer' class='client_form' action='{{ url()->current() }}' onSubmit="return check_all()">
                             {{csrf_field()}}
@@ -513,7 +499,7 @@
                                             </div>
 										</div>
 										<div class="input-wrap">
-										    <input type="checkbox" name="autoset_check" id="chkAll-1" class="checkbox-v2" value=""><label for="chkAll-1" class="ml-10" style="line-height:1.3">당일할인<br>달력에 노출함</label>
+										    <input type="checkbox" name="autoset_check" id="chkAll-1" class="checkbox-v2" value="Y"><label for="chkAll-1" class="ml-10" style="line-height:1.3">당일할인<br>달력에 노출함</label>
 										</div>
                                     </div>
 									</td>

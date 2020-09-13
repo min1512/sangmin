@@ -18,7 +18,7 @@ class ApiController extends BaseController
     protected $code;
 
     public function __construct(Request $request) {
-        $fp = fopen("../logs/api_".date("Ymd").".txt","a+");
+        $fp = fopen("../logs/book_".date("Ymd").".txt","a+");
         fwrite($fp, "\r\n\r\n====================================================\r\n");
         fwrite($fp, "==== ".url()->current()."\r\n");
         fwrite($fp, "==== ".date("Y-m-d H:i:s")."\r\n");
@@ -48,7 +48,8 @@ class ApiController extends BaseController
         $this->code[200] = "Success";
 
         $this->data['code'] = 200;
-        $token = $request->input("key");
+        $token = $request->input("key",null);
+        if($token==null) $token = $request->input("token");
 
         if(!isset($token)){
             $this->data['code'] = 101;

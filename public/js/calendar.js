@@ -489,7 +489,7 @@ function actionSet(days, room) {
         roominfo += "<div class=\"wrapper\">";
         roominfo += "<div class=\"title\">";
             roominfo += "<div class='button'>선택일</div>";
-            roominfo += "<div class='h1'>"+tmp_date[0]+"년 "+tmp_date[1]+"월 "+tmp_date[2]+"일</div>";
+            roominfo += "<div class='h1' id='day'>"+tmp_date[0]+"년 "+tmp_date[1]+"월 "+tmp_date[2]+"일</div>";
         roominfo += "<div class='content'>"
             roominfo += "<div><span>주소</span> "+data.client.client_addr_basic+" "+data.client.client_addr_detail+"</div>";
             roominfo += "<div><span>전화번호</span> "+data.client.client_tel+"</div>";
@@ -523,11 +523,11 @@ function actionSet(days, room) {
 
         document.getElementById(brand_id+"_roominfo").innerHTML = roominfo;
 
-        changeRoomList(days);
+        changeRoomList(days, room);
     });
 }
 
-function changeRoomList(days) {
+function changeRoomList(days, room) {
     console.log("changeRoomList");
     postAjax('http://api.einet.co.kr/order/change/day', {
         key: params.key,
@@ -544,8 +544,20 @@ function changeRoomList(days) {
                 else tmp_img = "http://api.einet.co.kr/data/"+img.path;
                 if(tmp_img!="") break;
             }
-
-                roomlist +="<div class=\"selected\" id='"+brand_id+"_room_info_"+item.id+"' price_room='"+item.id+"' price_adult='' price_child='' price_infant='' cnt_basic="+item.room_cnt_basic+" cnt_max="+item.room_cnt_max+" price='' price1='' price2='' price3='' price4='' price5=''>";
+                roomlist+="<head>"
+                    roomlist +="<meta charset=\"utf-8\">"
+                roomlist+="</head>"
+                roomlist+="<form name='list_all' id='list_all'>"
+                roomlist+="<input type='hidden' name='total_room_value'>"
+                roomlist+="<input type='hidden' name='total_person_value'>"
+                roomlist+="<input type='hidden' name='total_option_value'>"
+                roomlist+="<input type='hidden' name='every_thing_value'>"
+                roomlist+="<input type='hidden' name='room_cnt_basic["+item.id+"]' value='"+item.room_cnt_basic+"'>"
+                roomlist+="<input type='hidden' name='room_cnt_max["+item.id+"]' value='"+item.room_cnt_max+"'>"
+                roomlist+="<input type='hidden' name='room_name["+item.id+"]' value='["+item.type_name+"]-"+item.room_name+"'>"
+                roomlist+="<input type='hidden' name='price_2["+item.id+"]'>"
+                roomlist+="<input type='hidden' name='day'>"
+                roomlist +="<div class=\"selected\" id='"+brand_id+"_room_info_"+item.id+"' price_room='"+item.id+"' price_adult='' price_child='' price_infant='' cnt_basic="+item.room_cnt_basic+" cnt_max="+item.room_cnt_max+" price='' price1='' price2='' price3='' price4='' price5='' total_price=''>";
                     roomlist +="<div class=\"wrapper\">";
                         roomlist +="<h2>객실선택</h2>";
                         roomlist +="<div class=\"room\">";
@@ -574,7 +586,7 @@ function changeRoomList(days) {
                                     roomlist +="<div class=\"r1-inner f-box\">"
                                         roomlist +="<div class=\"term\">"
                                             roomlist +="<div class=\"title\">기간</div>"
-                                            roomlist +="<select name=\"term\" id='term_"+item.id+"' onchange='check_price("+item.id+")'>"
+                                            roomlist +="<select name=\"term["+item.id+"]\" id='term_"+item.id+"' onchange='check_price("+item.id+")'>"
                                                 roomlist +="<option value=\"1\">1박</option>\n" +
                                                             "<option value=\"2\">2박</option>\n" +
                                                             "<option value=\"3\">3박</option>\n" +
@@ -617,7 +629,7 @@ function changeRoomList(days) {
                                 roomlist +="</div>"
                                 roomlist +="<div class=\"r-box r2\">"
                                     roomlist +="<div class=\"r2-inner\">"
-                                        roomlist +="<div class=\"title\">기준인원 초과금액</div>"
+                                        roomlist +="<div class=\"title\">기준인원 초과금액(<a id='room_cnt_basic_"+item.id+"'>기준: "+item.room_cnt_basic+" </a> <a id='room_cnt_max_"+item.id+"'>최대: "+item.room_cnt_max+" </a>)</div>"
                                         roomlist +="<div class=\"extra-fee\">"
                                             roomlist +="<div class=\"adult\">성인:<span class=\"a-age\" id='children_"+item.id+"'></span>  <span class=\"a-e-fee\" id='add_adult_"+item.id+"'></span>원 </div>\n" +
                                                         "<div class=\"child\">아동:<span class=\"c-age1\" id='young_"+item.id+"'></span>  <span class=\"c-e-fee\" id='add_child_"+item.id+"'></span>원</div>\n" +
@@ -636,6 +648,7 @@ function changeRoomList(days) {
                                 roomlist +="</div>"
                             roomlist +="</div>"
                             for(var z=0; z<(data.facility[item.id]).length; z++){
+                                roomlist +="<input type='hidden' name='title["+item.id+"]["+z+"]'>"
                                 roomlist +="<div class='r-box'>"
                                     roomlist +="<div class=\"inner\">"
                                         roomlist +="<div class=\"r-box r-box1\">"
@@ -648,7 +661,7 @@ function changeRoomList(days) {
                                                 roomlist +="</label>"
                                             roomlist +="</div>"
                                             roomlist +="<div class=\"r-box\">"
-                                                roomlist +="<select name='num_"+item.id+"_"+z+"' id='num_"+item.id+"_"+z+"'   onchange='select_change("+item.id+","+z+")'>"
+                                                roomlist +="<select name='num["+item.id+"]["+z+"]' id='num_"+item.id+"_"+z+"'   onchange='select_change("+item.id+","+z+")'>"
                                                 roomlist +="<option value=\"1\">1</option>\n" +
                                                             "<option value=\"2\">2</option>\n" +
                                                             "<option value=\"3\">3</option>\n" +
@@ -669,7 +682,7 @@ function changeRoomList(days) {
 
                 document.getElementById(brand_id+"_roomlist").innerHTML = roomlist;
 
-                // roomlist += "<div><img src='"+tmp_img+"' style='width:50px; height:50px; ' id='room_img_"+item.id+"' />["+item.type_name+"]"+item.room_name+", 기간:<select name=''><option value='1'>1박</option></select>기준:"+item.room_cnt_basic+"최대:"+item.room_cnt_max+", 가격(정상가):<span id='price_1_"+item.id+"'></span>, 가격(할인가):<span id='price_2_"+item.id+"'></span></div>";
+            // roomlist += "<div><img src='"+tmp_img+"' style='width:50px; height:50px; ' id='room_img_"+item.id+"' />["+item.type_name+"]"+item.room_name+", 기간:<select name=''><option value='1'>1박</option></select>기준:"+item.room_cnt_basic+"최대:"+item.room_cnt_max+", 가격(정상가):<span id='price_1_"+item.id+"'></span>, 가격(할인가):<span id='price_2_"+item.id+"'></span></div>";
 
             //일자별, 룸별 가격정보
             $.ajax({
@@ -733,10 +746,13 @@ function changeRoomList(days) {
                 },
                 error: function (obj) {
                     console.log(obj);
+                },
+                complete: function () {
+                    first_check(room);
                 }
             })
-
         }
+
         var totalprice =""
         totalprice +="</br></br></br></br></br></br>"
         totalprice +="<div class=\"summary\">"
@@ -774,7 +790,7 @@ function changeRoomList(days) {
                                 totalprice +="<tr class=\"total-fee-tr\">"
                                     totalprice +="<td class=\"total-fee\">총 결제금액</td>"
                                     totalprice +="<td class=\"total-fee-v\"><span id='total_room_value_bak'></span>원</td>"
-                                    totalprice +="<td class=\"reser-btn\" rowspan=\"3\">예약<br />하기</td>"
+                                    totalprice +="<td class=\"reser-btn\" rowspan=\"3\"  id='next_page' >예약<br />하기</td>"
                                 totalprice +="</tr>"
                             totalprice +="<tr class=\"vist-fee-tr\">"
                                 totalprice +="<td class=\"vist-fee\">입실 시 현장 결제 금액</td>"
@@ -790,8 +806,182 @@ function changeRoomList(days) {
             totalprice +="</div>"
         totalprice +="</div>"
         totalprice +="</br></br></br></br>"
+        totalprice +="<input name=\"_token\" type=\"hidden\" value=\"cf54ty6y7yuuyyygytfggfd56667DfrSH8i\">"
         document.getElementById(brand_id+"_totalprice").innerHTML = totalprice;
+
+
+        $('#next_page').click(function () {
+
+            if($('input:checkbox[id^="c_box"]').is(":checked") == true){
+
+                var total_room_value = $('#total_room_value').text();
+                var total_person_value = $('#total_person_value').text();
+                var total_option_value = $('#total_option_value').text();
+                var every_thing_value = $('#every_thing_value').text();
+                var day = $('#day').text();
+
+                var room_id = Array();
+                $('input:checkbox[id^="c_box"]').each(function () {
+                    if($(this).is(":checked") == true){
+                        var id = $(this).attr("id");
+                        id = id.replace("c_box_","");
+                        room_id.push(id);
+                    }
+                })
+
+                for(var x in room_id){
+                    var item = room_id[x];
+                    var price_2_val = $("#price_2_"+item+"").text();
+                    var title_val_0 = $("#title_"+item+"_0").text();
+                    var title_val_1 = $("#title_"+item+"_1").text();
+                    var title_val_2 = $("#title_"+item+"_2").text();
+                    $('input[name="price_2['+item+']"]').val(price_2_val);
+                    $('input[name="title['+item+'][0]"]').val(title_val_0);
+                    $('input[name="title['+item+'][1]"]').val(title_val_1);
+                    $('input[name="title['+item+'][2]"]').val(title_val_2);
+                }
+
+                $('input[name="total_room_value"]').val(total_room_value );
+                $('input[name="total_person_value"]').val(total_person_value );
+                $('input[name="total_option_value"]').val(total_option_value );
+                $('input[name="every_thing_value"]').val(every_thing_value );
+                $('input[name="day"]').val(day);
+            }
+
+            var list_all = $("form[name=list_all]").serializeArray() ;
+            $.ajax({
+                url: "http://api.einet.co.kr/test",
+                type: "POST",
+                data: list_all,
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data);
+                    next_page(data.c_box, data.total_room_value, data.total_person_value, data.total_option_value, data.every_thing_value, data.day, data.adult, data.child, data.infant, data.room_name, data.term, data.price_2, data.room_cnt_basic, data.room_cnt_max, data.title, data.num  );
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            })
+        })
     });
+}
+
+function next_page(array_room_id, total_room_value, total_person_value, total_option_value, every_thing_value, day, adult, child, infant, room_name, term, price_2, room_cnt_basic, room_cnt_max, title, option_num ) {
+    var html ="<div id='"+brand_id+"_form'>"
+        html +="<form name='all_information'>"
+            html +="<input type='hidden' name='total_price' value="+every_thing_value+">"
+            html +="<input type='hidden' name='only_option_price' value="+total_option_value+">"
+            html +="<input type='hidden' name='only_room_price' value="+total_room_value+">"
+            html +="<input type='hidden' name='array_room_id' value="+array_room_id+">"
+            html +="<table border='1px' style='margin: auto;'>"
+                html +="<tr>"
+                    html +="<th>"
+                        html +="객실명"
+                    html +="</th>"
+                    html +="<th>"
+                        html +="이용일"
+                    html +="</th>"
+                    html +="<th>"
+                        html +="인원"
+                    html +="</th>"
+                    html +="<th>"
+                        html +="옵션"
+                    html +="</th>"
+                    html +="<th>"
+                        html +="이용요금"
+                    html +="</th>"
+                html +="</tr>"
+                for (var i in array_room_id) {
+                    for(var j in adult) {
+                        for(var z in term){
+                            for(var x in price_2){
+                                for(var g in room_cnt_basic){
+                                    for(var h in room_cnt_max){
+                                        for(var y in title){
+                                            if(i==j) {
+                                                if(i==z){
+                                                    if(i==x){
+                                                        if(i==g){
+                                                            if(i==h){
+                                                                if(i==y){
+                                                                    html += "<tr>"
+                                                                        html += "<td>"
+                                                                            html += "" + room_name[j] + ""
+                                                                        html += "</td>"
+                                                                        html += "<td>"
+                                                                            html += "" + day + "("+term[z]+"박)"
+                                                                        html += "</td>"
+                                                                        html += "<td>"
+                                                                            html += "성인: " + adult[j] + ", 유아: " + child[j] + ", 영유아: " + infant[j] + "(기준: "+room_cnt_basic[g]+" 최대: "+room_cnt_max[h]+" )"
+                                                                        html += "</td>"
+                                                                        html +="<td>"
+                                                                        for(var e in title[y]){
+                                                                            if(total_option_value!=0){
+                                                                                html +=" "+title[y][e]+": "+option_num[y][e]+" "
+                                                                            }else{
+                                                                                html +=" "+title[y][e]+": 0 "
+                                                                            }
+                                                                        }
+                                                                        html +="</td>"
+                                                                        html +="<td>"
+                                                                            html += "이용가격: "+price_2[x]+""
+                                                                        html +="</td>"
+                                                                    html += "</tr>"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            html +="<tr><td colspan='5' style='text-align: center'>예약자명: <input type='text' name='reservation_name'></td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'>생년월일: <input type='text' name='reservation_birthday'></td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'>연락처: <input type='text' name='reservation_tel'></td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'>비상 연락처: <input type='text' name='reservation_tel1'></td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'>이메일: <input type='text' name='reservation_email'></td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'>차량번호: <input type='text' name='reservation_car'></td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'>예약 요청사항: <input type='text' name='reservation_etc'></td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'>결제 방법: <input type='radio' name='reservation_money_how' value='card'>신용카드 <input type='radio' name='reservation_money_how' value='money'> 무통장입금 </td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'><input type='checkbox' name='reservation_all'>전체 동의</td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'><input type='checkbox' name='reservation_agree'>약관동의</td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'><input type='checkbox' name='reservation_cancel'>취소수수료에 동의</td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'>총 가격: "+every_thing_value+"</td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'>객실 이용 가격 : "+total_room_value+"</td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'>인원 추가 가격: "+total_person_value+"</td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'>옵션 이용 가격: "+total_option_value+"</td></tr>"
+            html +="<tr><td colspan='5' style='text-align: center'><input type='button' id='payment' value='결체하기' onclick='popup($('input[name='all_information']').serializeArray());' ></td></tr>"
+            html +="</table>"
+        html +="</form>"
+    html +="</div>"
+    document.write(html);
+}
+
+function popup(form) {
+    console.log(form);
+    var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+    window.open('http://api.einet.co.kr/popup',"팝업창", option);
+}
+
+
+
+function first_check(room) {
+    var price = document.getElementById(brand_id+"_room_info_"+room).getAttribute("price");
+    document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", price);
+    $("input[id='c_box_"+room+"']").prop("checked", true);
+    document.getElementById('br_room_info_'+room+'').scrollIntoView();
+    document.getElementById('total_room_value').innerText = parseInt(price).format();
+    document.getElementById('total_room_value_bak').innerText = parseInt(price).format();
+    document.getElementById('total_person_value').innerText =0;
+    document.getElementById('total_option_value').innerText =0;
+    document.getElementById('every_thing_value').innerText = parseInt(price).format();
+    document.getElementById('right_now_price').innerText = parseInt(price).format();
+    document.getElementById('right_now_no_price').innerText = 0;
 }
 
 function check_price(room) {
@@ -847,7 +1037,7 @@ function check_price(room) {
 
     if(cnt>0) return false;
 
-    if(parseInt(cnt_adult) + parseInt(cnt_child) + parseInt(cnt_infant) <= parseInt(cnt_basic)){
+    if(parseInt(cnt_adult) + parseInt(cnt_child) + parseInt(cnt_infant) >= parseInt(cnt_basic)){
 
         if(parseInt(term)==1){
             console.log(1);
@@ -857,10 +1047,14 @@ function check_price(room) {
             console.log(price3);
             console.log(price4);
             console.log(price5);
+            console.log(parseInt(cnt_adult));
+            console.log(parseInt(cnt_basic));
             if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)  + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)  + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))));
             }else{
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))));
             }
 
         }else if(parseInt(term)==2){
@@ -873,8 +1067,10 @@ function check_price(room) {
             console.log(price5);
             if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) + parseInt(price1) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))));
             }else{
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) + parseInt(price1) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))));
             }
         }else if(parseInt(term)==3){
             console.log(3);
@@ -886,8 +1082,10 @@ function check_price(room) {
             console.log(price5);
             if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult) * parseInt(term)) + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term)) ).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) + parseInt(price1) + parseInt(price2) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult) * parseInt(term)) + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term)) ));
             }else{
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term)) ).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) + parseInt(price1) + parseInt(price2) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term)) ));
             }
         }else if(parseInt(term)==4){
             console.log(4);
@@ -899,8 +1097,10 @@ function check_price(room) {
             console.log(price5);
             if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))));
             }else{
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))));
             }
         }else if(parseInt(term)==5){
             console.log(5);
@@ -912,8 +1112,10 @@ function check_price(room) {
             console.log(price5);
             if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))));
             }else{
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))));
             }
         }else if(parseInt(term)==6){
             console.log(price);
@@ -924,8 +1126,10 @@ function check_price(room) {
             console.log(price5);
             if((parseInt(cnt_adult) - parseInt(cnt_basic)) > 0){
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + parseInt(price5) + ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + parseInt(price5) + ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))));
             }else{
                 document.getElementById('price_2_'+room).innerText = (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + parseInt(price5) + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+                document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + parseInt(price5) + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))));
             }
 
         }
@@ -933,7 +1137,9 @@ function check_price(room) {
         // document.getElementById('price_2_'+room).innerText = (parseInt(price)*parseInt(term)).format();
     }else{
         price = price.replace(/,/gi,"");
-        document.getElementById('price_2_'+room).innerText = ((parseInt(price) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult))) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+        // document.getElementById('price_2_'+room).innerText = ((parseInt(price) +  ((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult))) * parseInt(term)    + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+        document.getElementById('price_2_'+room).innerText = (parseInt(price) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))).format();
+        document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price", (parseInt(price) +  (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term))));
     }
 
 
@@ -948,10 +1154,15 @@ function check_price(room) {
             var price = document.getElementById('price_2_'+room).innerText;
             price = price.replace(/,/gi,"");
             document.getElementById('price_2_'+room).innerText = (parseInt(price) + (parseInt(facility_price) * parseInt(num))).format();
+            document.getElementById(brand_id+"_room_info_"+room).setAttribute("total_price",(parseInt(price) + (parseInt(facility_price) * parseInt(num))));
         }
     }
 
     check();
+
+    $("input[id^='c_box']").click(function () {
+        document.getElementById('total_room_value_bak').scrollIntoView();
+    })
 }
 
 function check() {
@@ -961,14 +1172,16 @@ function check() {
             var room_id = $(this).attr("id");
             var room_id = room_id.replace('c_box_',"");
             array_room_id.push(room_id);
-            document.getElementById('total_room_value_bak').scrollIntoView();
         }
     })
 
     var total_price =0;
-
+    var only_room_price =0;
+    var only_person_price =0;
+    var only_option_price =0;
     for(var i=0; i<array_room_id.length; i++){
-        var price = parseInt(parseInt(document.getElementById('price_2_'+array_room_id[i]).innerText) + "000" );
+        // var price_all = parseInt(parseInt(document.getElementById('price_2_'+array_room_id[i]).innerText) + "000" );
+        var price_all = document.getElementById(brand_id+"_room_info_"+array_room_id[i]).getAttribute("total_price");
 
         var cnt_adult = document.getElementById("adult_"+array_room_id[i]).value;
         var cnt_child = document.getElementById("child_"+array_room_id[i]).value;
@@ -982,28 +1195,52 @@ function check() {
         var cnt_max = document.getElementById(brand_id+"_room_info_"+array_room_id[i]).getAttribute("cnt_max");
         var young = document.getElementById('young_'+array_room_id[i]).innerText;
         var double_young = document.getElementById('double_young_'+array_room_id[i]).innerText;
+
+        var price = document.getElementById(brand_id+"_room_info_"+array_room_id[i]).getAttribute("price");
         var price1 = document.getElementById(brand_id+"_room_info_"+array_room_id[i]).getAttribute("price1");
+        var price2 = document.getElementById(brand_id+"_room_info_"+array_room_id[i]).getAttribute("price2");
         var price3 = document.getElementById(brand_id+"_room_info_"+array_room_id[i]).getAttribute("price3");
         var price4 = document.getElementById(brand_id+"_room_info_"+array_room_id[i]).getAttribute("price4");
         var price5 = document.getElementById(brand_id+"_room_info_"+array_room_id[i]).getAttribute("price5");
 
+        //오로지 방의 가격
         if(term ==1) {
-            var only_room_price
+            only_room_price =  (parseInt(only_room_price) + parseInt(price));
+        }else if(term ==2){
+            only_room_price = (parseInt(only_room_price) + parseInt(price) + parseInt(price1));
+        }else if(term ==3){
+            only_room_price = ( parseInt(only_room_price) + parseInt(price) + parseInt(price1) + parseInt(price2));
+        }else if(term ==4){
+            only_room_price = ( parseInt(only_room_price) + parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3));
+        }else if(term == 5){
+            only_room_price = ( parseInt(only_room_price) + parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4));
+        }else if(term ==6){
+            only_room_price = ( parseInt(only_room_price) +parseInt(price) + parseInt(price1) + parseInt(price2) + parseInt(price3) + parseInt(price4) + parseInt(price5));
         }
 
-        //오로지 방의 가격
-        var only_room_price =11;
         //인원수의 가격
-
+        if((parseInt(cnt_adult) - parseInt(cnt_basic) ) >0) {
+            only_person_price = (parseInt(only_person_price) + (((parseInt(cnt_adult) - parseInt(cnt_basic)) * parseInt(price_adult)) * parseInt(term)) + (parseInt(cnt_child) * parseInt(price_child) * parseInt(term)) + (parseInt(cnt_infant) * parseInt(price_infant) * parseInt(term)));
+        }else{
+            only_person_price=0;
+        }
         //전체 가격
-        var price = parseInt(parseInt(document.getElementById('price_2_'+array_room_id[i]).innerText) + "000" );
-        var total_price = parseInt(total_price) + price;
-        //옵션 가격
+        total_price = parseInt(total_price) + parseInt(price_all);
 
+        //옵션 가격(전체 가격 - 방 가격 - 추가 인원 가격)
+        only_option_price = parseInt(total_price) - parseInt(only_room_price) - parseInt(only_person_price);
     }
-    document.getElementById('total_room_value').innerText = total_price.format();
-    document.getElementById('total_room_value_bak').innerText = total_price.format();
+
+    document.getElementById('total_person_value').innerText = parseInt(only_person_price).format();
+    document.getElementById('total_room_value').innerText = parseInt(only_room_price).format();
+    document.getElementById('total_room_value_bak').innerText = parseInt(total_price).format();
+    document.getElementById('total_option_value').innerText = parseInt(only_option_price).format();
+    document.getElementById('right_now_no_price').innerText = parseInt(only_option_price).format();
+    document.getElementById('right_now_price').innerText = (parseInt(only_room_price) + parseInt(only_person_price)).format();
+    document.getElementById('every_thing_value').innerText = parseInt(total_price).format();
 }
+
+
 
 function select_change(room, f) {
     document.getElementById('cb1_'+room+'_'+f+'').checked = true;

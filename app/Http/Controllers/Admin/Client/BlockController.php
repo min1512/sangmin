@@ -57,7 +57,80 @@ class BlockController extends Controller
     }
 
     public function postBlock(Request $request){
+        dd($request->all());
+        $user_id = $request->id;
+        $custom_price_season = $request->custom_price_season;
+        $block = $request->block;
+        $Tel = $request->Tel;
+        $None = $request->none;
+        $block_tel_start = $request->block_tel_start;
+        $block_tel_end = $request->block_tel_end;
+        $no_block_tel = $request->no_block_tel;
 
+        $tmp = [];
+        $tmp1 = [];
+        if($block_tel_start == "") {
+            foreach ($custom_price_season as $k => $v) {
+                foreach ($v as $k2 => $v2) {
+                    $isset = BlockTable::where('day', $k)->where('room_id', $k2)->first();
+                    if (isset($isset)) {
+                        $BlockTable = BlockTable::where('day', $k)->where('room_id', $k2)->first();
+                    } else {
+                        $BlockTable = new BlockTable();
+                        $BlockTable->user_id = $user_id;
+                        $BlockTable->room_id = $k2;
+                        $type_id = ClientTypeRoom::where('user_id', $BlockTable->user_id)->where('id', $BlockTable->room_id)->value('type_id');
+                        $BlockTable->type_id = $type_id;
+                        $BlockTable->day = $k;
+                    }
+                    if ($block == "B") {
+                        $BlockTable->flag = $block;
+                    } elseif ($Tel == "T") {
+                        $BlockTable->flag = $Tel;
+                    } elseif ($None == "N") {
+                        $BlockTable->flag = $None;
+                        $tmp[] = $BlockTable->id;
+                    }
+                    $BlockTable->save();
+                }
+            }
+            BlockTable::WhereIn('id', $tmp)->where('user_id', $user_id)->delete();
+            BlockTable::where('flag', "N")->delete();
+        }else{
+            foreach ($custom_price_season as $k =>$v){
+                for($i=strtotime($block_tel_start); $i<=strtotime($block_tel_end); $i+=86400){
+                    if(!in_array(date("Y-m-d",$i),$no_block_tel)) {
+                        $isset = BlockTable::where('day', date("Y-m-d",$i))->where('room_id', $k)->where('user_id',$user_id)->first();
+                        if (isset($isset)) {
+                            $BlockTable = BlockTable::where('day', date("Y-m-d",$i))->where('room_id', $k)->where('user_id',$user_id)->first();
+                        } else {
+                            $BlockTable = new BlockTable();
+                            $BlockTable->user_id = $user_id;
+                            $BlockTable->room_id = $k;
+                            $type_id = ClientTypeRoom::where('user_id', $BlockTable->user_id)->where('id', $BlockTable->room_id)->value('type_id');
+                            $BlockTable->type_id = $type_id;
+                            $BlockTable->day = date("Y-m-d",$i);
+                        }
+                        if ($block == "B") {
+                            $BlockTable->flag = $block;
+                        } elseif ($Tel == "T") {
+                            $BlockTable->flag = $Tel;
+                        } elseif ($None == "N") {
+                            $BlockTable->flag = $None;
+                            $tmp1[] = $BlockTable->id;
+                        }
+                        $BlockTable->save();
+                    }
+                }
+            }
+
+            BlockTable::WhereIn('id', $tmp1)->where('user_id', $user_id)->delete();
+            BlockTable::where('flag', "N")->delete();
+        }
+        return redirect()->route('client.block',[$user_id]);
+    }
+
+    public function postBlockBatch(request $request) {
         $user_id = $request->id;
         $custom_price_season = $request->custom_price_season;
         $block = $request->block;

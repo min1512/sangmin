@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\Users;
 use App\Models\UserStaff;
 use Illuminate\Http\Request;
@@ -35,6 +36,10 @@ class StaffController extends Controller
 
     public function postSave(Request $request, $id='') {
         $id = $request->input("id",0);
+
+        $email_check = $request->input("email_chk","N");
+        if($email_check=="N") return redirect()->back();
+
         $user = Users::find($id);
         if(isset($user)) {
             $staff = UserStaff::where('user_id',$id)->first();
@@ -49,13 +54,15 @@ class StaffController extends Controller
         $password   = $request->input("password","");
         $password2  = $request->input("password2","");
 
-        $user->email        = $request->input("email");
+        if($request->input("email_ad","")!="" && $request->input("email_id","")!="") {
+            $user->email = $request->input("email_id") . "@" . $request->input("email_ad");
+        }
         if($password!="" && $password==$password2) $user->password = bcrypt($password);
         $user->flag_use     = "Y";
         $user->save();
 
         $staff->staff_name  = $request->input("staff_name","");
-        $staff->staff_hp    = $request->input("staff_hp","");
+        $staff->staff_hp    = join("-",$request->input("staff_hp",""));
         $staff->staff_birth = $request->input("staff_birth",null);
         $staff->staff_lunar = $request->input("staff_lunar",null);
         $staff->save();
@@ -68,13 +75,12 @@ class StaffController extends Controller
     }
 
     public function emailcheck(Request $request){
-        $email = $request->input('email');
-        $isset = Users::where('email',$email)->first();
-        if(isset($isset)){
-            $data = false;
+        $email = $request->input('email',null);
+        $isset = Users::where('email',$email)->count();
+        if($isset>0){
+            return response()->json(false);
         }else{
-            $data = true;
+            return response()->json(true);
         }
-        return $data;
     }
 }

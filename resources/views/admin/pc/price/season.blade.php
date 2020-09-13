@@ -20,7 +20,6 @@
                             ||
                             ($("input[name^='end_season']").eq(index-1).val() >= $(this).val()  && $("input[name^='start_season']").eq(index-1).val() <= $(this).val())
                         ){
-                            console.log(index);
                             if (tcnt3 < 1) alert("날짜 입력이 잘못 되었습니다.");
                             tcnt3++;
                         }else if(
@@ -167,8 +166,6 @@
             });
         });
 
-
-
         $(function () {
             $('#add_season').click(function () {
                 var user_id = {{isset($user_id)?$user_id:""}}
@@ -179,15 +176,15 @@
                             "<input type=hidden name=_token />" +
                             "<tr>" +
                                 "<td>시즌명</td>"+
-                                "<td><input type='text' id='season_name' name='season_name'></td>" +
+                                "<td><input type='text' name='season_name'></td>" +
                             "</tr>"+
                             "<tr>" +
                                 "<td>시작 기간</td>"+
-                                "<td><input type='date' id='season_start' name='season_start'></td>" +
+                                "<td><input type='date' name='season_start'></td>" +
                             "</tr>"+
                             "<tr>" +
                                 "<td>끝 기간</td>"+
-                                "<td><input type='date' id='season_end' name='season_end'></td>" +
+                                "<td><input type='date' name='season_end'></td>" +
                             "</tr>"+
                             "<tr>" +
                                 "<td><button type='button' onclick='test1()' class=\"mt-1 btn season_save\" >저장</button></td>"+
@@ -386,12 +383,14 @@
 @endsection
 
 @section("styles")
+<!--
     <link rel="stylesheet" href="http://staff.einet.co.kr/asset/css/common-b.css?v=<?=time()?>">
     <link rel="stylesheet" href="http://staff.einet.co.kr/asset/css/blade.css?v=<?=time() ?>">
+-->
 @endsection
 
 @section("contents")
-    @include("admin.pc.include.price.season_search",['search'=>isset($search)?$search:[]])
+{{--    @include("admin.pc.include.price.season_search",['search'=>isset($search)?$search:[]])--}}
 
     @include("admin.pc.include.price.season_list",['curPath'=>$curPath, 'curPath_staff'=>$curPathstaff, 'seasonList'=>$seasonList, 'user_id'=>isset($user_id)?$user_id:""])
 

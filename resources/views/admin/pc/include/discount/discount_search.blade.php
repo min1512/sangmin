@@ -1,8 +1,74 @@
-<div class="row">
+<div class="row ">
     <div class="main-card mb-3 card" style="width:100%; ">
         <div class="card-body">
-            <h5 class="card-title">Search</h5>
+            <h5 class="card-title bld">Search</h5>
             <form method="get" action="{{url()->current()}}">
+                <div class="clb content-search">
+                    <ul class="content-search__list">
+                        <li class="content-search__item fl">
+                            <div class="select-wrap w-170">
+                                <select name="search_client" id="search_client" class="select-v1 noto">
+                                    <option value="">::숙박업체::</option>
+                                    @php $pension = \App\Models\UserClient::where('flag_use','Y')->get(); @endphp
+                                    @foreach($pension as $p)
+                                        <option value="{{$p->user_id}}" >{{$p->client_name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </li>
+                        <li class="content-search__item fl">
+                            <div class="input-wrap type-search">
+                                <span class="content-search__name">주문자</span>
+                                <input type="text" class="input-v1 va-m w-170" name="search_order_name" id="search_order_name" />
+                            </div>
+                        </li>
+                        <li class="content-search__item fl">
+                            <div class="input-wrap type-search">
+                                <span class="content-search__name">예약일</span>
+                                <input type="text" class="input-v1 va-m w-170 type-search datepicker" name="search_order_date" id="search_order_date" />
+                            </div>
+                        </li>
+                        <li class="content-search__item fl">
+                            <div class="select-wrap w-170">
+                                <select name='search_order_state' id='search_order_state' class="select-v1 noto">
+                                    <option value="">::예약상태::</option>
+                                    @php $state = \App\Http\Controllers\Controller::getCode('order_state'); @endphp
+                                    @foreach($state as $s)
+                                        <option value="{{$s->code}}">{{$s->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </li>
+                        <li class="content-search__item fl">
+                            <div class="select-wrap w-170">
+                                <select name='search_order_state' id='search_order_state' class="select-v1 noto">
+                                    <option value="">::예약상태::</option>
+                                    @php $state = \App\Http\Controllers\Controller::getCode('order_state'); @endphp
+                                    @foreach($state as $s)
+                                        <option value="{{$s->code}}">{{$s->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </li>
+                        <li class="content-search__item fl">
+                            <div class="select-wrap w-170">
+                                <select name='search_order_state' id='search_order_state' class="select-v1 noto">
+                                    <option value="">::예약상태::</option>
+                                    @php $state = \App\Http\Controllers\Controller::getCode('order_state'); @endphp
+                                    @foreach($state as $s)
+                                        <option value="{{$s->code}}">{{$s->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </li>
+
+
+                        <li class="content-search__item fl clb type-btn">
+                            <button type="submit" class="btn-v3 type-black type-search va-m">검색</button>
+                        </li>
+                    </ul>
+                </div>
+            <!--
                 <table class="mb-0 table">
                     <tr>
                         <td>
@@ -31,6 +97,7 @@
                         </td>
                     </tr>
                 </table>
+-->
             </form>
         </div>
     </div>

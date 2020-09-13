@@ -32,4 +32,16 @@ class MainController extends Controller
             'user' => $user
         ]);
     }
+
+    public function postPopup(Request $request){
+        $url = getenv("QUERY_STRING");
+        $total_price = $request->input('total_price');
+        return view("api.popup", ['total_price' => $total_price, 'url' =>$url]);
+    }
+
+    public function postPopups(Request $request){
+        $total_price = $request->input('total_price');
+        return $total_price;
+    }
+
 }

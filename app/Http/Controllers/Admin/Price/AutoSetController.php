@@ -7,9 +7,6 @@ use App\Models\AutosetDiscount;
 use App\Models\AutosetDiscountHowmuch;
 use App\Models\AutosetDiscountRoom;
 use App\Models\ClientDiscount;
-use App\Models\ClientDiscountBanDate;
-use App\Models\ClientDiscountRoom;
-use App\Models\ClientDiscountTerm;
 use App\Models\ClientTypeRoom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +38,7 @@ class AutoSetController extends Controller
                 autoset_discount.*
                     , ifnull((select group_concat(room_id separator ",") from autoset_discount_room where autoset_id=autoset_discount.id),null) as room_id
                 ')
-            ->get();
+            ->paginate(10);
         $Client_type_room = AutosetDiscountRoom::where('user_id',$user_id)
             ->selectraw('
                 autoset_discount_room.*
@@ -60,15 +57,12 @@ class AutoSetController extends Controller
     public function getDiscountClient(Request $request, $did=""){
         $auto_discount = self::discount_view($request->all(),"", $did);
 
-        return $auto_discount;
-//        return view('admin.pc.price.autodiscount_insert',$auto_discount);
+        return view('admin.pc.price.autodiscount_insert',$auto_discount);
     }
     public function getDiscountStaff(Request $request, $user_id, $did=""){
         $auto_discount = self::discount_view($request->all(), $user_id, $did);
 
-        return $auto_discount;
-
-//        return view('admin.pc.price.autodiscount_insert',$auto_discount);
+        return view('admin.pc.price.autodiscount_insert',$auto_discount);
     }
 
     public function discount_view($data=[], $user_id="", $did="" ){
@@ -91,6 +85,7 @@ class AutoSetController extends Controller
         $auto_discount['ClientTypeRoom'] = ClientTypeRoom::where('client_type_room.user_id',$user_id)
             ->selectraw('
                 client_type_room.*
+                , (select room_id from autoset_discount_room where room_id=client_type_room.id and autoset_id='.$did.') as room_id
                 , (select room_id from autoset_discount_room where room_id=client_type_room.id and autoset_id='.$did.') as room_id
                 ')
             ->get();
@@ -158,8 +153,7 @@ class AutoSetController extends Controller
     }
 
     public function staff_discount_save(Request $request, $user_id="", $did=""){
-//        dd($request->all());
-        $did = $request->input('season_id');
+
         $term_check = $request->input('term_check');
         $autoset_check = $request->input('autoset_check');
         $isset = AutosetDiscount::find($did);
@@ -195,15 +189,6 @@ class AutoSetController extends Controller
             }
             $AutosetDiscountHowmuch->autoset_discount_howmuch =$v;
             $AutosetDiscountHowmuch->date =$k;
-            foreach ($request->input('char') as $k1 => $v1){
-                $tmp = explode("|",$v1);
-                $unit = $tmp[0];
-                $type = $tmp[1];
-                if($k==$k1){
-                    $AutosetDiscountHowmuch->autoset_discount_unit = $unit;
-                    $AutosetDiscountHowmuch->autoset_discount_type = $type;
-                }
-            }
             $AutosetDiscountHowmuch->save();
             $tmpDeleteAutosetDiscountHowMuch[] = $AutosetDiscountHowmuch->id;
         }
@@ -225,14 +210,6 @@ class AutoSetController extends Controller
             $tmpDeleteAutosetRoomId[] = $AutosetDiscountRoom->id;
         }
         AutosetDiscountRoom::WhereNotIn('id',$tmpDeleteAutosetRoomId)->where('user_id',$user_id)->where('autoset_id',isset($did) && $did != "" ?$did:$AutosetDiscount->id)->delete();
-
-        return redirect()->route('price.autoset',['user_id'=>$user_id]);
-    }
-
-    public function DeleteDiscountStaff(Request $request, $user_id, $season_id){
-        AutosetDiscount::where('id',$season_id)->where('user_id',$user_id)->delete();
-        AutosetDiscountHowmuch::where('autoset_id',$season_id)->where('user_id',$user_id)->delete();
-        AutosetDiscountRoom::where('autoset_id',$season_id)->where('user_id',$user_id)->delete();
 
         return redirect()->route('price.autoset',['user_id'=>$user_id]);
     }

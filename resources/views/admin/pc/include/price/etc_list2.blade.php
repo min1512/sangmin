@@ -1,4 +1,4 @@
-<div class="row fl between-32 js-height" style="width:48%;min-width:460px;">
+<div class="row fr between-32 js-height" style="width:48%;min-width:460px;">
     <div class="">
         <div class="card-body">
             @php

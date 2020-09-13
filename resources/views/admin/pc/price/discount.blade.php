@@ -9,8 +9,6 @@
 @endsection
 
 @section("styles")
-<link rel="stylesheet" href="http://staff.einet.co.kr/asset/css/common-b.css?v=<?=time()?>">
-<link rel="stylesheet" href="http://staff.einet.co.kr/asset/css/blade.css?v=<?=time() ?>">
 @endsection
 
 @section("contents")

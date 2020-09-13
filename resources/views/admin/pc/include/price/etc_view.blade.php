@@ -17,9 +17,7 @@
                     })
                 }
             })
-        })
 
-        $(function () {
             $("input[name^='facility']").click(function () {
                 $("input[name^='facility']").each(function () {
                     oneCheck($(this));
@@ -40,36 +38,6 @@
                 $("#facility_all").prop("checked", false);
             }
         }
-
-        var ord = {{ sizeof($room_name)>0?sizeof($room_name):0 }};
-        $(function () {
-            $('#num1').click(function () {
-                var num = $('#num').val();
-                for (var i = 0; i < num; i++) {
-                    $('#num_plus').append(
-                        "<div class=\"position-relative form-group\" style='border: 1px solid red;'>\n" +
-                        "<div class=\"position-relative form-group\">\n" +
-                        "<input type='hidden' name='room_num["+ord+"]' value=" + num + ">\n" +
-                        "</div>\n" +
-                        "<div class=\"position-relative form-group\">\n" +
-                        "객실명\n" +
-                        "<input type='text' name='room_name["+ord+"]'>\n" +
-                        "</div>\n"+
-                        "<div class=\"position-relative form-group\">\n" +
-                        "실시간 예약\n" +
-                        "<input type='radio' name='now["+ord+"]' value='Y'>판매 <input type='radio' name='now["+ord+"]' value='N'>판매안함\n" +
-                        "</div>\n"+
-                        "<div class=\"position-relative form-group\">\n" +
-                        "온라인 판매 대행\n" +
-                        "<input type='radio' name='online["+ord+"]' value='Y'>판매 <input type='radio' name='online["+ord+"]' value='N'>판매안함\n" +
-                        "</div>\n"+
-                        "<input type='button' class=\"mt-1 btn btn-primary\" name='delete["+ord+"]' value='삭제' onclick='$(this).parent().remove()'>\n" +
-                        "</div>"
-                    );
-                    ord++;
-                }
-            });
-        });
     </script>
 
     <script>
@@ -77,6 +45,7 @@
         $(function () {
             $('#num1').click(function () {
                 var num = $('#num').val();
+                num = 1;
                 for (var i = 0; i < num; i++) {
                     $('#num_plus1').append(
                         "<tr class=\"table-a__tr\">"+
@@ -103,27 +72,10 @@
                                 "<label for=\"on4_"+ord+"\" class=\"ml-20\">판매 안함</label>"+
                             "</td>"+
                          "</tr>"
-                        // "<div class=\"position-relative form-group\" style='border: 1px solid red;'>\n" +
-                        // "<div class=\"position-relative form-group\">\n" +
-                        // "<input type='hidden' name='room_num["+ord+"]' value=" + num + ">\n" +
-                        // "</div>\n" +
-                        // "<div class=\"position-relative form-group\">\n" +
-                        // "객실명\n" +
-                        // "<input type='text' name='room_name["+ord+"]'>\n" +
-                        // "</div>\n"+
-                        // "<div class=\"position-relative form-group\">\n" +
-                        // "실시간 예약\n" +
-                        // "<input type='radio' name='now["+ord+"]' value='Y'>판매 <input type='radio' name='now["+ord+"]' value='N'>판매안함\n" +
-                        // "</div>\n"+
-                        // "<div class=\"position-relative form-group\">\n" +
-                        // "온라인 판매 대행\n" +
-                        // "<input type='radio' name='online["+ord+"]' value='Y'>판매 <input type='radio' name='online["+ord+"]' value='N'>판매안함\n" +
-                        // "</div>\n"+
-                        // "<input type='button'  name='delete["+ord+"]' value='삭제' onclick='$(this).parent().remove()'>\n" +
-                        // "</div>"
                     );
                     ord++;
                 }
+                $("#num").val($("input[name^='room_num[']").length);
             });
         });
         var size = {{ sizeof($file)>0?sizeof($file):0 }};
@@ -189,14 +141,20 @@
     <script>
         function delete_room_list(id) {
             var id = id;
-            $("#room_list_"+id+"").hide();
+            $("#room_list_"+id+"").remove();
+			$("#room_name_"+id+"").remove();
+			$("#room_num_"+id+"").remove();
+			$("#on1_"+id+"").remove();
+			$("#on2_"+id+"").remove();
+			$("#on3_"+id+"").remove();
+			$("#on4_"+id+"").remove();
         }
     </script>
 @endsection
 
 @section("styles")
     <link rel="stylesheet" href="http://staff.einet.co.kr/asset/css/common-b.css?v=<?=time()?>">
-<link rel="stylesheet" href="http://staff.einet.co.kr/asset/css/blade.css?v=<?=time() ?>">
+    <link rel="stylesheet" href="http://staff.einet.co.kr/asset/css/blade.css?v=<?=time() ?>">
 @endsection
 
 @section("contents")
@@ -241,7 +199,7 @@
 								</td>
 								<td colspan="5" class="table-a__td type-nobd type-left">
 									<div class="input-wrap" style="width:150px;">
-										<input type="text"  name="type_name"  class="input-v1 ta-r" value="{{isset($ClientRoom)?$ClientRooms[0]->type_name:""}}">
+										<input type="text" name="type_name"  class="input-v1 ta-r" value="{{isset($ClientRoom)?$ClientRooms[0]->type_name:""}}" />
 									</div>
 								</td>
 							</tr>
@@ -251,21 +209,21 @@
 								</td>
 								<td colspan="5" class="table-a__td type-nobd type-left">
 									<div class="input-wrap" style="width:48px;">
-										<input type="text" class="input-v1 ta-r" name="num" id="num" value="{{isset($ClientRoom)?$ClientRooms[0]->num:""}}">
+										<input type="text" class="input-v1 ta-r" name="num" id="num" value="{{isset($ClientRoom)?$ClientRooms[0]->num:""}}" />
 									</div> 개
-									<button type="button" class="btn-v2 fr" id="num1" name="num1" value="0">판매객실 추가</button>
+									<button type="button" class="btn-v2 fr" id="num1" name="num1">판매객실 추가</button>
 
 									<div class="table-a__inbox type-table">
 										<table class="table-a__table type-inner" id="num_plus1">
                                             @foreach($room_name as $t => $v)
-                                            <input type="hidden" name="room_num[{{$t}}]" id="room_num[{{$t}}]" class="form-control" value='{{isset($room_name)?$v->id:""}}' />
+                                            <input type="hidden" name="room_num[{{$t}}]" id="room_num_{{$t}}" class="form-control" value='{{isset($room_name)?$v->id:""}}' />
 											<tr class="table-a__tr" id="room_list_{{$t}}">
 												<td class="table-a__td type-grey">
 													<span class="table-a__span type-1">객실명</span>
 													<div class="input-wrap ml-10" style="max-width:160px;">
 														<input type="text" name="room_name[{{$t}}]" id="room_name_{{$t}}" class="input-v1 ta-l" value="{{isset($room_name)?$v->room_name:""}}">
 													</div>
-													<input type="checkbox" name="chkAll[{{$t}}]" id="del_{{$t}}" class="checkbox-v1"><label for="del_{{$t}}" class=" ml-10" onclick="delete_room_list({{$t}});">삭제</label>
+													<input type="checkbox" name="chkAll[{{$t}}]" id="del_{{$t}}" class="checkbox-v1"><label for="del_{{$t}}" class="ml-10" onclick="delete_room_list({{$t}});">삭제</label>
 												</td>
 												<td class="table-a__td">
 													<span class="table-a__span type-2">온라인 판매</span>
@@ -300,25 +258,14 @@
 								<td class="table-a__td type-nobd type-right type-top lh-28">객실 형태</td>
 								<td colspan="5" class="table-a__td type-nobd type-left">
 									<div class="table-a__inbox type-left">
-                                        @if($ClientRoom != "")
-                                            <input type="radio" id="room_shape_1"  class="radio-v1 dp-ib" name="room_shape" value="Poisonous" @if(($ClientRooms[0]->room_shape)=="Poisonous")checked="checked"@endif />
-                                            <label for="room_shape_1" class="">독채형</label>
-                                            <input type="radio" id="room_shape_2" class="radio-v1 dp-ib" name="room_shape"  value="Ventral" @if(($ClientRooms[0]->room_shape)=="Ventral")checked="checked"@endif />
-                                            <label for="room_shape_2" class="ml-20">복층형</label>
-                                            <input type="radio" id="room_shape_3"  class="radio-v1 dp-ib" name="room_shape" value="One-room-type" @if(($ClientRooms[0]->room_shape)=="One-room-type")checked="checked"@endif />
-                                            <label for="room_shape_3" class="ml-20">원룸형</label>
-                                            <input type="radio" id="room_shape_4" class="radio-v1 dp-ib" name="room_shape" value="Detachable" @if(($ClientRooms[0]->room_shape)=="Detachable")checked="checked"@endif>
-                                            <label for="room_shape_4" class="ml-20">분리형</label>
-                                        @elseif($ClientRoom =="")
-                                            <input type="radio" id="room_shape_1" class="radio-v1 dp-ib" name="room_shape" value="Poisonous" checked="checked">
-                                            <label for="room_shape_1" class="">독채형</label>
-                                            <input type="radio" id="room_shape_2" class="radio-v1 dp-ib" name="room_shape" value="Ventral" checked="">
-                                            <label for="room_shape_2" class="ml-20">복층형</label>
-                                            <input type="radio" id="room_shape_3" class="radio-v1 dp-ib" name="room_shape" value="One-room-type" checked="">
-                                            <label for="room_shape_3" class="ml-20">원룸형</label>
-                                            <input type="radio" id="room_shape_4" class="radio-v1 dp-ib" name="room_shape" value="Detachable" checked="">
-                                            <label for="room_shape_4" class="ml-20">분리형</label>
-                                        @endif
+                                        <input type="radio" id="room_shape_1"  class="radio-v1 dp-ib" name="room_shape" value="Poisonous" {{isset($ClientRoom)&&$ClientRooms[0]->room_shape=="Poisonous"?"checked":""}} />
+                                        <label for="room_shape_1" class="">독채형</label>
+                                        <input type="radio" id="room_shape_2" class="radio-v1 dp-ib" name="room_shape"  value="Ventral" {{isset($ClientRoom)&&$ClientRooms[0]->room_shape=="Ventral"?"checked":""}} />
+                                        <label for="room_shape_2" class="ml-20">복층형</label>
+                                        <input type="radio" id="room_shape_3"  class="radio-v1 dp-ib" name="room_shape" value="One-room-type" {{isset($ClientRoom)&&$ClientRooms[0]->room_shape=="One-room-type"?"checked":""}} />
+                                        <label for="room_shape_3" class="ml-20">원룸형</label>
+                                        <input type="radio" id="room_shape_4" class="radio-v1 dp-ib" name="room_shape" value="Detachable" {{isset($ClientRoom)&&$ClientRooms[0]->room_shape=="Detachable"?"checked":""}} />
+                                        <label for="room_shape_4" class="ml-20">분리형</label>
 									</div>
 								</td>
 							</tr>
@@ -339,23 +286,11 @@
                                                 <dd class="fl select-list__dd">
                                                     <div class="input-wrap">
                                                         <div class="select-wrap">
-                                                            @if($ClientRoom != "")
                                                             <select name="{{$c->code}}" id="{{$c->code}}" class="select-v1 noto">
-                                                                <option value="1" @if($ClientRooms[0]->$name == 1) selected @endif >1</option>
-                                                                <option value="2" @if($ClientRooms[0]->$name == 2) selected @endif >2</option>
-                                                                <option value="3" @if($ClientRooms[0]->$name == 3) selected @endif >3</option>
-                                                                <option value="4" @if($ClientRooms[0]->$name == 4) selected @endif >4</option>
-                                                                <option value="5" @if($ClientRooms[0]->$name == 5) selected @endif >5</option>
+                                                                @for($i=1; $i<=5; $i++)
+                                                                <option value="{{$i}}" {{isset($ClientRoom)&&$ClientRooms[0]->$name==$i?"selected":""}}>{{$i}}</option>
+                                                                @endfor
                                                             </select>
-                                                            @else
-                                                                <select name="{{$c->code}}" id="{{$c->code}}" class="select-v1 noto">
-                                                                    <option value="1">1</option>
-                                                                    <option value="2">2</option>
-                                                                    <option value="3">3</option>
-                                                                    <option value="4">4</option>
-                                                                    <option value="5">5</option>
-                                                                </select>
-                                                            @endif
                                                         </div>
                                                     </div>
                                                 </dd>
@@ -372,14 +307,14 @@
 										<label for="facility_all">모두선택</label>
 									</p>
                                     @php
-                                        $type_facility = \App\Http\Controllers\Controller::getCode('type_facility');
+                                        $type_amanity = \App\Http\Controllers\Controller::getCode('type_amanity');
                                         $temp = explode(",",$ClientRoomFacilitys->fac);
                                     @endphp
 									<div class="facility-group clb">
 										<ul class="facility-group__list fl clb">
-                                            @foreach($type_facility as $c)
+                                            @foreach($type_amanity as $c)
                                                 <li class="facility-group__item fl">
-                                                    <input type="checkbox" id="fg1_{{$c->code}}" class="checkbox-v2" name="facility[]" value="{{$c->code}}" @if($ClientRoomFacilitys->fac != ""){{ in_array($c->code,$temp)?"checked":""}} @elseif($ClientRoomFacilitys->fac == "") checked="checked" @endif>
+                                                    <input type="checkbox" id="fg1_{{$c->code}}" class="checkbox-v2" name="facility[]" value="{{$c->code}}" {{ isset($ClientRoomFacilitys->fac)&&in_array($c->code,$temp)?"checked":""}} />
                                                     <label for="fg1_{{$c->code}}">{{ $c->name }}</label>
                                                 </li>
                                             @endforeach
@@ -414,7 +349,7 @@
 											</li>
                                             @endforeach
 										</ul>
-										<span class="add-img__sub">데이터용량 0KB / 10MB</span>
+										{{--<span class="add-img__sub">데이터용량 0KB / 10MB</span>--}}
 									</div>
 								</td>
 							</tr>

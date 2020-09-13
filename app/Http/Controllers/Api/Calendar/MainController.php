@@ -121,11 +121,12 @@ class MainController extends ApiController
             foreach($room as $r){
                 $yoil = date("w",strtotime("+".$i." days",$curDate));
                 $data_price = DataPrice::where('room_id',$r->id)
+                    ->where('date', date('Y-m-d',strtotime("+".$i." days",$curDate)))
                     ->where('date_type',$yoil)
                     ->first();
 
-                $this->data['price_normal'][$i+1][$r->id] = $data_price->price_normal;
-                $this->data['price_sales'][$i+1][$r->id] = $data_price->price_sales;
+                $this->data['price_normal'][$i+1][$r->id] = isset($data_price->price_normal)?$data_price->price_normal:"예약 불가";
+                $this->data['price_sales'][$i+1][$r->id] = isset($data_price->price_sales)?$data_price->price_sales:"예약 불가";
             }
         }
 

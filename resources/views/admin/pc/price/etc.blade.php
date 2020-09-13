@@ -55,12 +55,19 @@
 @endsection
 
 @section("styles")
+<!--
 <link rel="stylesheet" href="http://staff.einet.co.kr/asset/css/common-b.css?v=<?=time()?>">
 <link rel="stylesheet" href="http://staff.einet.co.kr/asset/css/blade.css?v=<?=time() ?>">
+-->
 @endsection
 
 @section("contents")
+    <form method="get" action="{{url()->current()}}">
+        <input type="hidden" name="search_board" value="{{ isset($search['search_board'])&&$search['search_board']!=""?$search['search_board']:"" }}">
+    </form>
     @include("admin.pc.include.price.etc_search",['search'=>isset($search)?$search:[]])
+
+    @include("admin.pc.include.price.etc_search1",['search'=>isset($search)?$search:[]])
 
     @include("admin.pc.include.price.etc_list",['clientList'=>$clientList, 'uid'=>$id])
 

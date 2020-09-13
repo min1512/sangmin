@@ -36,7 +36,7 @@ class Controller extends BaseController
     static public function getCategory() {
         $category = [];
         $tmp = Code::where(['depth'=>0, 'code'=>'category_admin'])->first();
-        $code1 = Code::where(['depth'=>1, 'up_id'=>$tmp->id, 'flag_use'=>'Y', 'flag_view'=>'Y'])->get();
+        $code1 = Code::where(['depth'=>1, 'up_id'=>$tmp->id, 'flag_use'=>'Y', 'flag_view'=>'Y'])->orderBy('order_by','asc')->get();
 
         foreach($code1 as $k => $c) {
             $category[$k]['depth'] = $c->depth;
@@ -99,6 +99,11 @@ class Controller extends BaseController
         }
 
         return self::array_to_object($code);
+    }
+
+    static public function getCodeName($code) {
+        $code2 = Code::where('code',$code)->first();
+        return $code2->code_name;
     }
 
     static public function array_to_object(array $array) {

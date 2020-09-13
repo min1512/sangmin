@@ -47,7 +47,13 @@ class AgencyController extends Controller
             $agency->user_id = $user->id;
         }
 
-        $user->email        = $request->input("email");
+        $password   = $request->input("password","");
+        $password2  = $request->input("password2","");
+
+        if($request->input("email_ad","")!="" && $request->input("email_id","")!="") {
+            $user->email = $request->input("email_id") . "@" . $request->input("email_ad");
+        }
+        if($password!="" && $password==$password2) $user->password = bcrypt($password);
         $user->flag_use     = "Y";
         $user->save();
 

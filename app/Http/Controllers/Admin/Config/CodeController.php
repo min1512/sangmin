@@ -59,7 +59,7 @@ class CodeController extends Controller
         if(!isset($code)) $code = new Code();
 
         $code->up_id        = $up_id;
-        $code->depth        = $up->depth+1;
+        $code->depth        = !$up?0:$up->depth;
         $code->code         = $request->input("code");
         $code->code_name    = $request->input("code_name");
         $code->simple       = $request->input("simple");

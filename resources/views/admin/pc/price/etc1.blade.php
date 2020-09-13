@@ -12,6 +12,6 @@
 @section("contents")
     @include("admin.pc.include.price.etc1_search",['search'=>isset($search)?$search:[]])
 
-    @include("admin.pc.include.price.etc1_list",['additionetcprice'=>$additionetcprice,'user_id'=>isset($user_id)?$user_id:""])
+    @include("admin.pc.include.price.etc1_list",['additionetcprice'=>$additionetcprice,'list_facility'=>$list_facility,'clientRoom'=>$clientRoom,'user_id'=>isset($user_id)?$user_id:""])
 
 @endsection

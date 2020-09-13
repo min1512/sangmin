@@ -3,32 +3,22 @@
     function search_postcode() {
         new daum.Postcode({
             oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
                 var roadAddr = data.roadAddress; // 도로명 주소 변수
                 var extraRoadAddr = ''; // 참고 항목 변수
 
-                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
                 if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
                     extraRoadAddr += data.bname;
                 }
-                // 건물명이 있고, 공동주택일 경우 추가한다.
                 if(data.buildingName !== '' && data.apartment === 'Y'){
                     extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
                 }
-                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
                 if(extraRoadAddr !== ''){
                     extraRoadAddr = ' (' + extraRoadAddr + ')';
                 }
 
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('clientPost').value = data.zonecode;
                 document.getElementById("clientAddrBasic").value = roadAddr;
 
-                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
                 if(roadAddr !== ''){
                     document.getElementById("clientAddrDetail").value = extraRoadAddr;
                 } else {
@@ -73,9 +63,7 @@
                 '<p><a  class="img_label_'+size+'" id="img_label_'+size+'" style="color: red;">삭제</a></p>'+
                 '</div>'
             );
-            console.log(size+"::");
             $('.img_label_'+size).click(function () {
-                console.log(size+":::");
                 $('#file_name_'+size+'').val("");
                 $(this).parent().parent().hide();
             });
@@ -85,25 +73,13 @@
                 $("input[name^='file']").each(function () {
                     var id = $(this).attr("id");
                     $('#img_label_'+id).click(function () {
-                        console.log(id);
                         $('#file_name_'+id+'').val("");
                         $(this).parent().parent().hide();
                     });
-                    console.log(id);
                     $("."+id).change(function () {
                         if($('#file_name_'+id+'').val() != $("#fileName").val()){
-                            //hidden값( 저장된 값)
-                            console.log($('#file_name_'+id+'').val());
-                            //바로바로 변경된값
-                            console.log($("#fileName").val());
-                            console.log("변경");
                             $('#file_name_'+id+'').val($("#fileName").val());
                         } else{
-                            //hidden값( 저장된 값)
-                            console.log($('#file_name_'+id+'').val());
-                            //바로바로 변경된값
-                            console.log($("#fileName").val());
-                            console.log("같음");
                             $('#file_name_'+id+'').val($("#fileName").val());
                         }
                     });
@@ -132,8 +108,6 @@
         if($(a).prop("checked")){
             var checkBoxLength = $("input[name^='facilityCommon']").length;
             var checkedLength = $("input[name^='facilityCommon']:checked").length;
-            console.log(checkBoxLength);
-            console.log(checkedLength);
             if(checkBoxLength==checkedLength){
                 $("#facilityCommon_all").prop("checked", true);
             }else{
@@ -148,8 +122,6 @@
         if($(a).prop("checked")){
             var checkBoxLength = $("input[name^='Service']").length;
             var checkedLength = $("input[name^='Service']:checked").length;
-            console.log(checkBoxLength);
-            console.log(checkedLength);
             if(checkBoxLength==checkedLength){
                 $("#Service_all").prop("checked", true);
             }else{
@@ -164,8 +136,6 @@
         if($(a).prop("checked")){
             var checkBoxLength = $("input[name^='Nearby_tourist_spots']").length;
             var checkedLength = $("input[name^='Nearby_tourist_spots']:checked").length;
-            console.log(checkBoxLength);
-            console.log(checkedLength);
             if(checkBoxLength==checkedLength){
                 $("#Nearby_tourist_spots_all").prop("checked", true);
             }else{
@@ -273,108 +243,18 @@
     });
 
     function newOpen(obj) {
-        console.log($(obj).attr("src"));
         $('#preview3 img').attr("src",$(obj).attr("src"));
         $('#preview3').show();
         $('#close').click(function () {
             $('#preview3').hide();
         })
     };
-
-    $(function () {
-        $("#dobule_young").change(function () {
-            $("input[name='dobule_young']").prop("checked",true);
-        });
-        $("#young").change(function () {
-            $("input[name='young']").prop("checked",true);
-        });
-        $("#child").change(function () {
-            $("input[name='child']").prop("checked",true);
-        });
-        $(("input[name='dobule_young']")).click(function () {
-            if($("input[name='dobule_young']").is(":checked")==false){
-                $("#dobule_young").val("default");
-            }
-        })
-        $(("input[name='young']")).click(function () {
-            if($("input[name='young']").is(":checked")==false){
-                $("#young").val("default");
-            }
-        })
-        $(("input[name='child']")).click(function () {
-            if($("input[name='child']").is(":checked")==false){
-                $("#child").val("default");
-            }
-        })
-    })
-
-    $(function () {
-        $(".btn-primary").click(function () {
-            var dobule_young = $("#dobule_young").val();
-            var young = $("#young").val();
-            var child = $("#child").val();
-            if(dobule_young != "default" && young != "default" && child != "default"){
-                if(dobule_young >= young || dobule_young >= child){
-                    alert("나이기준 값이 잘못 입력되었습니다.");
-                    return false;
-                }else if(young >= child){
-                    alert("나이기준 값이 잘못 입력되었습니다.");
-                    return false;
-                }else{
-                    return true;
-                }
-            }else if(($("input[name='young']").is(":checked")==true)==true){
-                if(($("#young").val()=="default")){
-                    alert("나이기준 값이 입력 되지 않았습니다.");
-                    return false;
-                }
-            }else if(($("input[name='child']").is(":checked")==true)==true){
-                if(($("#child").val()=="default")){
-                    alert("나이기준 값이 입력 되지 않았습니다.");
-                    return false;
-                }
-            }else if(($("input[name='adult']").is(":checked")==true)==true){
-                if(($("#adult").val()=="default")){
-                    alert("나이기준 값이 입력 되지 않았습니다.");
-                    return false;
-                }
-            }else{
-                return true;
-            }
-        })
-    })
-
-
-
-
 </script>
 
-<form method="post" action="{{ route('user.client.save',['id'=>$id]) }}" enctype="multipart/form-data">
+<form method="post" name="frmUserClient" onSubmit="return frmUserClient('frmUserClient')" enctype="multipart/form-data">
     {{ csrf_field() }}
     <table class="default" cellpadding="0" cellspacing="0">
         <input type="hidden" name="check" value="{{$_SERVER['REQUEST_URI']}}">
-        <thead>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        </thead>
         <tbody>
             <tr>
                 <td class="test">업소명</td>
@@ -576,18 +456,8 @@
                         var id = $(this).attr("id");
                         $("."+id).change(function () {
                             if($('#file_name_'+id+'').val() != $("#fileName").val()){
-                                //hidden값( 저장된 값)
-                                console.log($('#file_name_'+id+'').val());
-                                //바로바로 변경된값
-                                console.log($("#fileName").val());
-                                console.log("변경");
                                 $('#file_name_'+id+'').val($("#fileName").val());
                             } else{
-                                //hidden값( 저장된 값)
-                                console.log($('#file_name_'+id+'').val());
-                                //바로바로 변경된값
-                                console.log($("#fileName").val());
-                                console.log("같음");
                                 $('#file_name_'+id+'').val($("#fileName").val());
                             }
                         });
@@ -598,7 +468,6 @@
                     $("input[name^='file']").each(function () {
                         var id = $(this).attr("id");
                         $('#img_label_'+id).click(function () {
-                            console.log(id);
                             $('#file_name_'+id+'').val("");
                             $(this).parent().parent().hide();
                         });
@@ -614,7 +483,7 @@
                  @endphp
                 @if($UserClientFacility!="")
                     <td class="test1"><input type="checkbox" id="facilityCommon_all"  value="Y">전체 선택</td>
-                    <td class="test2">
+                    <td>
                         @foreach($user_client_facility as $k=>$c)
                             @if(isset($c->code_facility))
                                 <input type="checkbox" id="facilityCommon" name="facilityCommon[]" class="form-control" value="{{$c->code}}" {{isset($user_client_facility)&&$c->code_facility==$c->code?"checked":""}} />{{$c->code_name}}
@@ -625,7 +494,7 @@
                     </td>
                 @else
                     <td class="test1"><input type="checkbox" id="facilityCommon_all"  value="Y">전체 선택</td>
-                    <td class="test2">
+                    <td>
                         @foreach($type_facility as $k=>$c)
                             <input type="checkbox" id="facilityCommon" name="facilityCommon[]" class="form-control" value="{{$c->code}}" />{{$c->name}}
                         @endforeach
@@ -642,7 +511,7 @@
                 @endphp
                 @if($UserClientService!="")
                     <td class="test1"><input type="checkbox" id="Service_all" value="Y">전체 선택</td>
-                    <td class="test2">
+                    <td>
                         @foreach($user_client_service as $k=>$c)
                             @if(isset($c->code_facility))
                                 <input type="checkbox" id="Service[]" name="Service[]" class="form-control" value="{{$c->code}}" {{isset($user_client_service)&&$c->code_facility==$c->code?"checked":""}} />{{$c->code_name}}
@@ -653,7 +522,7 @@
                     </td>
                 @else
                     <td class="test1"><input type="checkbox" id="Service_all" value="Y">전체 선택</td>
-                    <td class="test2">
+                    <td>
                         @foreach($service as $k=>$c)
                             <input type="checkbox" id="Service[]" name="Service[]" class="form-control" value="{{$c->code}}" />{{$c->name}}
                         @endforeach
@@ -669,7 +538,7 @@
                 @endphp
                 @if($UserClientTorisit!="")
                     <td class="test1"><input type="checkbox" id="Nearby_tourist_spots_all" value="Y">전체 선택</td>
-                    <td class="test2">
+                    <td>
                         @foreach($user_client_torisit as $k=>$c)
                             @if(isset($c->code_facility))
                                 <input type="checkbox" id="Nearby_tourist_spots[]" name="Nearby_tourist_spots[]" class="form-control" value="{{$c->code}}" {{isset($user_client_torisit)&&$c->code_facility==$c->code?"checked":""}} />{{$c->code_name}}
@@ -680,7 +549,7 @@
                     </td>
                 @else
                     <td class="test1"><input type="checkbox" id="Nearby_tourist_spots_all" value="Y">전체 선택</td>
-                    <td class="test2">
+                    <td>
                     @foreach($Nearby_tourist_spots as $k=>$c)
                         <input type="checkbox" id="Nearby_tourist_spots[]" name="Nearby_tourist_spots[]" class="form-control" value="{{$c->code}}" />{{$c->name}}
                     @endforeach
@@ -711,6 +580,22 @@
                 </td>
             </tr>
             <tr>
+                <td class="test">가격노출기간</td>
+                <td>
+                    <input type="text" id="cnt_day" name="cnt_day" value="{{ isset($userInfo)?$userInfo->cnt_day:60 }}" data-min="{{ isset($userInfo)?(($userInfo->cnt_day-30)<1?1:$userInfo->cnt_day-30):30 }}" data-max="{{ isset($userInfo)?$userInfo->cnt_day+30:90 }}" />
+{{--
+                    <select name="cnt_day" id="cnt_day" class="form-control">
+                        <option value="">::노출기간::</option>
+                        <option value="60" {{ isset($userInfo)&&$userInfo->cnt_day==60?"selected":"" }}>60일</option>
+                        <option value="90" {{ isset($userInfo)&&$userInfo->cnt_day==90?"selected":"" }}>90일</option>
+                        <option value="120" {{ isset($userInfo)&&$userInfo->cnt_day==120?"selected":"" }}>120일</option>
+                        <option value="150" {{ isset($userInfo)&&$userInfo->cnt_day==150?"selected":"" }}>150일</option>
+                        <option value="180" {{ isset($userInfo)&&$userInfo->cnt_day==180?"selected":"" }}>180일</option>
+                    </select>
+--}}
+                </td>
+            </tr>
+            <tr>
                 <td class="test">스킨</td>
                 <td>
                     @php $skinReserve = \App\Http\Controllers\Controller::getCode('skin_reserve'); @endphp
@@ -721,59 +606,6 @@
                         @endforeach
                     </select>
                 </td>
-            </tr>
-            <tr>
-                <td class="test">나이 기준(숙박 가능 한지 불가 한지)</td>
-                <td>
-                    <input type="checkbox" name="dobule_young" value="Y"@if($userInfo->dobule_young=="Y")checked @endif />영유아
-                </td>
-                <td>
-                    <input type="checkbox" name="young" value="Y"@if($userInfo->young=="Y")checked @endif />유아
-                </td>
-                <td>
-                    <input type="checkbox" name="child" value="Y"@if($userInfo->child=="Y")checked @endif />아이
-                </td>
-                <td>
-                    <input type="checkbox" name="adult" checked="checked" value="Y" @if($userInfo->adult=="Y")checked @endif />성인
-                </td>
-            </tr>
-            <tr>
-                <td>
-                </td>
-                <td>
-                    <select name="sleep_check_value" class="form-control">
-                        <option value="0">0개월</option>
-                    </select>
-                    ~
-                    <select name="sleep_check_value_dobule_young" class="form-control" id="dobule_young">
-                        <option value="default" {{isset($userInfo)&&$userInfo->sleep_check_value_dobule_young=="default"?"selected":"" }}>선택해주세요</option>
-                        @for($i=0; $i<=36; $i++)
-                            <option value="{{$i}}" {{isset($userInfo)&&$userInfo->sleep_check_value_dobule_young==$i?"selected":"" }}>{{$i}}개월</option>
-                        @endfor
-                    </select>
-                </td>
-                <td>
-                    ~
-                    <select name="sleep_check_value_young" class="form-control" id="young">
-                        <option value="default" {{isset($userInfo)&&$userInfo->sleep_check_value_young=="default"?"selected":"" }}>선택해주세요</option>
-                        @for($i=1; $i<=36; $i++)
-                            <option value="{{$i}}" {{isset($userInfo)&&$userInfo->sleep_check_value_young==$i?"selected":"" }}>{{$i}}개월</option>
-                        @endfor
-                    </select>
-                </td>
-                <td>
-                    ~
-                    <select name="sleep_check_value_child" class="form-control" id="child">
-                        <option value="default" {{isset($userInfo)&&$userInfo->sleep_check_value_child=="default"?"selected":"" }}>선택해주세요</option>
-                        @for($i=1; $i<=36; $i++)
-                            <option value="{{$i}}" {{isset($userInfo)&&$userInfo->sleep_check_value_child==$i?"selected":"" }}>{{$i}}개월</option>
-                        @endfor
-                    </select>
-                </td>
-                <td>
-                    ~
-                </td>
-
             </tr>
             <tr>
                 <td class="test">대행사(코드에서 자동화)</td>

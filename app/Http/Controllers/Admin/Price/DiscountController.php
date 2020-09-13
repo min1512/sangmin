@@ -44,7 +44,7 @@ class DiscountController
                     , ifnull((select group_concat(discount_end separator ",") from client_discount_term where discount_id=client_discount.id),null) as discount_end
                     , ifnull((select date from client_discount_term where discount_id=client_discount.id limit 1),null) as date
                 ')
-                ->paginate(5);
+            ->paginate(5);
 
         $ClientTypeRoom = ClientTypeRoom::where('client_type_room.user_id',$user_id)->get();
         $ClientSeasonTerm = ClientSeasonTerm::where('user_id',$user_id)
@@ -77,20 +77,14 @@ class DiscountController
 //        return view('admin.pc.price.discount_insert',$discount);
     }
 
-    public function discount_view($data=[], $user_id="", $did=""){
-
+    public function discount_view($data=[], $user_id="", $did="0"){
         //did값은 할인 시즌의 아이디 값임.
         $discount =[];
-        if($user_id==""){
-            $user_id= Auth::user()->id;
-        }
-        if($did==""){
-            $did=0;
-        }
+        if($user_id=="") $user_id= Auth::user()->id;
+
         $discount['did'] = $did;
         $discount['curPath'] = "/info/season";
         $discount['user_id'] = $user_id;
-
 
         $discount['ClientTypeRoom'] = ClientTypeRoom::where('client_type_room.user_id',$user_id)
             ->selectraw('
@@ -111,9 +105,7 @@ class DiscountController
                 , ifnull((select group_concat(id separator ",") from client_season where id=client_season_term.season_id),null) as season_id
                 ')
             ->get();
-        $discount['ClientSeason_Check'] = ClientDiscount::where('user_id',$user_id)->where('id', $did)->value('season_check');
-        $discount['ClientSeason_date'] = ClientDiscount::where('user_id',$user_id)->where('id', $did)->value('date');
-        $discount['ClientSeason_date'] = explode(",",$discount['ClientSeason_date']);
+
         $discount['ClientDiscountBanDate'] = ClientDiscountBanDate::where('user_id',$user_id)->where('discount_id',$did)->orderby('date_ban')->get();
         $discount['ClientDiscountTerm'] = ClientDiscountTerm::where('user_id',$user_id)->where('discount_id',$did)
             ->selectraw("
@@ -122,28 +114,24 @@ class DiscountController
                 ")
             ->get();
 
-        $discount['ClientDiscount'] = ClientDiscount::where('user_id',$user_id)->where('id',$did)->first();
-        $discount['ClientDiscountBanDateSize'] = ClientDiscountBanDate::where('user_id',$user_id)->where('discount_id',$did)->get();
-
         return $discount;
     }
 
     public function discount_save(Request $request, $did=""){
-        $did = $request->input('season_id');
-        isset($did)?$did:$did="";
+        $did = $request->input('season_id',$did);
 
         $ClientDiscount = ClientDiscount::find($did);
 
-        if(isset($ClientDiscount)){
-            $ClientDiscount = ClientDiscount::find($did);
-        }else{
+        if(!isset($ClientDiscount)) {
             $ClientDiscount = new ClientDiscount();
+            $ClientDiscount->user_id = Auth::user()->id;
         }
+
         $ClientDiscount->discount_name = $request->discount_name;
         $ClientDiscount->flag_use = $request->discount_check;
         $ClientDiscount->season_check = $request->input('what_date');
-        $ClientDiscount -> date = implode(",",$request->input('day'));
-        $ClientDiscount->user_id = Auth::user()->id;
+        $ClientDiscount->date = implode(",",$request->input('day'));
+        $ClientDiscount->simple = $request->input('simple');
         $ClientDiscount->save();
 
 
@@ -154,10 +142,8 @@ class DiscountController
                 if(($request->input('start_season.'.$k))!=""){
                     $end_season = $request->input('end_season.'.$k);
                     $client_discount_term_id = $request->input('client_discount_term_id.'.$k);
-                    $isset = ClientDiscountTerm::where('discount_id',$did)->where('user_id',Auth::user()->id)->where('id',$client_discount_term_id)->first();
-                    if(isset($isset)){
-                        $ClientDiscountTerm = ClientDiscountTerm::find($isset['id']);
-                    }else{
+                    $ClientDiscountTerm = ClientDiscountTerm::where('discount_id',$did)->where('user_id',Auth::user()->id)->where('id',$client_discount_term_id)->first();
+                    if(!isset($ClientDiscountTerm)) {
                         $ClientDiscountTerm = new ClientDiscountTerm();
                         $ClientDiscountTerm->user_id = Auth::user()->id;
                         $ClientDiscountTerm->discount_id = $did;
@@ -171,18 +157,15 @@ class DiscountController
             }
             ClientDiscountTerm::whereNotIn('id',$tmpDeleteClientDiscountTermId1)->where('user_id',Auth::user()->id)->where('discount_id',$did)->delete();
         }else if($ClientDiscount->season_check=='Y'){
-//            dd($request->all());
             //기간 참조(할인 기간)-->시즌 갯수 만큼 돌림(체크된 시즌 갯수)
             $tmpDeleteClientDiscountTermId2 = [];
             foreach ($request->input('no_right_now_id') as $k=>$v){
-                $isset = ClientDiscountTerm::where('discount_id',$did)->where('user_id',Auth::user()->id)->where('season_id',$v)->first();
-                if(!isset($isset)){
+                $ClientDiscountTerm = ClientDiscountTerm::where('discount_id',$did)->where('user_id',Auth::user()->id)->where('season_id',$v)->first();
+                if(!isset($ClientDiscountTerm)){
                     $ClientDiscountTerm = new ClientDiscountTerm();
-                    $ClientDiscountTerm -> user_id = Auth::user()->id;
-                    $ClientDiscountTerm -> discount_id = $did;
+                    $ClientDiscountTerm->user_id = Auth::user()->id;
+                    $ClientDiscountTerm->discount_id = $did;
                     $ClientDiscountTerm->season_id = $v;
-                }else{
-                    $ClientDiscountTerm = ClientDiscountTerm::find($isset['id']);
                 }
                 $ClientDiscountTerm->discount_start =null;
                 $ClientDiscountTerm->discount_end =null;
@@ -215,10 +198,8 @@ class DiscountController
         //room_id별로 할인 값 넣기
         $tmpDeleteRoomId = [];
         foreach ($request->input('room_id') as $k=>$v){
-            $id = ClientDiscountRoom::where('user_id',Auth::user()->id)->where('discount_id',$did)->where('room_id',$v)->value('id');
-            if(isset($id)){
-                $ClientDiscountRoom = ClientDiscountRoom::find($id);
-            }else {
+            $ClientDiscountRoom = ClientDiscountRoom::where('user_id',Auth::user()->id)->where('discount_id',$did)->where('room_id',$v)->first();
+            if(!isset($ClientDiscountRoom)){
                 $ClientDiscountRoom = new ClientDiscountRoom();
                 $ClientDiscountRoom->user_id = Auth::user()->id;
                 $ClientDiscountRoom->room_id = $request->input("room_id.".$k);
@@ -233,27 +214,24 @@ class DiscountController
         }
         ClientDiscountRoom::whereNotIn('id',$tmpDeleteRoomId)->where('user_id',Auth::user()->id)->where('discount_id',$did)->delete();
 
-        return redirect()->route('info.discount');
+        return redirect()->route('info.discount',['user_id'=>$ClientDiscount->user_id]);
     }
 
     public function staff_discount_save(Request $request, $user_id="", $did=""){
-//        dd($request->all());
-        $did = $request->input('season_id');
-        isset($did)?$did:$did="";
+        //$did = $request->input('season_id');
+        //isset($did)?$did:$did="";
+        $did = $request->input("discount_id",$did);
         $ClientDiscount = ClientDiscount::find($did);
 
-        if(isset($ClientDiscount)){
-            $ClientDiscount = ClientDiscount::find($did);
-        }else{
-            $ClientDiscount = new ClientDiscount();
-        }
+        if(!isset($ClientDiscount)) $ClientDiscount = new ClientDiscount();
+
         $ClientDiscount->discount_name = $request->discount_name;
         $ClientDiscount->flag_use = $request->discount_check;
         $ClientDiscount->season_check = $request->input('what_date');
-        $ClientDiscount -> date = implode(",",$request->input('day'));
+        $ClientDiscount->date = implode(",",$request->input('day'));
+        $ClientDiscount->simple = $request->input('simple');
         $ClientDiscount->user_id = $user_id;
         $ClientDiscount->save();
-
 
         //직접 입력(할인 기간)
         if($ClientDiscount->season_check=='N'){
@@ -302,22 +280,24 @@ class DiscountController
         //제외 날짜 값(배열 형식으로 받음)
         $date_ban = $request->input('date_ban');
         $tmpDeleteDateBanId = [];
-        foreach ($date_ban as $k =>$v){
-            if(($request->input('date_ban.'.$k))!=""){
-                $ClientDiscountBanDate = ClientDiscountBanDate::where('discount_id',$did)->where('user_id',$user_id)->where('date_ban',$v)->first();
-                if(isset($ClientDiscountBanDate)){
-                    $ClientDiscountBanDate = ClientDiscountBanDate::find($ClientDiscountBanDate['id']);
-                }else{
-                    $ClientDiscountBanDate = new ClientDiscountBanDate();
-                    $ClientDiscountBanDate->user_id = $user_id;
-                    $ClientDiscountBanDate->discount_id = isset($did) && $did != "" ?$did:$ClientDiscount->id;
+        if(isset($date_ban)) {
+            foreach ($date_ban as $k => $v) {
+                if (($request->input('date_ban.' . $k)) != "") {
+                    $ClientDiscountBanDate = ClientDiscountBanDate::where('discount_id', $did)->where('user_id', $user_id)->where('date_ban', $v)->first();
+                    if (isset($ClientDiscountBanDate)) {
+                        $ClientDiscountBanDate = ClientDiscountBanDate::find($ClientDiscountBanDate['id']);
+                    } else {
+                        $ClientDiscountBanDate = new ClientDiscountBanDate();
+                        $ClientDiscountBanDate->user_id = $user_id;
+                        $ClientDiscountBanDate->discount_id = isset($did) && $did != "" ? $did : $ClientDiscount->id;
+                    }
+                    $ClientDiscountBanDate->date_ban = $v;
+                    $ClientDiscountBanDate->save();
+                    $tmpDeleteDateBanId[] = $ClientDiscountBanDate->id;
                 }
-                $ClientDiscountBanDate ->date_ban = $v;
-                $ClientDiscountBanDate ->save();
-                $tmpDeleteDateBanId[] = $ClientDiscountBanDate->id;
             }
+            ClientDiscountBanDate::whereNotIn('id',$tmpDeleteDateBanId)->where('user_id',$user_id)->where('discount_id',$did)->delete();
         }
-        ClientDiscountBanDate::whereNotIn('id',$tmpDeleteDateBanId)->where('user_id',$user_id)->where('discount_id',$did)->delete();
 
         //room_id별로 할인 값 넣기
         $tmpDeleteRoomId = [];
